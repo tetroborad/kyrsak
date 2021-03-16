@@ -1,0 +1,7 @@
+ftp python - http://python-3.ru/page/python-ftp-ftplib
+git - https://git-scm.com/book/ru/v2/Основы-Git-Работа-с-удалёнными-репозиториями
+? stryktyrirovanie - https://habr.com/ru/post/253201/
+SQLAlchemy - https://docs.sqlalchemy.org/en/14/
+sqlAlchemy RU - https://habr.com/ru/post/470285/
+PostgreSQL RU - https://metanit.com/sql/postgresql/1.1.php
+XML fail - https://habr.com/ru/post/524288/#well_formed_xml
