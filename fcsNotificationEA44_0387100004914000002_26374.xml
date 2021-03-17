@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:export xmlns="http://zakupki.gov.ru/oos/types/1" xmlns:ns2="http://zakupki.gov.ru/oos/export/1">
+    <ns2:fcsNotificationEF schemeVersion="1.0">
+        <id>26374</id>
+        <purchaseNumber>0387100004914000002</purchaseNumber>
+        <docPublishDate>2014-01-24T17:05:18.322+06:00</docPublishDate>
+        <href>http://zakupki.gov.ru/epz/order/notice/ea44/view/common-info.html?noticeId=26374</href>
+        <printForm>
+            <url>http://zakupki.gov.ru/epz/order/notice/printForm/view.html?noticeId=26374</url>
+        </printForm>
+        <purchaseObjectInfo>Оказание услуг по изготовлению бланков строгой отчетности 
+</purchaseObjectInfo>
+        <purchaseResponsible>
+            <responsibleOrg>
+                <regNum>03871000049</regNum>
+                <fullName>Отдел Министерства внутренних дел Российской Федерации по городу Мегиону</fullName>
+                <postAddress>Российская Федерация, 628681, Ханты-Мансийский Автономный округ - Югра АО, Мегион г, Строителей, 13, -</postAddress>
+                <factAddress>Российская Федерация, 628681, Ханты-Мансийский Автономный округ - Югра АО, Мегион г, Строителей, 13, -</factAddress>
+                <INN>8605010305</INN>
+                <KPP>860501001</KPP>
+            </responsibleOrg>
+            <responsibleRole>CU</responsibleRole>
+            <responsibleInfo>
+                <orgPostAddress>Российская Федерация, 628681, Ханты-Мансийский Автономный округ - Югра АО, Мегион г, Строителей, 13, -</orgPostAddress>
+                <orgFactAddress>Российская Федерация, 628681, Ханты-Мансийский Автономный округ - Югра АО, Мегион г, Строителей, 13, -</orgFactAddress>
+                <contactPerson>
+                    <lastName>Качапкина</lastName>
+                    <firstName>Татьяна</firstName>
+                    <middleName>Викторовна</middleName>
+                </contactPerson>
+                <contactEMail>ovdmeg@mail.ru</contactEMail>
+                <contactPhone>8-3464-333081</contactPhone>
+                <contactFax>8-3464-333081</contactFax>
+            </responsibleInfo>
+        </purchaseResponsible>
+        <placingWay>
+            <code>EA44</code>
+            <name>Электронный аукцион</name>
+        </placingWay>
+        <ETP>
+            <code>ETP_SBAST</code>
+            <name>ЗАО «Сбербанк-АСТ»</name>
+            <url>http://www.sberbank-ast.ru</url>
+        </ETP>
+        <procedureInfo>
+            <collecting>
+                <startDate>2014-01-25T09:00:00+04:00</startDate>
+                <place>ЗАО «Сбербанк – Автоматизированная система торгов». 
+http://www.sberbank-ast.ru
+заявка на участие в аукционе направляется участником аукциона оператору электронной площадки
+</place>
+                <order>в соответствии с требованиями ст. 66 Федерального закона «О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд» № 44-ФЗ от 05.04.2013 г.</order>
+                <endDate>2014-02-01T09:00:00+04:00</endDate>
+            </collecting>
+            <scoring>
+                <date>2014-02-04T00:00:00+04:00</date>
+            </scoring>
+            <bidding>
+                <date>2014-02-07T00:00:00+04:00</date>
+            </bidding>
+        </procedureInfo>
+        <lot>
+            <maxPrice>196400</maxPrice>
+            <currency>
+                <code>RUB</code>
+                <name>Российский рубль</name>
+            </currency>
+            <financeSource>федеральный бюджет</financeSource>
+            <quantityUndefined>false</quantityUndefined>
+            <customerRequirements>
+                <customerRequirement>
+                    <customer>
+                        <regNum>03871000049</regNum>
+                        <fullName>Отдел Министерства внутренних дел Российской Федерации по городу Мегиону</fullName>
+                    </customer>
+                    <maxPrice>196400</maxPrice>
+                    <deliveryPlace>Место оказания услуг – по фактическому нахождению Исполнителя с последующей доставкой за счет Исполнителя до Заказчика по адресу – Ханты-Мансийский автономный округ-Югра, г. Мегион, ул.Строителей, дом 13.</deliveryPlace>
+                    <deliveryTerm>Срок оказания услуг по изготовлению бланков строгой отчётности составляет не более 10 календарных (десять) дней с момента утверждения Заказчиком образцов бланков строгой отчётности, направленных Исполнителем Заказчику. Образцы подлежащих изготовлению бланков строгой отчётности направляются Исполнителем в адрес Заказчика в течение 4 календарных (четыре) дней с момента подписания государственного контракта Заказчиком на ЭТП ЗАО «Сбербанк – Автоматизированная система торгов». Образцы направляются Исполнителем Заказчику заказным письмом 1 класса (с минимальным сроком нахождения в пути до адресата), на котором проставляется штамп почтового отделения о дате отправки указанного заказного  письма. Адрес направления образцов бланков – 628681, Россия, Ханты-Мансийский АО-Югра, г. Мегион, ул.Строителей, дом 13.
+Дата отправки письма с приложением бланков - не позже 4 (четыре) дней с момента подписания государственного контракта Заказчиком на ЭТП ЗАО «Сбербанк – Автоматизированная система торгов». Одновременно с отправко</deliveryTerm>
+                    <applicationGuarantee>
+                        <amount>1964</amount>
+                        <part>1.0</part>
+                        <procedureInfo>в соответствии с требованиями Федерального закона «О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд» № 44-ФЗ от 05.04.2013 г. и  электронной площадки ЗАО «Сбербанк – Автоматизированная система торгов». </procedureInfo>
+                        <settlementAccount>40302810100001000004</settlementAccount>
+                        <personalAccount>05871347850</personalAccount>
+                        <bik>047162000</bik>
+                    </applicationGuarantee>
+                    <contractGuarantee>
+                        <amount>19640</amount>
+                        <part>10.0</part>
+                        <procedureInfo>Исполнение контракта может обеспечиваться предоставлением банковской гарантии, выданной банком и соответствующей требованиям ст. 45 Федерального закона № 44-ФЗ, или внесением денежных средств на указанный заказчиком счет, на котором в соответствии с законодательством Российской Федерации учитываются операции со средствами, поступающими заказчику. Способ обеспечения исполнения контракта определяется участником, с которым заключается контракт, самостоятельно. Срок действия банковской гарантии должен превышать срок действия контракта не менее чем на один месяц. Способ обеспечения исполнения контракта определяется участником аукциона само-стоятельно. 
+
+Контракт заключается после предоставления участником, с которым заключается контракт, обеспечения исполнения контракта в соответствии с ч. 3 ст. 96 Федеральным законом № 44-ФЗ.
+Срок предоставления документа обеспечения исполнения контракта – в течение 5 (пяти) дней с момента получения проекта контракта от оператора электронной торговой площадки. Исполнитель направляет на электронную площадку документы по обеспечению исполнения контракта, подписанные ЭП, вместе с подписанным проектом контракта. 
+В случае предоставления обеспечения контракта в виде банковской гарантии, заказчик проверяет наличие сведений о предоставленной банковской гарантии в реестре банковских гарантий. Заказчик рассматривает поступившую в качестве обеспечения исполнения контракта банковскую гарантию в срок, не превышающий 3 (трех) рабочих дней со дня ее поступления. 
+</procedureInfo>
+                        <settlementAccount>40302810100001000004</settlementAccount>
+                        <personalAccount>05871347850</personalAccount>
+                        <bik>047162000</bik>
+                    </contractGuarantee>
+                </customerRequirement>
+            </customerRequirements>
+            <purchaseObjects>
+                <purchaseObject>
+                    <OKPD>
+                        <code>22.22.20.153</code>
+                        <name>Бланки деловые самокопировальные разрезанные, включая бланки на одном листе, полистно проложенные копировальные наборы</name>
+                    </OKPD>
+                    <name>Протокол об административном правонарушении (покомплектно)</name>
+                    <OKEI>
+                        <code>839</code>
+                        <nationalCode>КОМПЛ</nationalCode>
+                    </OKEI>
+                    <price>4.81</price>
+                    <quantity>
+                        <value>3000.0</value>
+                    </quantity>
+                    <sum>14430</sum>
+                </purchaseObject>
+                <purchaseObject>
+                    <OKPD>
+                        <code>22.22.20.153</code>
+                        <name>Бланки деловые самокопировальные разрезанные, включая бланки на одном листе, полистно проложенные копировальные наборы</name>
+                    </OKPD>
+                    <name>Протокол о задержании транспортного средства</name>
+                    <OKEI>
+                        <code>839</code>
+                        <nationalCode>КОМПЛ</nationalCode>
+                    </OKEI>
+                    <price>5.96</price>
+                    <quantity>
+                        <value>2000.0</value>
+                    </quantity>
+                    <sum>11920</sum>
+                </purchaseObject>
+                <purchaseObject>
+                    <OKPD>
+                        <code>22.22.20.153</code>
+                        <name>Бланки деловые самокопировальные разрезанные, включая бланки на одном листе, полистно проложенные копировальные наборы</name>
+                    </OKPD>
+                    <name>Протокол о запрещении эксплуатации транспортного средства</name>
+                    <OKEI>
+                        <code>839</code>
+                        <nationalCode>КОМПЛ</nationalCode>
+                    </OKEI>
+                    <price>5.24</price>
+                    <quantity>
+                        <value>2500.0</value>
+                    </quantity>
+                    <sum>13100</sum>
+                </purchaseObject>
+                <purchaseObject>
+                    <OKPD>
+                        <code>22.22.20.153</code>
+                        <name>Бланки деловые самокопировальные разрезанные, включая бланки на одном листе, полистно проложенные копировальные наборы</name>
+                    </OKPD>
+                    <name>Постановление по делу об административном правонарушении</name>
+                    <OKEI>
+                        <code>839</code>
+                        <nationalCode>КОМПЛ</nationalCode>
+                    </OKEI>
+                    <price>4.61</price>
+                    <quantity>
+                        <value>27000.0</value>
+                    </quantity>
+                    <sum>124470</sum>
+                </purchaseObject>
+                <purchaseObject>
+                    <OKPD>
+                        <code>22.22.20.153</code>
+                        <name>Бланки деловые самокопировальные разрезанные, включая бланки на одном листе, полистно проложенные копировальные наборы</name>
+                    </OKPD>
+                    <name>Акт освидетельствования на состояние алкогольного опьянения</name>
+                    <OKEI>
+                        <code>839</code>
+                        <nationalCode>КОМПЛ</nationalCode>
+                    </OKEI>
+                    <price>8.08</price>
+                    <quantity>
+                        <value>1000.0</value>
+                    </quantity>
+                    <sum>8080</sum>
+                </purchaseObject>
+                <purchaseObject>
+                    <OKPD>
+                        <code>22.22.20.153</code>
+                        <name>Бланки деловые самокопировальные разрезанные, включая бланки на одном листе, полистно проложенные копировальные наборы</name>
+                    </OKPD>
+                    <name>Протокол об административном правонарушении (по 50 комплектов в блокноте)</name>
+                    <OKEI>
+                        <code>839</code>
+                        <nationalCode>КОМПЛ</nationalCode>
+                    </OKEI>
+                    <price>4.88</price>
+                    <quantity>
+                        <value>5000.0</value>
+                    </quantity>
+                    <sum>24400</sum>
+                </purchaseObject>
+                <totalSum>196400</totalSum>
+            </purchaseObjects>
+            <preferenses>
+                <preferense>
+                    <code>8361034</code>
+                    <name>Субъектам малого предпринимательства (в соответствии со Статьей 30 Федерального закона № 44-ФЗ)</name>
+                    <prefValue>0.0</prefValue>
+                </preferense>
+                <preferense>
+                    <code>8361035</code>
+                    <name>Социально ориентированным некоммерческим организациям (в соответствии со Статьей 30 Федерального закона № 44-ФЗ)</name>
+                    <prefValue>0.0</prefValue>
+                </preferense>
+            </preferenses>
+            <requirements>
+                <requirement>
+                    <code>8361040</code>
+                    <name>Единые требования к участникам (в соответствии  с частью 1 Статьи 31 Федерального закона № 44-ФЗ)</name>
+                    <content>в соответствии с разделом 2-4 аукционной документации</content>
+                </requirement>
+            </requirements>
+            <restrictInfo>не предусмотрено</restrictInfo>
+        </lot>
+        <attachments>
+            <attachment>
+                <publishedContentId>F0B55FBB372B0078E043AC110725D956</publishedContentId>
+                <fileName>аукционная документация бланки и.doc</fileName>
+                <docDescription>аукционная документация бланки строгой отчетности</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F0B55FBB372B0078E043AC110725D956</url>
+            </attachment>
+            <attachment>
+                <publishedContentId>F0B5AC8C809100BAE043AC1107250AB8</publishedContentId>
+                <fileName>1протокол о задержании тс.jpg</fileName>
+                <docDescription>1протокол о задержании тс</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F0B5AC8C809100BAE043AC1107250AB8</url>
+            </attachment>
+            <attachment>
+                <publishedContentId>F0B5AC8C809B00BAE043AC1107250AB8</publishedContentId>
+                <fileName>2протокол о запрещении эксплуатации тс.jpg</fileName>
+                <docDescription>2протокол о запрещении эксплуатации тс</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F0B5AC8C809B00BAE043AC1107250AB8</url>
+            </attachment>
+            <attachment>
+                <publishedContentId>F0B454C2D932008CE043AC11072506E5</publishedContentId>
+                <fileName>3постановление по делу об админ правонар 1 лицевая сторона.jpg</fileName>
+                <docDescription>3постановление по делу об админ правонар 1 лицевая сторона</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F0B454C2D932008CE043AC11072506E5</url>
+            </attachment>
+            <attachment>
+                <publishedContentId>F0B5AC8C809D00BAE043AC1107250AB8</publishedContentId>
+                <fileName>3постановление по делу об админитр. правонар 2 оборотная сторона.jpg</fileName>
+                <docDescription>3постановление по делу об админитр. правонар 2 оборотная сторона</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F0B5AC8C809D00BAE043AC1107250AB8</url>
+            </attachment>
+            <attachment>
+                <publishedContentId>F0B454C2D93C008CE043AC11072506E5</publishedContentId>
+                <fileName>4акт освидетельствования на состояние алкогольного опьянения.jpg</fileName>
+                <docDescription>4акт освидетельствования на состояние алкогольного опьянения</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F0B454C2D93C008CE043AC11072506E5</url>
+            </attachment>
+            <attachment>
+                <publishedContentId>F0B5AC8C80A100BAE043AC1107250AB8</publishedContentId>
+                <fileName>5протокол об административном правонарушении 1 лицевая сторона.jpg</fileName>
+                <docDescription>5протокол об административном правонарушении 1 лицевая сторона</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F0B5AC8C80A100BAE043AC1107250AB8</url>
+            </attachment>
+            <attachment>
+                <publishedContentId>F0B454C2D946008CE043AC11072506E5</publishedContentId>
+                <fileName>6протокол об административном правонарушении.jpg</fileName>
+                <docDescription>6протокол об административном правонарушении</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F0B454C2D946008CE043AC11072506E5</url>
+            </attachment>
+            <attachment>
+                <publishedContentId>F0B4BCEDF78E0056E043AC1107254D04</publishedContentId>
+                <fileName>5протокол об админитративном правонарушении 2 оборотная сторона.jpg</fileName>
+                <docDescription>5протокол об админитративном правонарушении 2 оборотная сторона</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F0B4BCEDF78E0056E043AC1107254D04</url>
+            </attachment>
+        </attachments>
+    </ns2:fcsNotificationEF>
+</ns2:export>

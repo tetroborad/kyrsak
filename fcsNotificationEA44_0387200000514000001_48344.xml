@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:export xmlns="http://zakupki.gov.ru/oos/types/1" xmlns:ns2="http://zakupki.gov.ru/oos/export/1">
+    <ns2:fcsNotificationEF schemeVersion="1.0">
+        <id>48344</id>
+        <purchaseNumber>0387200000514000001</purchaseNumber>
+        <docPublishDate>2014-01-31T14:26:22.115+06:00</docPublishDate>
+        <href>http://zakupki.gov.ru/epz/order/notice/ea44/view/common-info.html?noticeId=48344</href>
+        <printForm>
+            <url>http://zakupki.gov.ru/epz/order/notice/printForm/view.html?noticeId=48344</url>
+        </printForm>
+        <purchaseObjectInfo>Оказание услуг по механизированной уборке и вывозу снега, с его последующей утилизацией и размещением на специализированных для этих целей площадках, с дворовых территорий зданий стационара и здания поликлиники и отделения психотерапии.</purchaseObjectInfo>
+        <purchaseResponsible>
+            <responsibleOrg>
+                <regNum>03872000005</regNum>
+                <fullName>казенное учреждение Ханты-Мансийского автономного округа - Югры "Нижневартовский психоневрологический диспансер"</fullName>
+                <postAddress>Российская Федерация, 628615, Ханты-Мансийский Автономный округ - Югра АО, Нижневартовск г, Интернациональная, 39В, -</postAddress>
+                <factAddress>Российская Федерация, 628615, Ханты-Мансийский Автономный округ - Югра АО, Нижневартовск г, Интернациональная, 39В, -</factAddress>
+                <INN>8603056230</INN>
+                <KPP>860301001</KPP>
+            </responsibleOrg>
+            <responsibleRole>CU</responsibleRole>
+            <responsibleInfo>
+                <orgPostAddress>Российская Федерация, 628615, Ханты-Мансийский Автономный округ - Югра АО, Нижневартовск г, Интернациональная, 39В, -</orgPostAddress>
+                <orgFactAddress>Российская Федерация, 628615, Ханты-Мансийский Автономный округ - Югра АО, Нижневартовск г, Интернациональная, 39В, -</orgFactAddress>
+                <contactPerson>
+                    <lastName>Карелина </lastName>
+                    <firstName>Елена</firstName>
+                    <middleName>Викторовна</middleName>
+                </contactPerson>
+                <contactEMail>dagavor@npnd.ru</contactEMail>
+                <contactPhone>7-3466-448168</contactPhone>
+            </responsibleInfo>
+        </purchaseResponsible>
+        <placingWay>
+            <code>EA44</code>
+            <name>Электронный аукцион</name>
+        </placingWay>
+        <ETP>
+            <code>ETP_EETP</code>
+            <name>ОАО «ЕЭТП»</name>
+            <url>http://roseltorg.ru</url>
+        </ETP>
+        <procedureInfo>
+            <collecting>
+                <startDate>2014-02-01T08:00:00+04:00</startDate>
+                <place>628615, г.Нижневартовск, ул. Интернациональная 39 В.</place>
+                <order>Заявка на участие в электронном аукционе направляется участником такого аукциона оператору электронной площадки в форме двух электронных документов, содержащих первую и вторую части заявки. Указанные электронные документы подаются одновременно.</order>
+                <endDate>2014-02-10T12:00:00+04:00</endDate>
+            </collecting>
+            <scoring>
+                <date>2014-02-11T00:00:00+04:00</date>
+            </scoring>
+            <bidding>
+                <date>2014-02-14T00:00:00+04:00</date>
+            </bidding>
+        </procedureInfo>
+        <lot>
+            <maxPrice>270000</maxPrice>
+            <currency>
+                <code>RUB</code>
+                <name>Российский рубль</name>
+            </currency>
+            <financeSource>бюджет Ханты-Мансийского автономного округа - Югры</financeSource>
+            <quantityUndefined>false</quantityUndefined>
+            <customerRequirements>
+                <customerRequirement>
+                    <customer>
+                        <regNum>03872000005</regNum>
+                        <fullName>казенное учреждение Ханты-Мансийского автономного округа - Югры "Нижневартовский психоневрологический диспансер"</fullName>
+                    </customer>
+                    <maxPrice>270000</maxPrice>
+                    <deliveryPlace>628615, г.Нижневартовск, ул. Интернациональная 39 В; ул. Спортивная, 19</deliveryPlace>
+                    <deliveryTerm>с момента заключения контракта по 15 мая 2014 года; с 01.10.2014 по 31.12.2014 года,
+ежемесячно,  по  заявке  в  течение  12  (двенадцати)  часов  с  момента  поступления заявки от Заказчика.</deliveryTerm>
+                    <applicationGuarantee>
+                        <amount>2700</amount>
+                        <part>1.0</part>
+                        <procedureInfo>Путем внесения денежный средств, согласно статья 44 Федерального Закона № 44-ФЗ</procedureInfo>
+                        <settlementAccount>40302810300004000018</settlementAccount>
+                        <personalAccount>620077386</personalAccount>
+                        <bik>047162000</bik>
+                    </applicationGuarantee>
+                    <contractGuarantee>
+                        <amount>27000</amount>
+                        <part>10.0</part>
+                        <procedureInfo>Выданная банком банковская гарантия, или внесение денежных средств на указанный Заказчиком счет, на котором в соответствии с законодательством Российской Федерации учитываются операции со средствами, поступающими Заказчику. Способ обеспечения исполнения контракта определяется Исполнителем самостоятельно.
+</procedureInfo>
+                        <settlementAccount>40302810300004000018</settlementAccount>
+                        <personalAccount>620077386</personalAccount>
+                        <bik>047162000</bik>
+                    </contractGuarantee>
+                </customerRequirement>
+            </customerRequirements>
+            <purchaseObjects>
+                <purchaseObject>
+                    <OKPD>
+                        <code>90.03.13.111</code>
+                        <name>Услуги по уборке территорий городов и поселков с использованием специальной техники</name>
+                    </OKPD>
+                    <name>Оказание услуг по механизированной уборке и вывозу снега, с его последующей утилизацией и размещением на специализированных для этих целей площадках, с дворовых территорий зданий стационара и здания поликлиники и отделения психотерапии.</name>
+                    <price>270000</price>
+                    <quantity>
+                        <value>1.0</value>
+                    </quantity>
+                    <sum>270000</sum>
+                </purchaseObject>
+                <totalSum>270000</totalSum>
+            </purchaseObjects>
+            <requirements>
+                <requirement>
+                    <code>8361040</code>
+                    <name>Единые требования к участникам (в соответствии  с частью 1 Статьи 31 Федерального закона № 44-ФЗ)</name>
+                </requirement>
+            </requirements>
+            <restrictInfo>отсутсвует</restrictInfo>
+            <restrictForeignsInfo>отсутсвует</restrictForeignsInfo>
+        </lot>
+        <attachments>
+            <attachment>
+                <publishedContentId>F13D7CCEB4B10056E043AC110725AA63</publishedContentId>
+                <fileName>ОАЭФ 01-14 Механизированная уборка и вывоз снега.rar</fileName>
+                <docDescription>ОАЭФ 01-14 Механизированная уборка и вывоз снега</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F13D7CCEB4B10056E043AC110725AA63</url>
+            </attachment>
+            <attachment>
+                <publishedContentId>F13FA4DE268F0076E043AC110725B227</publishedContentId>
+                <fileName>Внесение изменений в аукционную документацию Механизированная уборка и вывоз снега.rar</fileName>
+                <docDescription>Внесение изменений в аукционную документацию Механизированная уборка и вывоз снега</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F13FA4DE268F0076E043AC110725B227</url>
+            </attachment>
+        </attachments>
+        <modification>
+            <modificationNumber>1</modificationNumber>
+            <info>внесение изменений в аукционную документацию в раздел ОБОСНОВАНИЕ НАЧАЛЬНО-МАКСИМАЛЬНОЙ ЦЕНЫ КОНТРАКТА  </info>
+            <reason>
+                <responsibleDecision>
+                    <decisionDate>2014-01-31T00:00:00+04:00</decisionDate>
+                </responsibleDecision>
+            </reason>
+        </modification>
+    </ns2:fcsNotificationEF>
+</ns2:export>
