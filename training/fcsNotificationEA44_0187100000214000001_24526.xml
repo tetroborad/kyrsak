@@ -18,7 +18,7 @@
                 <INN>8601024258</INN><!--ИНН-->
                 <KPP>860101001</KPP><!--код причины постановки на учот в налоговую инспекцию-->
             </responsibleOrg>
-            <responsibleRole>CU</responsibleRole><!--Роль организации, осуществляющей закупку-->
+            <responsibleRole>CU</responsibleRole><!--не предстовляю что и куда-->
             <responsibleInfo>
                 <orgPostAddress>Российская Федерация, 628011, Ханты-Мансийский Автономный округ - Югра АО, Ханты-Мансийск г, Дзержинского, 2, -</orgPostAddress>
                 <orgFactAddress>Российская Федерация, 628011, Ханты-Мансийский Автономный округ - Югра АО, Ханты-Мансийск г, Дзержинского, 2, -</orgFactAddress>
@@ -62,7 +62,7 @@
                 <name>Российский рубль</name><!--название валюты-->
             </currency>
             <financeSource>Федеральный бюджет</financeSource><!--источник финонсирования-->
-            <quantityUndefined>false</quantityUndefined><!--Невозможно определить количество товара, объем подлежащих выполнению работ, оказанию услуг-->
+            <quantityUndefined>false</quantityUndefined><!--не понял-->
             <customerRequirements><!--все требования заказчика-->
                 <customerRequirement><!--конкретное требование заказчика-->
                     <customer><!--заказчик-->
@@ -120,7 +120,7 @@
         </lot>
         <attachments><!--приклепленныуе файлы-->
             <attachment><!--конкретный преклепленный файл-->
-                <publishedContentId>F0B01C2B4FF200FCE043AC110725FD23</publishedContentId><!--Уникальный идентификатор контента документа в ЕИС-->
+                <publishedContentId>F0B01C2B4FF200FCE043AC110725FD23</publishedContentId><!--не предстовляю что это какойто id-->
                 <fileName>аукционная документация № 1-ЭА охрана.doc</fileName><!--название файла-->
                 <docDescription>аукционная документация № 1-ЭА охрана</docDescription><!--как он должен отображатся-->
                 <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F0B01C2B4FF200FCE043AC110725FD23</url><!--сылка на файл-->

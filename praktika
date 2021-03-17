@@ -1,0 +1,7 @@
+import os
+fails=[]
+fails=os.listdir(path="training")
+for i in fails:
+    print(1)
+#/home/user/praktika/training/NotificationEA44_0187100000214000001_24526.xml
+#os.listdir(path=".") - список файлов и директорий в папке.

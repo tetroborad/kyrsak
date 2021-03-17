@@ -5,3 +5,4 @@ SQLAlchemy - https://docs.sqlalchemy.org/en/14/
 sqlAlchemy RU - https://habr.com/ru/post/470285/
 PostgreSQL RU - https://metanit.com/sql/postgresql/1.1.php
 XML fail - https://habr.com/ru/post/524288/#well_formed_xml
+python libreali- https://habr.com/ru/post/220125/
