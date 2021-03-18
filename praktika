@@ -1,7 +1,21 @@
 import os
+from io import StringIO
+from lxml import etree
+parser=etree.XMLParser(remove_comments=True)
+def parseXML(xmlFile):
+    s=0
+    lib={}
+    root=xmlFile.getroot()
+    for child_root in root:
+        lib_elem=parseXML(child_root)
+        lib[child_root.tag]=lib_elem
+    
+    
 fails=[]
-fails=os.listdir(path="training")
+fails=os.listdir("training")
 for i in fails:
-    print(1)
-#/home/user/praktika/training/NotificationEA44_0187100000214000001_24526.xml
-#os.listdir(path=".") - список файлов и директорий в папке.
+    with open("training/"+i) as fobj:
+        xml = etree.parse(fobj,parser)
+    parseXML(xml)#вызов чтения файла
+    
+

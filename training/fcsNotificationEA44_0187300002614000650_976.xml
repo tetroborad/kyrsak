@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:export xmlns="http://zakupki.gov.ru/oos/types/1" xmlns:ns2="http://zakupki.gov.ru/oos/export/1">
+    <ns2:fcsNotificationEF schemeVersion="1.0">
+        <id>976</id>
+        <purchaseNumber>0187300002614000650</purchaseNumber>
+        <docPublishDate>2014-01-10T07:03:01.967+04:00</docPublishDate>
+        <href>http://zakupki.gov.ru/epz/order/notice/ea44/view/common-info.html?noticeId=976</href>
+        <printForm>
+            <url>http://zakupki.gov.ru/epz/order/notice/printForm/view.html?noticeId=976</url>
+        </printForm>
+        <purchaseObjectInfo>Поставка профилированного листа С-8 х 1150 согласно спецификации (приложение №1 к проекту муниципального контракта)</purchaseObjectInfo>
+        <purchaseResponsible>
+            <responsibleOrg>
+                <regNum>01873000026</regNum>
+                <fullName>Администрация сельского поселения Луговской</fullName>
+                <postAddress>Российская Федерация, 628532, Ханты-Мансийский Автономный округ - Югра АО, Ханты-Мансийский р-н, Луговской п, Гагарина, 19, -</postAddress>
+                <factAddress>Российская Федерация, 628532, Ханты-Мансийский Автономный округ - Югра АО, Ханты-Мансийский р-н, Луговской п, Гагарина, 19, -</factAddress>
+            </responsibleOrg>
+            <responsibleRole>CU</responsibleRole>
+            <responsibleInfo>
+                <orgPostAddress>Российская Федерация, 628532, Ханты-Мансийский Автономный округ - Югра АО, Ханты-Мансийский р-н, Луговской п, Гагарина, 19, -</orgPostAddress>
+                <orgFactAddress>Российская Федерация, 628532, Ханты-Мансийский Автономный округ - Югра АО, Ханты-Мансийский р-н, Луговской п, Гагарина, 19, -</orgFactAddress>
+                <contactPerson>
+                    <lastName>Захарова</lastName>
+                    <firstName>Ольга</firstName>
+                    <middleName>Юрьевна</middleName>
+                </contactPerson>
+                <contactEMail>zaharovaou@yandex.ru</contactEMail>
+                <contactPhone>7-3467-378001</contactPhone>
+                <contactFax>7-3467-378447</contactFax>
+            </responsibleInfo>
+        </purchaseResponsible>
+        <placingWay>
+            <code>EA44</code>
+            <name>Электронный аукцион</name>
+        </placingWay>
+        <ETP>
+            <code>ETP_SBAST</code>
+            <name>ЗАО «Сбербанк-АСТ»</name>
+            <url>oos_interaction@sberbank-ast.ru</url>
+        </ETP>
+        <procedureInfo>
+            <collecting>
+                <startDate>2014-01-10T15:00:00+04:00</startDate>
+                <place>Заявка на участие в электронном аукционе направляется оператору электронной площадки. Адрес электронной площадки ЗАО "Сбербанк-АСТ": www.sberbank-ast.ru</place>
+                <order>Заявка на участие в электронном аукционе направляется участником оператору электронной площадки в форме двух электронных документов, содержащих части заявки, предусмотренные частями 3 и 5 статьи 66 Федерального закона от 05.04.2013 № 44-ФЗ "О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд" </order>
+                <endDate>2014-01-16T15:00:00+04:00</endDate>
+            </collecting>
+            <scoring>
+                <date>2014-01-21T00:00:00+04:00</date>
+            </scoring>
+            <bidding>
+                <date>2014-01-24T00:00:00+04:00</date>
+            </bidding>
+        </procedureInfo>
+        <lot>
+            <maxPrice>1219920</maxPrice>
+            <currency>
+                <code>RUB</code>
+                <name>Российский рубль</name>
+            </currency>
+            <financeSource>Бюджет сельского поселения Луговской</financeSource>
+            <quantityUndefined>false</quantityUndefined>
+            <customerRequirements>
+                <customerRequirement>
+                    <customer>
+                        <regNum>01873000026</regNum>
+                    </customer>
+                    <maxPrice>1219920</maxPrice>
+                    <deliveryPlace>Населенные пункты сельского поселения Луговской Ханты-Мансийского района Ханты-Мансийского автономного округа-Югры согласно спецификации</deliveryPlace>
+                    <deliveryTerm>в течение 25 дней</deliveryTerm>
+                    <applicationGuarantee>
+                        <amount>12199.2</amount>
+                        <part>1.0</part>
+                        <procedureInfo>В соответствии со статьей 44 Федерального закона от 05.04.2013 № 44-ФЗ "О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд"</procedureInfo>
+                        <settlementAccount>40302810271623000023</settlementAccount>
+                        <personalAccount>05873032880</personalAccount>
+                        <bik>047162000</bik>
+                    </applicationGuarantee>
+                    <contractGuarantee>
+                        <amount>60996</amount>
+                        <part>5.0</part>
+                        <procedureInfo>В соответствии со статьей 96 Федерального закона от 05.04.2013 № 44-ФЗ "О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд"</procedureInfo>
+                        <settlementAccount>40302810271623000023</settlementAccount>
+                        <bik>047162000</bik>
+                    </contractGuarantee>
+                </customerRequirement>
+            </customerRequirements>
+            <purchaseObjects>
+                <purchaseObject>
+                    <OKPD>
+                        <code>27.33.11.123</code>
+                        <name>Листы профилированные (оребренные) в холодном состоянии из нелегированной стали</name>
+                    </OKPD>
+                    <name>Профилированный лист С-8 х 1150</name>
+                    <price>230</price>
+                    <quantity>
+                        <value>5304.0</value>
+                    </quantity>
+                    <sum>1219920</sum>
+                </purchaseObject>
+                <totalSum>1219920</totalSum>
+            </purchaseObjects>
+            <requirements>
+                <requirement>
+                    <code>8361040</code>
+                    <name>Единые требования к участникам (в соответствии  с частью 1 Статьи 31 Федерального закона № 44-ФЗ)</name>
+                </requirement>
+            </requirements>
+            <restrictInfo>Не установлено</restrictInfo>
+        </lot>
+        <attachments>
+            <attachment>
+                <fileName>Докум.  №  ЭА 02-14 профнастил.doc</fileName>
+                <docDescription>Докум.  №  ЭА 02-14 профнастил</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=EF8E0412191900DEE043AC110725BBE7</url>
+            </attachment>
+        </attachments>
+    </ns2:fcsNotificationEF>
+</ns2:export>

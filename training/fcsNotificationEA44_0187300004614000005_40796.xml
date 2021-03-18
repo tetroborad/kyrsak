@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:export xmlns="http://zakupki.gov.ru/oos/types/1" xmlns:ns2="http://zakupki.gov.ru/oos/export/1">
+    <ns2:fcsNotificationEF schemeVersion="1.0">
+        <id>40796</id>
+        <purchaseNumber>0187300004614000005</purchaseNumber>
+        <docPublishDate>2014-01-30T11:27:16.486+06:00</docPublishDate>
+        <href>http://zakupki.gov.ru/epz/order/notice/ea44/view/common-info.html?noticeId=40796</href>
+        <printForm>
+            <url>http://zakupki.gov.ru/epz/order/notice/printForm/view.html?noticeId=40796</url>
+        </printForm>
+        <purchaseObjectInfo>Приобретение 1 квартиры в п.Агириш для лица из числа детей-сирот и детей, оставшихся без попечения родителей </purchaseObjectInfo>
+        <purchaseResponsible>
+            <responsibleOrg>
+                <regNum>01873000046</regNum>
+                <fullName>администрация Советского района</fullName>
+                <postAddress>Российская Федерация, 628240, Ханты-Мансийский Автономный округ - Югра АО, Советский р-н, Советский г, ул. 50 лет Пионерии, д. 10, -</postAddress>
+                <factAddress>Российская Федерация, 628240, Ханты-Мансийский Автономный округ - Югра АО, Советский р-н, Советский г, ул. 50 лет Пионерии, д. 10, -</factAddress>
+                <INN>8615007291</INN>
+                <KPP>861501001</KPP>
+            </responsibleOrg>
+            <responsibleRole>RA</responsibleRole>
+            <responsibleInfo>
+                <orgPostAddress>Российская Федерация, 628240, Ханты-Мансийский Автономный округ - Югра АО, Советский р-н, Советский г, ул. 50 лет Пионерии, д. 10, -</orgPostAddress>
+                <orgFactAddress>Российская Федерация, 628240, Ханты-Мансийский Автономный округ - Югра АО, Советский р-н, Советский г, ул. 50 лет Пионерии, д. 10, -</orgFactAddress>
+                <contactPerson>
+                    <lastName>Балашова</lastName>
+                    <firstName>Ольга</firstName>
+                    <middleName>Анатольевна</middleName>
+                </contactPerson>
+                <contactEMail>sovzakaz@mail.ru</contactEMail>
+                <contactPhone>8-3467-532252</contactPhone>
+                <contactFax>8-3467-532252</contactFax>
+            </responsibleInfo>
+        </purchaseResponsible>
+        <placingWay>
+            <code>EA44</code>
+            <name>Электронный аукцион</name>
+        </placingWay>
+        <ETP>
+            <code>ETP_SBAST</code>
+            <name>ЗАО «Сбербанк-АСТ»</name>
+            <url>http://www.sberbank-ast.ru</url>
+        </ETP>
+        <procedureInfo>
+            <collecting>
+                <startDate>2014-01-30T07:57:00+04:00</startDate>
+                <place>http://sberbank-ast.ru  (ЗАО "Сбербанк-АСТ")</place>
+                <order>в соответствии с документации  об электронном аукционе</order>
+                <endDate>2014-02-07T10:00:00+04:00</endDate>
+            </collecting>
+            <scoring>
+                <date>2014-02-10T00:00:00+04:00</date>
+            </scoring>
+            <bidding>
+                <date>2014-02-13T00:00:00+04:00</date>
+            </bidding>
+        </procedureInfo>
+        <lot>
+            <maxPrice>1100000</maxPrice>
+            <currency>
+                <code>RUB</code>
+                <name>Российский рубль</name>
+            </currency>
+            <financeSource>бюджет Советского района</financeSource>
+            <quantityUndefined>false</quantityUndefined>
+            <customerRequirements>
+                <customerRequirement>
+                    <customer>
+                        <regNum>01873000218</regNum>
+                        <fullName>Департамент социального развития администрации Советского района</fullName>
+                    </customer>
+                    <maxPrice>1100000</maxPrice>
+                    <deliveryPlace>ХМАО-Югра, Советский район, п.Агириш</deliveryPlace>
+                    <deliveryTerm>не позднее даты перехода права собственности на квартиру, зарегистрированного Советским отделом Управления Федеральной службы государственной регистрации, кадастра и картографии по ХМАО-Югре</deliveryTerm>
+                    <applicationGuarantee>
+                        <amount>11000</amount>
+                        <part>1.0</part>
+                        <procedureInfo>Денежные средства, внесенные в качестве обеспечения заявок, при проведении электронных аукционов перечисляются на счет оператора электронной площадки в банке.</procedureInfo>
+                        <settlementAccount>40302810600005000021</settlementAccount>
+                        <personalAccount>006.11.015.1</personalAccount>
+                        <bik>047175000</bik>
+                    </applicationGuarantee>
+                    <contractGuarantee>
+                        <amount>0</amount>
+                        <part>0.0</part>
+                        <procedureInfo>обеспечение контракта не установлено</procedureInfo>
+                        <settlementAccount>40302810600005000021</settlementAccount>
+                        <personalAccount>006.11.015.1</personalAccount>
+                        <bik>047175000</bik>
+                    </contractGuarantee>
+                </customerRequirement>
+            </customerRequirements>
+            <purchaseObjects>
+                <purchaseObject>
+                    <OKPD>
+                        <code>70.12.11.000</code>
+                        <name>Услуги по покупке и продаже жилых зданий</name>
+                    </OKPD>
+                    <name>1 квартира в п.Агириш </name>
+                    <OKEI>
+                        <code>796</code>
+                        <nationalCode>ШТ</nationalCode>
+                    </OKEI>
+                    <customerQuantities>
+                        <customerQuantity>
+                            <customer>
+                                <regNum>01873000218</regNum>
+                                <fullName>Департамент социального развития администрации Советского района</fullName>
+                            </customer>
+                            <quantity>0.0</quantity>
+                        </customerQuantity>
+                    </customerQuantities>
+                    <price>1100000</price>
+                    <quantity>
+                        <value>1.0</value>
+                    </quantity>
+                    <sum>1100000</sum>
+                </purchaseObject>
+                <totalSum>1100000</totalSum>
+            </purchaseObjects>
+            <preferenses>
+                <preferense>
+                    <code>8361034</code>
+                    <name>Субъектам малого предпринимательства (в соответствии со Статьей 30 Федерального закона № 44-ФЗ)</name>
+                    <prefValue>0.0</prefValue>
+                </preferense>
+            </preferenses>
+            <requirements>
+                <requirement>
+                    <code>8361040</code>
+                    <name>Единые требования к участникам (в соответствии  с частью 1 Статьи 31 Федерального закона № 44-ФЗ)</name>
+                </requirement>
+            </requirements>
+            <restrictInfo>Закупка для СМП</restrictInfo>
+            <restrictForeignsInfo>В соответствии с Пунктом 7 Части 5 Статьи 63 Федерального закона от 05.04.2013г.                                       № 44-ФЗ «О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд»</restrictForeignsInfo>
+        </lot>
+        <attachments>
+            <attachment>
+                <publishedContentId>F12983C0866F0034E043AC110725D1C0</publishedContentId>
+                <fileName>Закупка № 8 квартира опека Агириш.doc</fileName>
+                <docDescription>Закупка № 8 квартира опека Агириш</docDescription>
+                <url>http://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=F12983C0866F0034E043AC110725D1C0</url>
+            </attachment>
+        </attachments>
+    </ns2:fcsNotificationEF>
+</ns2:export>
