@@ -1,21 +1,26 @@
 import os
-from io import StringIO
 from lxml import etree
 parser=etree.XMLParser(remove_comments=True)
-def parseXML(xmlFile):
-    s=0
+def lib(xmlFile):
     lib={}
-    root=xmlFile.getroot()
-    for child_root in root:
-        lib_elem=parseXML(child_root)
-        lib[child_root.tag]=lib_elem
-    
-    
+    lib[xmlFile.getroot()]=lib_chil(xmlFile.getroot())  
+    return lib
+
+def lib_chil(chil):
+    lib={}
+    if chil.getchildren() != None :
+        for child_root in chil:
+            lib_elem=lib_chil(child_root)
+            lib[child_root.tag]=lib_elem
+    else:
+        return chil.text
+    return lib
 fails=[]
 fails=os.listdir("training")
 for i in fails:
     with open("training/"+i) as fobj:
         xml = etree.parse(fobj,parser)
-    parseXML(xml)#вызов чтения файла
-    
-
+    with open('wraite','w') as wraite:
+        string=str(lib(xml))
+        wraite.write(string)#вызов чтения файла
+        wraite.write('1111111111111111111111')
