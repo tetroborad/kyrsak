@@ -1,6 +1,7 @@
 import os
 from lxml import etree
-parser=etree.XMLParser(remove_comments=True)
+ai_list=[]
+parser=etree.XMLParser(remove_comments=True,recover=True,attribute_defaults=True,dtd_validation=True,load_dtd=True)
 def lib(xmlFile):
     lib={}
     lib[xmlFile.getroot()]=lib_chil(xmlFile.getroot())  
@@ -8,10 +9,10 @@ def lib(xmlFile):
 
 def lib_chil(chil):
     lib={}
-    if chil.getchildren() != None :
+    if chil.getchildren() != ai_list :
         for child_root in chil:
             lib_elem=lib_chil(child_root)
-            lib[child_root.tag]=lib_elem
+            lib[etree.QName(child_root.tag).localname]=lib_elem
     else:
         return chil.text
     return lib
@@ -20,7 +21,9 @@ fails=os.listdir("training")
 for i in fails:
     with open("training/"+i) as fobj:
         xml = etree.parse(fobj,parser)
+    print(lib(xml))
+    print('\n111111111111111111111')
     with open('wraite','w') as wraite:
-        string=str(lib(xml))
+        string=str()
         wraite.write(string)#вызов чтения файла
         wraite.write('1111111111111111111111')
