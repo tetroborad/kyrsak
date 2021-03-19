@@ -17,7 +17,7 @@ def creat_essence (naim,attribute):
     if  #поищи в базе сущность с именем naim желательно логическую функцию
         #можно в кинуть словарь в БД и должно работать применая команда == conn.execute(students.insert(),atribute)
     else:
-        #создание пустой сущности
+        tex="CRE"
         # проверка на символ созданной сущности 
         # связать сущности
         # елсе
@@ -44,6 +44,6 @@ for i in fails:
     with open("training"+i, "w") as somefile:
         xml = etree.parse(fobj,parser)
     t=lib(xml,dok)
-    for i in range(2):
+    for iv in range(2):
         t=t.values()
     rid_lib(t,doc)
