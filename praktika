@@ -23,7 +23,3 @@ for i in fails:
         xml = etree.parse(fobj,parser)
     print(lib(xml))
     print('\n111111111111111111111')
-    with open('wraite','w') as wraite:
-        string=str()
-        wraite.write(string)#вызов чтения файла
-        wraite.write('1111111111111111111111')
