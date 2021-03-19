@@ -1,7 +1,22 @@
 import os
+import sqlalchemy
 from lxml import etree
+engine = create_engine('postgresql://scott:tiger@localhost/zakynki', echo = True)#уточнить текстовый юрл таблицы
+meta = MetaData()
 ai_list=[]
-parser=etree.XMLParser(remove_comments=True,recover=True,attribute_defaults=True,dtd_validation=True,load_dtd=True)
+parser=etree.XMLParser(remove_comments=True,recover=True)
+def rid_lib(lib,naim):
+   for book in lib:
+        if lib[dook] == dict:
+           rid_lib(lib[book],book)
+        
+        
+
+
+
+def creat_essence (naim,attribute):
+
+
 def lib(xmlFile):
     lib={}
     lib[xmlFile.getroot()]=lib_chil(xmlFile.getroot())  
@@ -16,10 +31,9 @@ def lib_chil(chil):
     else:
         return chil.text
     return lib
+
 fails=[]
 fails=os.listdir("training")
 for i in fails:
-    with open("training/"+i) as fobj:
-        xml = etree.parse(fobj,parser)
-    print(lib(xml))
-    print('\n111111111111111111111')
+    xml = etree.parse(fobj,parser)
+    rid_lib(lib(xml,dok))
