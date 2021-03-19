@@ -7,3 +7,4 @@ PostgreSQL RU - https://metanit.com/sql/postgresql/1.1.php
 XML fail - https://habr.com/ru/post/524288/#well_formed_xml
 python libreali- https://habr.com/ru/post/220125/
 python sql - https://coderlessons.com/tutorials/bazy-dannykh/sqlalchemy/sqlalchemy-kratkoe-rukovodstvo
+https://ru.wikibooks.org/wiki/SQLAlchemy
