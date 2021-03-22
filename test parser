@@ -5,25 +5,31 @@ parser=etree.XMLParser(remove_comments=True,recover=True)#настройки п�
 
 def lib(xmlFile):#читаем файл
     lib={}#создаем пустой словарь
-    lib[xmlFile.getroot()]=lib_chil(xmlFile.getroot())#заполняем словарь 
+    lib[xmlFile.getroot()]=lib_chil(xmlFile.getroot(),0)#заполняем словарь 
     return lib#возвращаем
 
-def lib_chil(chil):#создание словарей
+def lib_chil(chil,id):#создание словарей
+    last_child=None
     lib={}#создаем пустой словарь
     if chil.getchildren() != ai_list :#узнаём в теге есть ещо теги или только текст
         for child_root in chil:#проходимся по всем тегам в нутри расматриваемого тега
-            lib_elem=lib_chil(child_root)#получаем словарь того что в нутри тега
-            lib[etree.QName(child_root.tag).localname]=lib_elem#в писание в текущий словарь под ключом имя тега то что в нем
+            if last_child==child_root:
+                lib_elem=lib_chil(child_root,id+1)#получаем словарь того что в нутри тега
+            else:
+                lib_elem=lib_chil(child_root,id)
+            lib[str(etree.QName(child_root.tag).localname)+id]=lib_elem#в писание в текущий словарь под ключом имя тега то что в нем
+            last_child=child_root
     else:#если в нутри нашего тега нету тегов
         return chil.text#передай текст тега
     return lib#верни список всех тегов всех 
 
 
 fails=[]#
-fails=os.listdir("training")#получение списка всех файлов в библеотеке
-with open (wraiter) as wrait
-for i in fails:#обработка всех файлов
-    with open("training/"+i) as fobj:#открытие файла
-        xml = etree.parse(fobj,parser)#парсинк из документа 
-    t=lib(xml)#приврощение распарсеного документа в словарь словарей
-    wrait
+fails=os.listdir("lidreal")#получение списка всех файлов в библеотеке
+with open ("wraiter","w") as wraiter:
+    for i in fails:#обработка всех файлов
+        with open("lidreal/"+i) as fobj:#открытие файла
+            xml = etree.parse(fobj,parser)#парсинк из документа 
+        t=lib(xml)#приврощение распарсеного документа в словарь словарей
+        wraiter.writelines(str(t))
+        wraiter.writelines("\n1111111111111111\n")
