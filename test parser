@@ -53,9 +53,7 @@ with open ("wraiter","w") as wraiter:
             xml = etree.parse(fobj,parser)#парсинк из документа 
         t=lib(xml)#приврощение распарсеного документа в словарь словарей
         t=dazz(t)
-
-        wraiter.writelines("\n1111111111111111\n")
-s = zakupki.select()
-result = conn.execute(s) 
-for row in result:
-   print (row)
+    s = zakupki.select()
+    result = conn.execute(s) 
+    for row in result:
+        wraiter.writelines(str(row)+"\n")
