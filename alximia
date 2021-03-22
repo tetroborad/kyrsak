@@ -1,0 +1,29 @@
+from sqlalchemy import *#для работы с БД
+from sqlalchemy.orm import sessionmaker
+engine = create_engine('postgresql://zakupki:zakupki@localhost:15432/zakupki', echo = False)#
+meta = MetaData()#мета данные
+Session = sessionmaker(bind = engine) #сесия
+stydent= Table(
+   'stydent', meta, 
+   Column('id', Integer, primary_key = True), 
+   Column('ear',Integer),
+   Column('name', String), 
+   Column('liev', Boolean),
+)
+addresses = Table(
+   'addresses', meta, 
+   Column('id', Integer, primary_key = True), 
+   Column('st_id', Integer, ForeignKey('students.id')), 
+   Column('postal_add', String), 
+   Column('email_add', String)
+)
+nit_live=False
+meta.drop_all(engine)
+meta.create_all(engine)
+conn = engine.connect()
+stmt=stydent.insert().values(ear=22,name='Ivan',liev=nit_live)
+conn.execute(stmt)
+stmt=stydent.insert().values(ear=19,name='Ivana',liev=True)
+conn.execute(stmt)
+s = stydent.select()
+print(conn.execute(s).fetchall())
