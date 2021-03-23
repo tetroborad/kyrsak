@@ -8,11 +8,33 @@ Session = sessionmaker(bind = engine) #сесия
 conn = engine.connect()
 ai_list=[]#пустой список для сравнения
 parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера
+#класс таблицы и всех её полей
+class Tables(Base):
+    __tablename__ = None
+    __table_args__=None
+    __table__=None
+    
+    def __init__(self, lib):
+        for key in lib.keys():
+            for key_2 in lib[key].keys():
+                for  key_3 in lib[key][key_2].keys():
+                    for table in meta.tables :
+                        if lib[key][key_2][key_3]==table:
+                            __table__=meta.tables[str(lib[key][key_2][key_3])]
+                            break
+                        else:
+                            __tablename__=str(lib[key][key_2][key_3])
+                            for args in key_3:
+                                __table_args__=    
+
+
+
 zakupki= Table(
-   'nsiBudget', meta, 
+   'nsiClosedEPCases', meta, 
    Column('id', Integer, primary_key = True), 
-   Column('gos_id',Integer),
+   Column('code',String),
    Column('name', String), 
+   Column('updateDate', String), 
    Column('actual', Boolean),
 )
 meta.drop_all(engine)
@@ -42,7 +64,7 @@ def dazz (lib):
     for key in lib.keys():
         for key_2 in lib[key].keys():
             for  key_3 in lib[key][key_2].keys():
-                ins=ins.values(gos_id=int(lib[key][key_2][key_3]["code0"]),name=str(lib[key][key_2][key_3]["name0"]),actual=bool(lib[key][key_2][key_3]["actual0"]))
+                ins=ins.values(code=lib[key][key_2][key_3]["code0"],name=lib[key][key_2][key_3]["name0"],updateDate=lib[key][key_2][key_3]["updateDate0"],actual=bool(lib[key][key_2][key_3]["isActual0"]))
                 result = conn.execute(ins)
 
 fails=[]#

@@ -1,5 +1,6 @@
 from sqlalchemy import *#для работы с БД
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import mapper
 engine = create_engine('postgresql://zakupki:zakupki@localhost:15432/zakupki', echo = False)#
 meta = MetaData()#мета данные
 Session = sessionmaker(bind = engine) #сесия
@@ -10,20 +11,34 @@ stydent= Table(
    Column('name', String), 
    Column('liev', Boolean),
 )
-addresses = Table(
-   'addresses', meta, 
+zakpki= Table(
+   'zakupki', meta, 
    Column('id', Integer, primary_key = True), 
-   Column('st_id', Integer, ForeignKey('students.id')), 
-   Column('postal_add', String), 
-   Column('email_add', String)
+   Column('ear',Integer),
+   Column('name', String), 
+   Column('liev', Boolean),
 )
+class Stydent(object):
+    def __init__(self, ear, name, liev):
+        self.name = name
+        self.ear = ear
+        self.liev = liev
+
+class Zakpki(object):
+    def __init__(self, ear, name, liev):
+        self.name = name
+        self.ear = ear
+        self.liev = liev
+
+
 nit_live=False
-meta.drop_all(engine)
 meta.create_all(engine)
 conn = engine.connect()
-stmt=stydent.insert().values(ear=22,name='Ivan',liev=nit_live)
-conn.execute(stmt)
+mapper(Stydent, stydent) 
+mapper(Zakpki, zakpki) 
+stmt=Stydent(22,'vladimer',False)
 stmt=stydent.insert().values(ear=19,name='Ivana',liev=True)
 conn.execute(stmt)
 s = stydent.select()
-print(conn.execute(s).fetchall())
+print(conn.execute(s))
+

@@ -9,3 +9,4 @@ python libreali- https://habr.com/ru/post/220125/
 python sql - https://coderlessons.com/tutorials/bazy-dannykh/sqlalchemy/sqlalchemy-kratkoe-rukovodstvo
 https://ru.wikibooks.org/wiki/SQLAlchemy
 https://postgrespro.ru/docs/postgresql/9.6/sql-createtable
+запуск сервера-docker run --rm -v /home/user/docker_volumes/zakupki-postgres:/var/lib/postgresql/data  --name zakupki-postgres -e POSTGRES_DB=zakupki -e POSTGRES_USER=zakupki -e POSTGRES_PASSWORD=zakupki -p 15432:5432 postgres
