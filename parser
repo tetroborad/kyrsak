@@ -4,7 +4,6 @@ from lxml import etree#для парсинга xml
 engine = create_engine('postgresql://zakupki:zakupki@localhost:15432/zakupki', echo = True)#
 meta = MetaData()#мета данные
 Session = sessionmaker(bind = engine) #сесия
-q = engine.execute('SELECT * FROM pg_catalog.pg_tables')#текстовый запрос в БД для получения имен всех таблиц
 ai_list=[]#пустой список для сравнения
 parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера
 

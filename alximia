@@ -1,44 +1,41 @@
+from all_table import Stydent
 from sqlalchemy import *#для работы с БД
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import mapper
+from sqlalchemy.ext.declarative import declarative_base
 engine = create_engine('postgresql://zakupki:zakupki@localhost:15432/zakupki', echo = False)#
-meta = MetaData()#мета данные
 Session = sessionmaker(bind = engine) #сесия
-stydent= Table(
-   'stydent', meta, 
-   Column('id', Integer, primary_key = True), 
-   Column('ear',Integer),
-   Column('name', String), 
-   Column('liev', Boolean),
-)
-zakpki= Table(
-   'zakupki', meta, 
-   Column('id', Integer, primary_key = True), 
-   Column('ear',Integer),
-   Column('name', String), 
-   Column('liev', Boolean),
-)
-class Stydent(object):
-    def __init__(self, ear, name, liev):
-        self.name = name
-        self.ear = ear
-        self.liev = liev
-
-class Zakpki(object):
-    def __init__(self, ear, name, liev):
-        self.name = name
-        self.ear = ear
-        self.liev = liev
+session = Session()
+Base = declarative_base()
+MetaData = Base.metadata
+#class Stydent(Base):
+#    __tablename__ = 'users'
+#    id = Column(Integer, primary_key=True)
+#    name = Column(String)
+#    ear = Column(Integer)
+#    liev = Column(Boolean)
+#   # def __init__(self, ear, name, liev):
+#   #     self.name = name
+#    #    self.ear = ear
+#     #   self.liev = liev
 
 
-nit_live=False
-meta.create_all(engine)
-conn = engine.connect()
-mapper(Stydent, stydent) 
-mapper(Zakpki, zakpki) 
-stmt=Stydent(22,'vladimer',False)
-stmt=stydent.insert().values(ear=19,name='Ivana',liev=True)
-conn.execute(stmt)
-s = stydent.select()
-print(conn.execute(s))
+#nit_live=False
+#meta.create_all(engine)
+#conn = engine.connect()
+#mapper(Stydent, stydent)
+#mapper(Zakpki, zakpki) 
+#stmt=Stydent(22,'vladimer',False)
+#stmt=stydent.insert().values(ear=19,name='Ivana',liev=True)
+#conn.execute(stmt)
+#s = stydent.select()
+#print(conn.execute(s))
+Base.metadata.create_all(engine)
+vasia_stydent = Stydent(name="vasia",ear= 22,liev= False)
+zina_stydent = Stydent(name="zina", ear=19, liev=True)
+
+session.add(vasia_stydent)
+session.add(zina_stydent)
+session.commit()
+Stydent.__table__.drop(engine)
 

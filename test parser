@@ -7,32 +7,11 @@ meta = MetaData()#мета данные
 Session = sessionmaker(bind = engine) #сесия
 conn = engine.connect()
 ai_list=[]#пустой список для сравнения
-parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера
-#класс таблицы и всех её полей
-class Tables(Base):
-    __tablename__ = None
-    __table_args__=None
-    __table__=None
-    
-    def __init__(self, lib):
-        for key in lib.keys():
-            for key_2 in lib[key].keys():
-                for  key_3 in lib[key][key_2].keys():
-                    for table in meta.tables :
-                        if lib[key][key_2][key_3]==table:
-                            __table__=meta.tables[str(lib[key][key_2][key_3])]
-                            break
-                        else:
-                            __tablename__=str(lib[key][key_2][key_3])
-                            for args in key_3:
-                                __table_args__=    
-
-
+parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера   
 
 zakupki= Table(
-   'nsiClosedEPCases', meta, 
-   Column('id', Integer, primary_key = True), 
-   Column('code',String),
+   'nsiClosedEPCases', meta,  
+   Column('code',Integer, primary_key = True),
    Column('name', String), 
    Column('updateDate', String), 
    Column('actual', Boolean),

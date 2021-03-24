@@ -1,0 +1,231 @@
+<!--проверка доп тайпа--><?xml version="1.0" encoding="UTF-8"?>
+<export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://zakupki.gov.ru/oos/export/1"
+    xmlns:oos="http://zakupki.gov.ru/oos/types/1">
+    <nsiEPDocTypes>
+        <nsiEPDocType>
+            <oos:code>MRJ</oos:code>
+            <oos:name>Обоснование начальной (максимальной) цены контракта</oos:name>
+            <oos:objectName>epNotificationEZK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CP</oos:code>
+            <oos:name>Проект контракта</oos:name>
+            <oos:objectName>epNotificationEZK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>POD</oos:code>
+            <oos:name>Описание объекта закупки</oos:name>
+            <oos:objectName>epNotificationEZK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CAR</oos:code>
+            <oos:name>Требование к содержанию, составу заявки на участие в закупке</oos:name>
+            <oos:objectName>epNotificationEZK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>AD</oos:code>
+            <oos:name>Дополнительная информация и документы</oos:name>
+            <oos:objectName>epNotificationEZK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>PR</oos:code>
+            <oos:name>Обоснование цены контракта</oos:name>
+            <oos:objectName>epNotificationEZT2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CP</oos:code>
+            <oos:name>Проект контракта</oos:name>
+            <oos:objectName>epNotificationEZT2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>AD</oos:code>
+            <oos:name>Дополнительная информация и документы</oos:name>
+            <oos:objectName>epNotificationEZT2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>MRJ</oos:code>
+            <oos:name>Обоснование начальной (максимальной) цены контракта</oos:name>
+            <oos:objectName>epNotificationEF2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CP</oos:code>
+            <oos:name>Проект контракта</oos:name>
+            <oos:objectName>epNotificationEF2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>POD</oos:code>
+            <oos:name>Описание объекта закупки</oos:name>
+            <oos:objectName>epNotificationEF2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CAR</oos:code>
+            <oos:name>Требование к содержанию, составу заявки на участие в закупке</oos:name>
+            <oos:objectName>epNotificationEF2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>AD</oos:code>
+            <oos:name>Дополнительная информация и документы</oos:name>
+            <oos:objectName>epNotificationEF2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>FPD</oos:code>
+            <oos:name>Файлы проектной документации</oos:name>
+            <oos:objectName>epNotificationEF2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:25:44.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>MRJ</oos:code>
+            <oos:name>Обоснование начальной (максимальной) цены контракта</oos:name>
+            <oos:objectName>epNotificationEOK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:10.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CP</oos:code>
+            <oos:name>Проект контракта</oos:name>
+            <oos:objectName>epNotificationEOK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:10.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>POD</oos:code>
+            <oos:name>Описание объекта закупки</oos:name>
+            <oos:objectName>epNotificationEOK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:10.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CAR</oos:code>
+            <oos:name>Требование к содержанию, составу заявки на участие в закупке</oos:name>
+            <oos:objectName>epNotificationEOK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:10.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>AD</oos:code>
+            <oos:name>Дополнительная информация и документы</oos:name>
+            <oos:objectName>epNotificationEOK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:10.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>FPD</oos:code>
+            <oos:name>Файлы проектной документации</oos:name>
+            <oos:objectName>epNotificationEOK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:10.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>OCA</oos:code>
+            <oos:name>Порядок рассмотрения и оценки заявок на участие в конкурсах</oos:name>
+            <oos:objectName>epNotificationEOK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:10.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CP</oos:code>
+            <oos:name>Проект контракта</oos:name>
+            <oos:objectName>epClosedInvitationEZakK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>POD</oos:code>
+            <oos:name>Описание объекта закупки</oos:name>
+            <oos:objectName>epClosedInvitationEZakK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CAR</oos:code>
+            <oos:name>Требование к содержанию, составу заявки на участие в закупке</oos:name>
+            <oos:objectName>epClosedInvitationEZakK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>AD</oos:code>
+            <oos:name>Дополнительная информация и документы</oos:name>
+            <oos:objectName>epClosedInvitationEZakK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>MRJ</oos:code>
+            <oos:name>Обоснование начальной (максимальной) цены контракта</oos:name>
+            <oos:objectName>epClosedInvitationEZakK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>OCA</oos:code>
+            <oos:name>Порядок рассмотрения и оценки заявок на участие в конкурсах</oos:name>
+            <oos:objectName>epClosedInvitationEZakK2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CP</oos:code>
+            <oos:name>Проект контракта</oos:name>
+            <oos:objectName>epClosedInvitationEZakA2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>POD</oos:code>
+            <oos:name>Описание объекта закупки</oos:name>
+            <oos:objectName>epClosedInvitationEZakA2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>CAR</oos:code>
+            <oos:name>Требование к содержанию, составу заявки на участие в закупке</oos:name>
+            <oos:objectName>epClosedInvitationEZakA2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>AD</oos:code>
+            <oos:name>Дополнительная информация и документы</oos:name>
+            <oos:objectName>epClosedInvitationEZakA2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+        <nsiEPDocType>
+            <oos:code>MRJ</oos:code>
+            <oos:name>Обоснование начальной (максимальной) цены контракта</oos:name>
+            <oos:objectName>epClosedInvitationEZakA2020</oos:objectName>
+            <oos:updateDate>2021-01-01T17:26:06.000000</oos:updateDate>
+            <oos:isActual>true</oos:isActual>
+        </nsiEPDocType>
+    </nsiEPDocTypes>
+</export>
