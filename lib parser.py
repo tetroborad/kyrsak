@@ -9,19 +9,21 @@ engine = create_engine('postgresql://zakupki:zakupki@localhost:15432/zakupki', e
 meta = MetaData()#мета данные
 Session = sessionmaker(bind = engine) #создания класа сесии
 s=Session()#образец класса сесия
-ai_list=[]#пустой список для сравнения
+
 parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера 
-alltable.drop_table_all()
-alltable.creat_table_all()
+#alltable.creat_table_all()
 def lib(xmlFile):#читаем файл
     lib={}#создаем пустой словарь
     lib[xmlFile.getroot()]=lib_chil(xmlFile.getroot())#заполняем словарь 
+    lis=[]
+    for i in lib[0][0]:
+        lis.append(i)
     return lib#возвращаем
 def lib_chil(chil):#создание словарей
     id=0
     last_child=None
     lib={}#создаем пустой словарь
-    if chil.getchildren() != ai_list :#узнаём в теге есть ещо теги или только текст
+    if len(chil.getchildren()) != 0 :#узнаём в теге есть ещо теги или только текст
         for child_root in chil.getchildren():#проходимся по всем тегам в нутри расматриваемого тега
             lib_elem=lib_chil(child_root)
             if last_child==etree.QName(child_root.tag).localname:
@@ -30,14 +32,77 @@ def lib_chil(chil):#создание словарей
             last_child=etree.QName(child_root.tag).localname
     else:#если в нутри нашего тега нету тегов
         return chil.text#передай текст тега
-    return lib#верни список всех тегов всех 
+    return lib#верни список всех тегов всех
+
+# parsed_data = [
+#     {
+#         'id': 'qweasdzxc',
+#         'name': 'qweqweqwe',
+#         'actual': True
+#     }
+# ]
+
+#parsed_data = [
+#    {
+#        'id': 'qwe',
+#        'code': 'qwe',
+#        'name': 'qwe',
+#        'objectName': 'qwe',
+#        'type': 'qwe',
+#        'doc_type_code': 'IZT',
+#        'placing_way_code': 'ZKKP20',
+#        'actual': True
+#
+#    },
+#    ....
+    
+#]
+
+#def parse_abondoned_reason(xml_file):
+#    res = []
+#    for tag in xml_file.find_all('nsiAuditActionSubject'):
+#        res.append({
+#            'id': tag.find('id').text,
+#            'name': tag.find('name').text,
+#            'actual': {'true': True, 'false': False}[tag.find('actual').text]
+#        })
+#    return res
+
+#def import_objects(lib, model):
+#    for data in lib:
+#        obj = model(**data)
+#        session.add(obj)
+#    session.commit()
+
+#import_objects(parsed_data, nsiAuditActionSubject)
+
+def concrete_bazz_1(lib):
+    for key in lib.keys():
+        for key_2 in lib[key].keys():
+            for  key_3 in lib[key][key_2].keys():
+                if lib[key][key_2][key_3][actual]=='true':
+                    ins=alltable.nsiAuditActionSubject(id=lib[key][key_2][key_3][id],name=lib[key][key_2][key_3][name],actual=True)
+                else:
+                    ins=alltable.nsiAuditActionSubject(id=lib[key][key_2][key_3][id],name=lib[key][key_2][key_3][name],actual=False)
+                s.add(ins)
+                s.commit() 
+def concrete_bazz_2(lib):
+    for key in lib.keys():
+        for key_2 in lib[key].keys():
+            for  key_3 in lib[key][key_2].keys():
+                if lib[key][key_2][key_3][actual]=='true':
+                    ins=alltable.nsiDeviationFactFoundation(code=lib[key][key_2][key_3][code],name=lib[key][key_2][key_3][name],actual=True)
+                else:
+                    ins=alltable.nsiDeviationFactFoundation(code=lib[key][key_2][key_3][code],name=lib[key][key_2][key_3][name],actual=False)
+                s.add(ins)
+                s.commit() 
 def dazz (lib):  
     for key in lib.keys():
         for key_2 in lib[key].keys():
             for  key_3 in lib[key][key_2].keys():
                 ins=alltable.creat_table(key_3)
                 for atr in lib[key][key_2][key_3].keys():
-                    atr_naim=atr[:int(len(atr)-1)]
+                    atr_naim=re.sub(r'(?<!^)(?=[A-Z])', '_', atr[:int(len(atr)-1)]).lower() 
                     if lib[key][key_2][key_3][atr]=='false':
                         setattr(ins, atr_naim, False)
                     elif lib[key][key_2][key_3][atr]=='true':
@@ -52,8 +117,15 @@ with open ("wraiter","w") as wraiter:
     for i in fails:#обработка всех файлов
         with open("libreal/"+i) as fobj:#открытие файла
             xml = etree.parse(fobj,parser)#парсинк из документа 
-        t=lib(xml)#приврощение распарсеного документа в словарь словарей
-        t=dazz(t)
-    for row in s.query(alltable.nsiBudget).all():
-        wraiter.writelines(str(row.code)+" "+str(row.name)+" "+str(row.actual)+"\n")
-print(datetime.now()-taim)
+        t=lib_chil(xml)#приврощение распарсеного документа в словарь словарей
+        print(t)
+       # if i[4]=='A':
+       #     concrete_bazz_1(t)
+       # else:
+       #     concrete_bazz_2(t)
+       # #t=dazz(t)-универсальный парсер. да да зачем он нам он всевото уменьшит работу и решит проблемы
+#    for row in s.query(alltable.nsiDeviationFactFoundation).all():
+#        wraiter.writelines(str(row.code)+" "+str(row.name)+" "+str(row.actual)+"\n")
+#    for row in s.query(alltable.nsiAuditActionSubject).all():
+#        wraiter.writelines(str(row.code)+" "+str(row.name)+" "+str(row.actual)+"\n")
+#print(datetime.now()-taim)

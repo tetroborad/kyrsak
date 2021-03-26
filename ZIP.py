@@ -1,10 +1,12 @@
 #только дастоет конкретный файл из конкретной папки all_doc и переносит в папку либ
 import os, zipfile ,shutil
-zipFile = zipfile.ZipFile('all_doc/nsiAbandonedReason/nsiAbandonedReasonList_all_20210321000003_001.xml.zip')
-lis=zipFile.namelist()# получаем информацию о файлах и директориях
-for i in lis:
-    pyt=zipFile.extract(i) # извлекаем отдельный файл из корня архива
-shutil.move(pyt,'libreal/nsiAbandonedReasonList_all_20210321000003_001')
+for i in os.listdir("all_doc/"):
+    for k in os.listdir("all_doc/"+i):
+        zipFile = zipfile.ZipFile('all_doc/'+i+"/"+k)
+        lis=zipFile.namelist()# получаем информацию о файлах и директориях
+        for y in lis:
+            pyt=zipFile.extract(y) # извлекаем отдельный файл из корня архива
+            shutil.move(pyt,'libreal/'+y)
 #zipFile.extractall() [grn]# извлекаем весь архив в текущую директорию
 #zipFile.extractall('archive') [grn]# извлекаем весь архив в директорию archive[/grn]
 zipFile.close()

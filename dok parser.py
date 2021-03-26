@@ -4,7 +4,6 @@ from lxml import etree#для парсинга xml
 engine = create_engine('postgresql://zakupki:zakupki@localhost:15432/zakupki', echo = True)#
 meta = MetaData()#мета данные
 Session = sessionmaker(bind = engine) #сесия
-ai_list=[]#пустой список для сравнения
 parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера
 
 def rid_lib(lib,naim):#читаем получившуюся библеотеку
@@ -29,7 +28,7 @@ def lib(xmlFile):#читаем файл
 
 def lib_chil(chil):#создание словарей
     lib={}#создаем пустой словарь
-    if chil.getchildren() != ai_list :#узнаём в теге есть ещо теги или только текст
+    if len(chil.getchildren())!=0 :#узнаём в теге есть ещо теги или только текст
         for child_root in chil:#проходимся по всем тегам в нутри расматриваемого тега
             lib_elem=lib_chil(child_root)#получаем словарь того что в нутри тега
             lib[etree.QName(child_root.tag).localname]=lib_elem#в писание в текущий словарь под ключом имя тега то что в нем

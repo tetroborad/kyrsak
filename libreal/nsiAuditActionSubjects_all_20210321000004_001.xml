@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://zakupki.gov.ru/oos/export/1"
+    xmlns:oos="http://zakupki.gov.ru/oos/types/1">
+    <nsiAuditActionSubjects>
+        <nsiAuditActionSubject>
+            <oos:id>8723869</oos:id>
+            <oos:name>Финансовая система Российской Федерации</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723870</oos:id>
+            <oos:name>Бюджетный процесс</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723871</oos:id>
+            <oos:name>Средства федерального бюджета</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723872</oos:id>
+            <oos:name>Средства бюджетов субъектов Российской Федерации</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723873</oos:id>
+            <oos:name>Средства бюджетов государственных внебюджетных фондов</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723874</oos:id>
+            <oos:name>Средства бюджетов территориальных внебюджетных фондов</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723875</oos:id>
+            <oos:name>Средства Центрального банка Российской Федерации</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723876</oos:id>
+            <oos:name>Средства, полученные государственными учреждениями от приносящей доход деятельности</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723877</oos:id>
+            <oos:name>Федеральная собственность и иные ресурсы</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723878</oos:id>
+            <oos:name>Государственные внутренние и внешние заимствования</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723879</oos:id>
+            <oos:name>Государственные долговые обязательства</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723880</oos:id>
+            <oos:name>Государственные кредиты, предоставляемые Российской Федерацией иностранным государствам</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723881</oos:id>
+            <oos:name>Другие государственные средства в соответствии с нормативными актами</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723882</oos:id>
+            <oos:name>Деятельность по формированию и использованию государственных средств</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8723883</oos:id>
+            <oos:name>Законодательное регулирование и деятельность в сфере экономики и финансов</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8726220</oos:id>
+            <oos:name>Аудит в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8732225</oos:id>
+            <oos:name>5442101332</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8732226</oos:id>
+            <oos:name>8726220</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8732264</oos:id>
+            <oos:name>Средства местных бюджетов</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8752653</oos:id>
+            <oos:name>процесс использования средств местного бюджета Озерского муниципального образования, выделенных в 2014 году администрации Озерского муниципального образования Калининского муниципального района Саратовской области на осуществление закупок товаров, работ и услуг для муниципальных нужд, в том числе: документы, связанные с планированием муниципальных закупок и размещением муниципального заказа, документы подтверждающие исполнение заключенных муниципальных контрактов.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8772987</oos:id>
+            <oos:name>процесс использования средств местного бюджета, направляемых на закупки в соответствии с требованиями законодательства о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8852223</oos:id>
+            <oos:name>процесс использования средств бюджета, направляемых на закупки  в соответствии с требованиями законодательства о контрактной системе в сфере закупок.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8873725</oos:id>
+            <oos:name>Процесс использования средств  местного  бюджета, выделенных в 2014-2015 годах администрации Северного муниципального образования на осуществление закупок товаров, работ и услуг для муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8873726</oos:id>
+            <oos:name>Процесс использования средств  местного  бюджета, выделенных на осуществление закупок товаров, работ и услуг для муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8892121</oos:id>
+            <oos:name>средства местного бюджета муниципального образования город Армавир</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8893864</oos:id>
+            <oos:name>процесс использования средств бюджета, направляемых на закупки в соответствии с требованиями законодательства о контрактной системе в сфере закупок.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8909064</oos:id>
+            <oos:name>средства бюджета муниципального образования город Нефтеюганск, использованные на осуществление закупок товаров, работ, услуг для обеспечения муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8909066</oos:id>
+            <oos:name>Средства местного бюджета муниципального образования городской округ город Фролово</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8911002</oos:id>
+            <oos:name>Средства бюджета муниципального образования город Нефтеюганск, использованные на осуществление закупок товаров, работ, услуг для обеспечения муниципальных нужд.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8911043</oos:id>
+            <oos:name>бюджетные средства Рыбинского муниципального района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>8918044</oos:id>
+            <oos:name>Результаты аудита в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9008502</oos:id>
+            <oos:name>использование бюджетных средств, выделенных на осуществление товаров, работ, услуг в 2014 году</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9008503</oos:id>
+            <oos:name>процесс использования средств бюджета, выделенных на осуществление закупок товаров, работ, услуг</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9009030</oos:id>
+            <oos:name>- муниципальные правовые акты, регламентирующие организацию и проведение закупок товаров, работ, услуг для обеспечения муниципальных нужд;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9009031</oos:id>
+            <oos:name>- муниципальные правовые акты, регламентирующие организацию и проведение закупок товаров, работ, услуг для обеспечения муниципальных нужд;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9009032</oos:id>
+            <oos:name>- муниципальные правовые акты, регламентирующие организацию и проведение закупок товаров, работ, услуг для обеспечения муниципальных нужд;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9015258</oos:id>
+            <oos:name>9008503</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9016064</oos:id>
+            <oos:name>средства бюджета городского округа - город Волжский Волгоградской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9020085</oos:id>
+            <oos:name>Деятельность исполнительных органов власти Свердловской области по обеспечению закупок для государственных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9047176</oos:id>
+            <oos:name>средства местного бюджета, а также средства, полученные местным бюджетом из иных источников, предусмотренных законодательством Российской Федерации, использованные на осуществление закупок товаров, работ, услуг для обеспечения муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9060319</oos:id>
+            <oos:name>средства местного бюджета Клинского муниципального района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9069409</oos:id>
+            <oos:name>Средства бюджета муниципального района, поступившие в бюджеты поселений, входящих в состав муниципального района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9069410</oos:id>
+            <oos:name>процесс использования средств местного бюджета, выделенных на осуществление закупок товаров (работ, услуг)</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9151447</oos:id>
+            <oos:name>Аудит в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9151451</oos:id>
+            <oos:name>АУдит в сфеое закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9337140</oos:id>
+            <oos:name>средства местного бюджета города Ростова-на-Дону</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9337240</oos:id>
+            <oos:name>средства бюджетов муниципальных образований</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9337770</oos:id>
+            <oos:name>Средства бюджета муниципального образования Одоевский район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9365854</oos:id>
+            <oos:name>Бюджет городского округа &quot;город Якутск&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9365855</oos:id>
+            <oos:name>Проверка соблюдения законодательства о закупках отдельными видами юридических лиц</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9365858</oos:id>
+            <oos:name>Средства бюджета муниципального образования Успенский район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9365859</oos:id>
+            <oos:name>Средства бюджета муниципального образования Успенский район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9365860</oos:id>
+            <oos:name>Средства бюджета Николаевского сельского поселения Успенского района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9369800</oos:id>
+            <oos:name>Средства бюджета муниципального образования Каневской район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9370592</oos:id>
+            <oos:name>проверка финансово-хозяйственной деятельности в муниципальных учреждениях мниципального образования городской округ Красноперекопск</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9370596</oos:id>
+            <oos:name>проверка финансово-хозяйственной деятельности в муниципальных учреждениях и предприятиях муниципального образования городской округ Красноперекопск</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9371398</oos:id>
+            <oos:name>нормативные правовые акты, распорядительные, бухгалтерские, информационные и иные документы, подтверждающие эффективность и обоснованность использования бюджетных средств на празднование Нового 2016 года</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9371399</oos:id>
+            <oos:name>нормативные правовые акты, распорядительные, отчетные, бухгалтерские, информационные и иные документы, подтверждающие законность использования бюджетных средств</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9371435</oos:id>
+            <oos:name>использование средств местного бюджета, выделенных в 2015 году на закупки, связанные с празднованием нового года</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9371436</oos:id>
+            <oos:name>средства местного бюджета МО &quot;Усть-Канский район&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9371437</oos:id>
+            <oos:name>средства местного бюджета муниципального образования &quot;Усть-Канский район&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9371439</oos:id>
+            <oos:name>аудит в сфере закупок товаров, работ и услуг для муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9371440</oos:id>
+            <oos:name>средства местного бюджета муниципального образования &quot;Усть--Канский район&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9371441</oos:id>
+            <oos:name>целевое и эффективное использование средств бюджета</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9371476</oos:id>
+            <oos:name>Средства местного бюджета Нижнетуринского городского округа</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9383645</oos:id>
+            <oos:name>Процесс использования средств бюджета Артемовского городского округа, направляемых на закупки в соответствии с требованиями законодательства о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9383723</oos:id>
+            <oos:name>средства бюджета муниципального образования города Нефтеюганска</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9386498</oos:id>
+            <oos:name>средства  местного бюджета</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9393234</oos:id>
+            <oos:name>Средства бюджета Агаповского муниципального района, направляемые на закупки товаров, работ и услуг для обеспечения муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9394063</oos:id>
+            <oos:name>Аудит в сфере закупок на территории Крестецкого муниципального района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9395063</oos:id>
+            <oos:name>средства местного бюджета Рыбинского муниципального района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9395131</oos:id>
+            <oos:name>Осуществление аудита в сфере закупок на территории Крестецкого муниципального района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9395132</oos:id>
+            <oos:name>Средства бюджетов муниципального образования</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9397734</oos:id>
+            <oos:name>Аудит в сфере закупок в рамках реализации областной адресной программы</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9406712</oos:id>
+            <oos:name>Процесс использования бюджетных средств, направленных на закупки товаров, работ, услуг</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9408264</oos:id>
+            <oos:name>Аудит в сфере закупок товаров, работ и услуг, осуществленных в рамках реализации городоской Программы &quot;Муниципальные заимствования городского округа - город Волжский Волгоградской области, направляемые на покрытие дефицита бюджета городского округа - город Волжский Волгоградской области на 2015 год&quot;.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9408265</oos:id>
+            <oos:name>Аудит в сфере закупок товаров, работ и услуг, осуществленных МБУ &quot;Дворец культуры &quot;Волгоградгидрострой&quot; городского округа - город Волжский Волгоградской области за 2015 год.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9408266</oos:id>
+            <oos:name>Средства бюджета городского округа-город Волжский Волгоградской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9435041</oos:id>
+            <oos:name>средства местного бюджета городского округа Староуткинск</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9435042</oos:id>
+            <oos:name>средства бюджета городского округа Староуткинск</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9435076</oos:id>
+            <oos:name>8723264</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9436064</oos:id>
+            <oos:name>аудит в сфере закупок товаров, работ и услуг, осуществляемых МБУ ДО &quot;ДШИ&quot; Адамовского района Оренбургской области за 2016 год</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9436065</oos:id>
+            <oos:name>аудит в сфере закупок товаров, работ и услуг, осуществленных МБУ ДО &quot;ДШИ&quot; Адамовского района Оренбургской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9436066</oos:id>
+            <oos:name>аудит в сфере закупок товаров, работ и услуг, осуществленных МБУ ДО &quot;ДШИ&quot; Адамовского района Оренбургской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9436067</oos:id>
+            <oos:name>аудит в сфере закупок товаров, работ и услуг, осуществленных МБУ ДО &quot;ДШИ&quot; Адамовского района Оренбургской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9439354</oos:id>
+            <oos:name>Средства бюджета Клинского муниципального района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9439355</oos:id>
+            <oos:name>Средства бюджета Клинского муниципалного района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9453165</oos:id>
+            <oos:name>средства бюджета Клинского муниципального района Московской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9454131</oos:id>
+            <oos:name>средства бюджета городского округа Электросталь</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9455070</oos:id>
+            <oos:name>аудит закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9576043</oos:id>
+            <oos:name>Деятельность заказчиков по использованию бюджетных средств на закупки</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9580193</oos:id>
+            <oos:name>организация закупок, анализ и оценка информации по планируемым к заключению контрактам в части соблюдения Заказчиком законодательства о контрактной системе в сфере закупок товаров, работ, услуг, исполнение контрактов</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9584434</oos:id>
+            <oos:name>аудит в сфере закупок для муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>9584435</oos:id>
+            <oos:name>аудит в сфере закупок МБУ ДО &quot;Детская школа исскуств&quot; Адамовского района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>10296025</oos:id>
+            <oos:name>средства бюджета муниципального района &quot;Княжпогостский&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>10371934</oos:id>
+            <oos:name>средства местного бюджета Благодарненского муниципального района Ставропольского края</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>13768429</oos:id>
+            <oos:name>муниципальное дошкольное образовательное учреждение «Детский сад № 28»</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>13822202</oos:id>
+            <oos:name>Организация закупок,анализ и оценка информации по планируемым к заключению кнтрактам в части соблюдения заказчиком законодательсва о контрактной системе в сфере закупок товаров, работ, услуг, исполнение контрактов.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>15144257</oos:id>
+            <oos:name>Законность, результативность использования средств, предоставленных из бюджета муниципального образования городской округ город Лангепас в 2014-2016 годах Лангепасскому казенному учреждению &quot;Управление капитального строительства&quot; и направленных на объект &quot;Пожарное депо на 4 автомашины в г.Лангепасе&quot;, а также проведение аудита закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>16200056</oos:id>
+            <oos:name>Финансово-хозяйственная деятельность</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>16244212</oos:id>
+            <oos:name>Средства Фонд содействия реформированию жилищно-коммунального хозяйства</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>16826277</oos:id>
+            <oos:name>средства, полученные муниципальными учреждениями от приносящей доход деятельности</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>16826278</oos:id>
+            <oos:name>средства местного бюджета города Оренбурга</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>16826485</oos:id>
+            <oos:name>Процесс использования средств бюджета Добрянского муниципального района, направляемых на закупки товаров, работ, услуг для обеспечения муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>16830173</oos:id>
+            <oos:name>Деятельность по закупке товаров, работ, услуг для муниципальных нужд, документы и материалы, относящиеся к цели и предмету экспертно-аналитического мероприятия</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>16830175</oos:id>
+            <oos:name>Деятельность МКУ &quot;ЦБС&quot; по закупке товаров, работ и услуг для муниципальных нужд, документы и материалы, относящиеся к цели и предмету экспертно-аналитического мероприятия</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>17134476</oos:id>
+            <oos:name>Организация закупок, анализ и оценка информации по планируемым к заключению контрактам в части соблюдения Заказчиком законодательства о контрактной системе в сфере закупок товаров, работ, услуг,исполнение контрактов</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>19656119</oos:id>
+            <oos:name>администация МО Курганинский район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>20190053</oos:id>
+            <oos:name>аудит в сфере закупок товаров, работ и услуг, осуществленных МБДОУ ДС №25</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>20190054</oos:id>
+            <oos:name>аудит в сфере закупок товаров, работ и услуг, осуществленных МБДОУ ДС №25</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>20190055</oos:id>
+            <oos:name>аудит в сфере закупок товаров, работ и услуг, осуществленных МБДОУ ДС №25</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>20190056</oos:id>
+            <oos:name>аудит в сфере закупок товаров, работ и услуг, осуществленных МБДОУ ДС №25</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>20190057</oos:id>
+            <oos:name>аудит в сфере закупок товаров, работ и услуг, осуществленных МБДОУ ДС №25</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>20241142</oos:id>
+            <oos:name>Проверка исполнения контрактов и применение мер ответственности по контракту</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>20736693</oos:id>
+            <oos:name>Аудит в сфере закупок товаров, работ и услуг для муниципальных нужд.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>20792892</oos:id>
+            <oos:name>Администрация города Шумерля</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21243098</oos:id>
+            <oos:name>использование платы родителей (законных представителей) за присмотр и уход за детьми в муниципальном дошкольном образовательном учреждении</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21243099</oos:id>
+            <oos:name>Использование платы родителей (законных представителей) за присмотр и уход за детьми в муниципальных образовательных дошкольных учреждениях</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21611019</oos:id>
+            <oos:name>процесс использования средств Первосинюхинского сельского поселения Лабинского района (далее – Первосинюхинское сельское поселение), направляемых на закупки в соответствии с требованиями законодательства о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21611127</oos:id>
+            <oos:name>Средства местного бюджета муниципального образования Тавдинский городской округ</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21613925</oos:id>
+            <oos:name>Использование средств бюджета муниципального образования город Абаза, направленных на закупки товаров, работ, услуг в соответствии с требованиями Федерального закона от 05.04.2013 №44 ФЗ в целях реализации муниципальной программы &quot;Развитие транспортной системы МО г.Абаза на 2017-2016 годы&quot;.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21613929</oos:id>
+            <oos:name>Использование средств бюджета муниципального образования город Абаза, направленных на закупки товаров, работ, услуг в соответствии с требованиями Федерального закона от 05.04.2013 №44 ФЗ в целях реализации муниципальной программы &quot;Развитие транспортной системы МО г.Абаза на 2014-2016 годы&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21620029</oos:id>
+            <oos:name>Процесс использования средств бюджета Ирбитского муниципального образования, направляемых на закупки в соответствии с требованиями законодательства о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21645380</oos:id>
+            <oos:name>4803001023</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21646173</oos:id>
+            <oos:name>использования средств бюджета города и имущества, находящегося в муниципальной собственности</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21646174</oos:id>
+            <oos:name>использования средств бюджета города и имущества, находящегося в муниципальной собственности города</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21736585</oos:id>
+            <oos:name>Средства бюджета муниципального образования город Новый Уренгой</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21865816</oos:id>
+            <oos:name>Аудит в  сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>21899892</oos:id>
+            <oos:name>средства местного бюджета муниципального образования Котлас</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>22136553</oos:id>
+            <oos:name>Средства бюджета городского округа Шаховская Московской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>22815470</oos:id>
+            <oos:name>использование средств бюджета муниципального района &quot;Оловяннинский район&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>22819590</oos:id>
+            <oos:name>проверка использования средств бюджета города и имущества, находящегося в муниципальной собственности города Челябинска</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>22819591</oos:id>
+            <oos:name>Проверка использования средств бюджета города и имущества, находящегося в муниципальной собственности города Челябинска,</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23137924</oos:id>
+            <oos:name>Средства местного бюджета Гатчинкого муниципального района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23238988</oos:id>
+            <oos:name>Проверка соблюдения законности, результативности (эффективности и законности) использования средств бюджета города Челябинска при осуществлении уставной деятельности, соблюдения установленного порядка управления и распоряжения имуществом, находящимся в муниципальной собственности</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23238991</oos:id>
+            <oos:name>оценка достаточности правового обеспечения для решения задачи надлежащего уличного освещения города Челябинска;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23268390</oos:id>
+            <oos:name>Средства бюджета города Нефтеюганска</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23268391</oos:id>
+            <oos:name>Бюджетные средства муниципального образования город Нефтеюганск</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23268848</oos:id>
+            <oos:name>аудит деятельности муниципальных заказчиков  по формированию плана закупок, плана-графика закупок  на 2018 год</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23268849</oos:id>
+            <oos:name>аудит деятельности муниципальных заказчиков по формированию плана закупок, плана-графика закупок на 2018 год</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23720378</oos:id>
+            <oos:name>Средства бюджета муниципального образования Ачинский район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23762256</oos:id>
+            <oos:name>аудит в сфере закупок для муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23823275</oos:id>
+            <oos:name>процесс использования средств местного бюджета на осуществление закупок товаров, работ, услуг</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>23944116</oos:id>
+            <oos:name>средства бюджета города Ростова-на-Дону</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>24305059</oos:id>
+            <oos:name>средства бюджета сельского поселения</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>24314639</oos:id>
+            <oos:name>соблюдение муниципальным образованием    законодательства Российской Федерации о контрактной системе в сфере закупок товаров, работ, услуг, а также законодательства о размещении заказов</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>24497700</oos:id>
+            <oos:name>аудит в сфере закупок, осуществленных МБУК РДК &quot;Целинник&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>24730519</oos:id>
+            <oos:name>средства бюджета муниципального образования «Жигаловский район»</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25565150</oos:id>
+            <oos:name>Проверка  целевого и эффективного использования бюджетных средств, направленных на реализацию приоритетного проекта «Формирование современной городской среды»</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25570356</oos:id>
+            <oos:name>МУНИЦИПАЛЬНОЕ ОБРАЗОВАНИЕ ГРОМОВСКОЕ СЕЛЬСКОЕ ПОСЕЛЕНИЕ МУНИЦИПАЛЬНОГО ОБРАЗОВАНИЯ ПРИОЗЕРСКИЙ МУНИЦИПАЛЬНЫЙ РАЙОН ЛЕНИНГРАДСКОЙ ОБЛАСТИ</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25570360</oos:id>
+            <oos:name>МУНИЦИПАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ ФИЗИЧЕСКОЙ КУЛЬТУРЫ И СПОРТА &quot;ЦЕНТР ФИЗИЧЕСКОЙ КУЛЬТУРЫ, СПОРТА И МОЛОДЕЖНОЙ ПОЛИТИКИ&quot; МУНИЦИПАЛЬНОГО ОБРАЗОВАНИЯ ПРИОЗЕРСКИЙ МУНИЦИПАЛЬНЫЙ РАЙОН ЛЕНИНГРАДСКОЙ ОБЛАСТИ</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25610903</oos:id>
+            <oos:name>1020400564579</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25827202</oos:id>
+            <oos:name>процесс использования средств бюджета Владивостокского городского округа при осуществлении закупок услуг по организации питания детей дошкольного возраста, по организации бесплатного питания обучающихся в младших классах (1-4 включительно), по поставке школьных учебников в соответствии с требованиями законодательства о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25897288</oos:id>
+            <oos:name>Средства местного бюджета муниципального образования Тавдинского городского округа</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25897727</oos:id>
+            <oos:name>процесс расходования средств бюджета Ангарского городского округа, направляемых на закупки в соответствии с требованиями законодательства о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25902156</oos:id>
+            <oos:name>средства местного бюджета труновского муниципального района ставропольского края</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25907493</oos:id>
+            <oos:name>Бюджетные средства муниципального образования Надымский район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25982724</oos:id>
+            <oos:name>процесс получения, распределения и использования средств бюджета Елизовского муниципального района, выделенных в 2017 году Корякскому сельскому поселению</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25982736</oos:id>
+            <oos:name>Средства бюджета городского округа Луховицы Московской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>25982771</oos:id>
+            <oos:name>аудит в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26303535</oos:id>
+            <oos:name>Обобщение результатов аудита в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26316272</oos:id>
+            <oos:name>Процесс использования заказчиками бюджетных средств, направляемых на закупки товаров, работ, услуг</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26427938</oos:id>
+            <oos:name>планирование и осуществление закупок для муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26433664</oos:id>
+            <oos:name>выборочная проверка законности, результативности (эффективности и экономности)  расходования бюджетных средств в сфере закупок, товаров, работ, услуг для  обеспечения государственных и муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26433665</oos:id>
+            <oos:name>выборочной проверки проверка законности, результативности (эффективности и экономности)  расходования бюджетных средств в сфере закупок, товаров, работ, услуг для  обеспечения государственных и муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26433666</oos:id>
+            <oos:name>выборочная проверка  законности, результативности (эффективности и экономности)  расходования бюджетных средств в сфере закупок, товаров, работ, услуг для  обеспечения государственных и муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26496996</oos:id>
+            <oos:name>Средства бюджета муниципального образования Апшеронский район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26496997</oos:id>
+            <oos:name>Средства муниципального образования Апшеронский район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26496999</oos:id>
+            <oos:name>Средства бюджета муниципального образования Хадыженское городское поселение Апшеронского района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26497001</oos:id>
+            <oos:name>Средства бюджета Нефтегорское городское поселение Апшеронского района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26497002</oos:id>
+            <oos:name>Средства бюджета муниципального образования Кубанское сельское поселение Апшеронского района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26497003</oos:id>
+            <oos:name>Средства бюджета муниципального образования Нефтегорское городское поселение Апшеронского района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26537814</oos:id>
+            <oos:name>аудит в сфере закупок товаров,  работ, услуг, осуществляемых МКУ «Эксплуатационно-техническое управление»</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26537815</oos:id>
+            <oos:name>Аудит в сфере закупок товаров, работ, услуг, осуществляемых МКУ «Централизованная бухгалтерия учреждений культуры, спорта и молодежи» г.Охи</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26538026</oos:id>
+            <oos:name>Аудит в сфере закупок, осуществляемых МКУ «Эксплуатационно-техническое управление»</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>26796293</oos:id>
+            <oos:name>Аудит в сфере закупок БДОУ НМР ВО &quot;Игмасский детский сад&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>27010195</oos:id>
+            <oos:name>Аудит в сфере закупок муниципальное бюджетное учреждение  дополнительного образования «Детско-юношеская спортивная школа» станицы Новопокровской муниципального образования Новопокровский район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>27204434</oos:id>
+            <oos:name>процесс использования средств местногобюджета, направляемых на закупки в соответствии с требованиями законодательства о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>27353154</oos:id>
+            <oos:name>Аудит эффективности осуществленных закупок товаров, работ и услуг для обеспечения муниципальных нужд Муниципального казенного учреждения физической культуры и спорта «Эксперимент» с. Патруши за 2017 год</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>27353155</oos:id>
+            <oos:name>Аудит эффективности осуществленных закупок товаров, работ и услуг для обеспечения муниципальных нужд Муниципального автономного общеобразовательного учреждения «Средняя общеобразовательная школа № 23» г. Сысерть за 2017 год</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>27353258</oos:id>
+            <oos:name>процесс использования средств местного бюджета в соответствии с законодательством о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>28102746</oos:id>
+            <oos:name>Средства бюджета города Липецка</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>28359945</oos:id>
+            <oos:name>соблюдение законодательства в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>28359981</oos:id>
+            <oos:name>8732264</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>28625709</oos:id>
+            <oos:name>использование средств бюджета Владивостокского городского округа, выделенных на организацию и обеспечение подготовки спортивного резерва, капитальный ремонт спортивных сооружений</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>28726079</oos:id>
+            <oos:name>Средства местного бюджета Гатчинского муниципального района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>29111155</oos:id>
+            <oos:name>Средства бюджета города Оренбурга</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>29595286</oos:id>
+            <oos:name>оценка организации, реализуемости и эффективности закупок, обоснованности планирования закупок, оценка результатов закупок, достижения целей осуществления закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>29804197</oos:id>
+            <oos:name>Бюджет городского округа &quot;Город Чита&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>30002875</oos:id>
+            <oos:name>проведение анализа и оценки результатов закупок, достижения целей осуществления закупок, определённых ст. 13 Федерального закона от 05.04.2013 № 44-ФЗ «О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд» (с изменениями, далее – Закон № 44-ФЗ).</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>31548317</oos:id>
+            <oos:name>Бюджетные средства городского округа Павловский Посад Московской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>34510202</oos:id>
+            <oos:name>Деятельность администрации МО Галкинское сельское поселение по обеспечению закупок для муниципальных нужд в соответствии с Федеральным законом от 05.04.2013 №44-ФЗ</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>34534219</oos:id>
+            <oos:name>Родительская плата</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>34565077</oos:id>
+            <oos:name>процесс использования средств бюджета городского округа Красноуральск, направляемых на закупки товаров, работ, услуг для нужд муниципального казенного учреждения в соответствии с требованиями законодательства о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>34765045</oos:id>
+            <oos:name>Законности и эффективности (результативности и экономности) использования бюджетных средств, выделенных в 2018 году по подразделу 11 02 бюджета Тутаевского муниципального района «Массовый спорт» в виде субсидии на выполнение муниципального задания на оказание муниципальных услуг (работ) и на иные цели с элементами аудита закупок.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>34765046</oos:id>
+            <oos:name>Планирование и обоснованности расходования средств бюджета Тутаевского муниципального района, направленных на приобретение и списание материальных запасов в части ГСМ и аудита закупок транспортных средств за 2018 год – I полугодие 2019 года.</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35019951</oos:id>
+            <oos:name>деятельность координатора муниципальной программы, участников муниципальной программы в части исполнения мероприятий муниципальной программы, использования средств, выделенных на реализацию муниципальной программы</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35019953</oos:id>
+            <oos:name>деятельность координатора муниципальной программы, участников муниципальной программы в части исполнения мероприятий муниципальной программы, использования средств, выделенных на реализацию муниципальной программы Черниговского сельского поселения Апшеронского района «Поддержка дорожного хозяйства», в том числе аудит в сфере закупок»</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35019954</oos:id>
+            <oos:name>деятельность координатора муниципальной программы, участников муниципальной программы в части исполнения мероприятий муниципальной программы, использования средств, выделенных на реализацию муниципальной программы Тверского сельского поселения Апшеронского района «Поддержка дорожного хозяйства»</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35019955</oos:id>
+            <oos:name>деятельность координатора муниципальной программы Черниговского сельского поселения Апшеронского района «Поддержка дорожного хозяйства», участников муниципальной программы в части исполнения мероприятий муниципальной программы, использования средств, выделенных на реализацию муниципальной программы</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35095790</oos:id>
+            <oos:name>средства местного бюджета муниципального образования Новопокровский район</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35095792</oos:id>
+            <oos:name>средства бюджета Кубанского сельского поселения Новопокровского района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35287595</oos:id>
+            <oos:name>проверка законности и эффективности использования средств на выполнение мероприятий по капитальному ремонту автомобильных дорог местного значения и комплексному развитию улично-дорожной сети городских агломераций</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35287596</oos:id>
+            <oos:name>проверка финансово-хозяйственной деятельности открытого акционерного общества</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35287597</oos:id>
+            <oos:name>проверка законности и эффективности использования бюджетных средств на выполнение мероприятий по содержанию имущества, находящегося в муниципальной собственности</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35287598</oos:id>
+            <oos:name>проверка законности и эффективности использования субсидий, предоставленных на финансовое обеспечение выполнения муниципального задания, субсидий на иные цели и субсидий на осуществление капитальных вложений</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35637817</oos:id>
+            <oos:name>проведение анализа и оценки результатов закупок, достижения целей осуществления закупок, определённых Федеральным законом от 05.04.2013 № 44-ФЗ «О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд»</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35810742</oos:id>
+            <oos:name>Средства Бюджета кочетновского муниципального образования Ровенского района Саратовской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35810743</oos:id>
+            <oos:name>Средства бюджета Приволжского муниципального образования Ровенского муницпального района Саратовской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>35810744</oos:id>
+            <oos:name>Средства бюджета Ровенского муниципального образования Ровенского муниципального района Саратовской области</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>37634347</oos:id>
+            <oos:name>Процесс использования средств бюджета, направленных на закупки в соответствии с требованиями законодательства о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>43095013</oos:id>
+            <oos:name>8918044 Результаты аудита в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>45135054</oos:id>
+            <oos:name>7206021092</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>45616069</oos:id>
+            <oos:name>деятельность муниципального казенного учреждения Балаковского муниципального района «Служба субсидии»(далее – МКУ БМР «Служба субсидий», Заказчик, Учреждение) по осуществлению закупок товаров, работ и услуг для муниципальных нужд в соответствии с требованиями законодательства о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>45652225</oos:id>
+            <oos:name>средства местного бюджета Карабашского городского округа</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>45722412</oos:id>
+            <oos:name>Аудит в сфере закупок товаров, работ, услуг для обеспечения муниципальных нужд города Ярославля</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>45895679</oos:id>
+            <oos:name>процесс использования объектом аудита (контроля) средств местного бюджета (далее – бюджетные средства), направленных на закупки в целях реализации мероприятий муниципальной программы «Энергосбережение и повышение энергетической эффективности на территории города Черемхово»</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>45944696</oos:id>
+            <oos:name>аудит в сфере закупок для обеспечения муниципальных нужд</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>45959512</oos:id>
+            <oos:name>Средства бюджета городского округа Долгопрудный</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>45989447</oos:id>
+            <oos:name>средства бюджета муниципального образования городской оуруг Клин</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>46272789</oos:id>
+            <oos:name>Средства местного бюджета муниципального образования &quot;Город Гатчина&quot;</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>46566545</oos:id>
+            <oos:name>Средства полученные муниципальными учреждениями от приносящей доход деятельности</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>46566546</oos:id>
+            <oos:name>Средства бюджета муниципального образования Новополянское сельское поселение Апшеронского района</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>47359567</oos:id>
+            <oos:name>процесс расходования средств бюджета в соответствии с требованиями законодательства Российской Федерации о контрактной системе в сфере закупок</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>47789605</oos:id>
+            <oos:name>Проверка законности и эффективности расходования средств на выполнение мероприятия муниципальной программы</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>47789606</oos:id>
+            <oos:name>Проверка финансово-хозяйственной деятельности муниципального казенного учреждения</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>47789607</oos:id>
+            <oos:name>Проверка законности и эффективности расходования средств на реализацию национального проекта</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>47789608</oos:id>
+            <oos:name>Проверка законности и эффективности использования средств, выделенных на благоустройство</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>47994207</oos:id>
+            <oos:name>средства местного бюджета Усть-Катавского городского округа</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+        <nsiAuditActionSubject>
+            <oos:id>48023961</oos:id>
+            <oos:name>средства бюджета муниципального образования, выделенные на осуществление закупок, а также деятельность объекта контрольного мероприятия по их использованию</oos:name>
+            <oos:actual>true</oos:actual>
+        </nsiAuditActionSubject>
+    </nsiAuditActionSubjects>
+</export>
