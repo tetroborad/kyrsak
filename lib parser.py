@@ -1,3 +1,4 @@
+import re
 from datetime import datetime
 taim=datetime.now()
 import alltable
@@ -12,24 +13,26 @@ s=Session()#образец класса сесия
 
 parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера 
 #alltable.creat_table_all()
-def lib(xmlFile):#читаем файл
-    lib={}#создаем пустой словарь
-    lib[xmlFile.getroot()]=lib_chil(xmlFile.getroot())#заполняем словарь 
-    lis=[]
-    for i in lib[0][0]:
-        lis.append(i)
+def lib(xmlFile,naim):#читаем файл
+    lib=[]#создаем пустой словарь
+    for i in xmlFile.iter():#заполняем словарь 
+        if etree.QName(i.tag).localname==naim:
+            for k in i.iterchildren():
+                lib.append(lib_chil(k))
+        else:
+            continue
     return lib#возвращаем
 def lib_chil(chil):#создание словарей
-    id=0
-    last_child=None
     lib={}#создаем пустой словарь
-    if len(chil.getchildren()) != 0 :#узнаём в теге есть ещо теги или только текст
-        for child_root in chil.getchildren():#проходимся по всем тегам в нутри расматриваемого тега
+    if len(chil) != 0 :#узнаём в теге есть ещо теги или только текст
+        for child_root in chil.iterdescendants():#проходимся по всем тегам в нутри расматриваемого тега
             lib_elem=lib_chil(child_root)
-            if last_child==etree.QName(child_root.tag).localname:
-                id=id+1#получаем словарь того что в нутри тега
-            lib[str(etree.QName(child_root.tag).localname)+str(id)]=lib_elem#в писание в текущий словарь под ключом имя тега то что в нем
-            last_child=etree.QName(child_root.tag).localname
+            if type(lib_elem)==type(dict()):
+                for i in lib_elem.values():
+                    lib[re.sub(r'(?<!^)(?=[A-Z])', '_',str(etree.QName(child_root.tag).localname) ).lower() ]=i
+                    break
+            else:
+                lib[re.sub(r'(?<!^)(?=[A-Z])', '_',str(etree.QName(child_root.tag).localname) ).lower() ]=lib_elem#в писание в текущий словарь под ключом имя тега то что в нем
     else:#если в нутри нашего тега нету тегов
         return chil.text#передай текст тега
     return lib#верни список всех тегов всех
@@ -96,29 +99,18 @@ def concrete_bazz_2(lib):
                     ins=alltable.nsiDeviationFactFoundation(code=lib[key][key_2][key_3][code],name=lib[key][key_2][key_3][name],actual=False)
                 s.add(ins)
                 s.commit() 
-def dazz (lib):  
-    for key in lib.keys():
-        for key_2 in lib[key].keys():
-            for  key_3 in lib[key][key_2].keys():
-                ins=alltable.creat_table(key_3)
-                for atr in lib[key][key_2][key_3].keys():
-                    atr_naim=re.sub(r'(?<!^)(?=[A-Z])', '_', atr[:int(len(atr)-1)]).lower() 
-                    if lib[key][key_2][key_3][atr]=='false':
-                        setattr(ins, atr_naim, False)
-                    elif lib[key][key_2][key_3][atr]=='true':
-                        setattr(ins, atr_naim, True)
-                    else:
-                        setattr(ins, atr_naim, lib[key][key_2][key_3][atr])
-                s.add(ins)
-                s.commit() 
+def dazz (fail,parser):
+    pars=etree.parse(fail,parser)
+    naim = fail.name[fail.name.find('/')+1:fail.name.find('_')]
+    return lib(pars,naim)
+
 fails=[]#
 fails=os.listdir("libreal")#получение списка всех файлов в библеотеке
 with open ("wraiter","w") as wraiter:
     for i in fails:#обработка всех файлов
         with open("libreal/"+i) as fobj:#открытие файла
-            xml = etree.parse(fobj,parser)#парсинк из документа 
-        t=lib_chil(xml)#приврощение распарсеного документа в словарь словарей
-        print(t)
+             t=dazz(fobj,parser)#парсинк из документа 
+        wraiter.writelines(str(t))
        # if i[4]=='A':
        #     concrete_bazz_1(t)
        # else:
