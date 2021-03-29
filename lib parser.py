@@ -13,29 +13,19 @@ s=Session()#образец класса сесия
 
 parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера 
 #alltable.creat_table_all()
-def lib(xmlFile,naim):#читаем файл
-    lib=[]#создаем пустой словарь
-    for i in xmlFile.iter():#заполняем словарь 
-        if etree.QName(i.tag).localname==naim:
-            for k in i.iterchildren():
-                lib.append(lib_chil(k))
-        else:
-            continue
-    return lib#возвращаем
-def lib_chil(chil):#создание словарей
-    lib={}#создаем пустой словарь
-    if len(chil) != 0 :#узнаём в теге есть ещо теги или только текст
-        for child_root in chil.iterdescendants():#проходимся по всем тегам в нутри расматриваемого тега
-            lib_elem=lib_chil(child_root)
-            if type(lib_elem)==type(dict()):
-                for i in lib_elem.values():
-                    lib[re.sub(r'(?<!^)(?=[A-Z])', '_',str(etree.QName(child_root.tag).localname) ).lower() ]=i
-                    break
-            else:
-                lib[re.sub(r'(?<!^)(?=[A-Z])', '_',str(etree.QName(child_root.tag).localname) ).lower() ]=lib_elem#в писание в текущий словарь под ключом имя тега то что в нем
-    else:#если в нутри нашего тега нету тегов
-        return chil.text#передай текст тега
-    return lib#верни список всех тегов всех
+def pars_doc_type(fail):
+    lis=[]
+    dic={}
+    for i in fail.iter():
+        if str(etree.QName(i.tag).localname)=='nsiEPDocType':
+            dic['code']=i[0].text
+            dic['name']=i[1].text
+            dic['object_name']=i[2].text
+            dic['update_date']=i[3].text
+            dic['is_actual']=i[4].text
+            lis.append(dic)
+    return lis
+
 
 # parsed_data = [
 #     {
@@ -101,8 +91,7 @@ def concrete_bazz_2(lib):
                 s.commit() 
 def dazz (fail,parser):
     pars=etree.parse(fail,parser)
-    naim = fail.name[fail.name.find('/')+1:fail.name.find('_')]
-    return lib(pars,naim)
+    return pars_doc_type(pars)
 
 fails=[]#
 fails=os.listdir("libreal")#получение списка всех файлов в библеотеке

@@ -20,9 +20,12 @@ def lib_chil(chil):#создание словарей
         for child_root in chil.iterdescendants():#проходимся по всем тегам в нутри расматриваемого тега
             lib_elem=lib_chil(child_root)
             if type(lib_elem)==type(dict()):
-                return 'fiar'
-            elif lib_elem=="fiar":
-                return 'fiar'
+                if lib_chil.get('id')!=None:
+                    lib[re.sub(r'(?<!^)(?=[A-Z])', '_',str(etree.QName(child_root.tag).localname)+"_id" ).lower() ]=lib_elem['id']
+                elif lib_chil.get(code)!=None:
+                    lib[re.sub(r'(?<!^)(?=[A-Z])', '_',str(etree.QName(child_root.tag).localname)+"_id" ).lower() ]=lib_elem['code']
+                else:
+                    lib[re.sub(r'(?<!^)(?=[A-Z])', '_',str(etree.QName(child_root.tag).localname)+"_IlYa_HeLp")]=lib_elem
             else:
                 lib[re.sub(r'(?<!^)(?=[A-Z])', '_',str(etree.QName(child_root.tag).localname) ).lower() ]=lib_elem#в писание в текущий словарь под ключом имя тега то что в нем
     else:#если в нутри нашего тега нету тегов
