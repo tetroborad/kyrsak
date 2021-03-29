@@ -10,6 +10,7 @@ def lib(xmlFile,naim):#читаем файл
                 s=lib_chil(k)
                 if s=="fiar":
                     return 'fiar'
+                lib.append(s)
         else:
             continue
     return lib#возвращаем
@@ -34,7 +35,7 @@ with open ("wraiter","w") as wraiter:
     for i in fails:#обработка всех файлов
         with open("libreal/"+i) as fobj:#открытие файла
             pars=etree.parse(fobj,parser)
-            naim = etree.QName(pars).localname
+            naim = fobj.name[fobj.name.find('/')+1:fobj.name.find('_')]
             s=lib(pars,naim)
             if s!="fiar":
                 wraiter.write(str(s))
