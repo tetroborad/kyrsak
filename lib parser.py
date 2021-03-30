@@ -10,47 +10,92 @@ engine = create_engine('postgresql://zakupki:zakupki@localhost:15432/zakupki', e
 meta = MetaData()#мета данные
 Session = sessionmaker(bind = engine) #создания класа сесии
 s=Session()#образец класса сесия
-
 parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера 
 #alltable.creat_table_all()
-def pars_doc_type(fail):
+def pars_e_p_doc_type(fail):
     lis=[]
-    dic={}
-    for i in fail.iter():
-        if str(etree.QName(i.tag).localname)=='nsiEPDocType':
-            dic['code']=i[0].text
-            dic['name']=i[1].text
-            dic['object_name']=i[2].text
-            dic['update_date']=i[3].text
-            dic['is_actual']=i[4].text
-            lis.append(dic)
+    for i in fail.getiterator("{*}nsiEPDocType"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['object_name']=i.find("{*}objectName").text
+        dic['update_date']=i.find("{*}updateDate").text
+        dic['is_actual']=i.find("{*}isActual").text
+        lis.append(dic)
     return lis
-
-
-# parsed_data = [
-#     {
-#         'id': 'qweasdzxc',
-#         'name': 'qweqweqwe',
-#         'actual': True
-#     }
-# ]
-
-#parsed_data = [
-#    {
-#        'id': 'qwe',
-#        'code': 'qwe',
-#        'name': 'qwe',
-#        'objectName': 'qwe',
-#        'type': 'qwe',
-#        'doc_type_code': 'IZT',
-#        'placing_way_code': 'ZKKP20',
-#        'actual': True
-#
-#    },
-#    ....
-    
-#]
-
+def pars_purchase_document_types(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPurchaseDocumentTypes"):
+        dic={}
+        taim=[]
+        dic['placing_way_code']=i.find("{*}placingWayCode").text
+        dic['placing_way_type']=i.find("{*}placingWayType").text
+        dic['placing_way_name']=i.find("{*}placingWayName").text
+        dic['actual']=i.find("{*}actual").text
+        for k in i.getiterator("{*}documentType"):
+            taim.append(k.find("{*}code").text)
+        dic['document_types']=taim
+        lis.append(dic)
+    return lis
+def pars_abandoned_reason(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiAbandonedReason"):
+        dic={}
+        if i.find('{*}objectName')!=None:
+            dic['id']=i.find("{*}id").text
+            dic['code']=i.find("{*}code").text
+            dic['name']=i.find("{*}name").text
+            dic['object_name']=i.find("{*}objectName").text
+            dic['type']=i.find("{*}type").text
+            dic['doc_type_id']=i.find("{*}docType/{*}code").text
+            dic['placing_way_id']=i.find("{*}placingWay/{*}code").text
+            dic['actual']=i.find("{*}actual").text
+            lis.append(dic)  
+        else:
+            dic['id']=i.find("{*}id").text
+            dic['code']=i.find("{*}code").text
+            dic['name']=i.find("{*}name").text
+            dic['type']=i.find("{*}type").text
+            dic['doc_type_id']=i.find("{*}docType/{*}code").text
+            dic['placing_way_id']=i.find("{*}placingWay/{*}code").text
+            lis.append(dic)  
+    return lis
+def pars_andit_action_subjects(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiAuditActionSubject"):
+        dic={}
+        dic['id']=i.find("{*}id").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_bank_guarantee_refusal615_reason(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiBankGuaranteeRefusal615Reason"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_bank_guarantee_refusal_reason(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiBankGuaranteeRefusalReason"):
+        dic={}
+        dic['id']=i.find("{*}id").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_budget_list(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiBudget"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
 #def parse_abondoned_reason(xml_file):
 #    res = []
 #    for tag in xml_file.find_all('nsiAuditActionSubject'):
@@ -91,7 +136,7 @@ def concrete_bazz_2(lib):
                 s.commit() 
 def dazz (fail,parser):
     pars=etree.parse(fail,parser)
-    return pars_doc_type(pars)
+    return pars_bank_guarantee_refusal615_reason(pars)
 
 fails=[]#
 fails=os.listdir("libreal")#получение списка всех файлов в библеотеке
