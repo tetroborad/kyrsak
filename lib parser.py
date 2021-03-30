@@ -96,6 +96,72 @@ def pars_budget_list(fail):
         dic['actual']=i.find("{*}actual").text
         lis.append(dic)
     return lis
+def pars_change_price_foundations(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiChangePriceFoundation"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_closed_e_p_cases(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiClosedEPCases"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['update_date']=i.find("{*}updateDate").text
+        dic['is_actual']=i.find("{*}isActual").text
+        lis.append(dic)
+    return lis
+def pars_closed_methods_of_reason(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiClosedMethodOfReason"):
+        dic={}
+        dic['reason_code']=i.find("{*}reasonCode").text
+        dic['reason_name']=i.find("{*}reasonName").text
+        dic['reason_law']=i.find("{*}reasonLaw").text
+        dic['last_update_date']=i.find("{*}lastUpdateDate").text
+        dic['actual']=i.find("{*}actual").text
+        dic['is_hide_info_required']=i.find("{*}isHideInfoRequired").text
+        lis.append(dic)
+    return lis
+def pars_commission_role(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiCommissionRole"):
+        dic={}
+        dic['id']=i.find("{*}id").text
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['order']=i.find("{*}order").text
+        dic['right_vote']=i.find("{*}rightVote").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_world_time_zone(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiWorldTimeZone"):
+        dic={}
+        dic['name']=i.find("{*}name").text
+        dic['difference_time']=i.find("{*}differenceTime").text
+        dic['is_actual']=i.find("{*}isActual").text
+        lis.append(dic)
+    return lis
+def pars_drugs_o_k_e_i(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiDrugOKEI"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['full_name']=i.find("{*}fullName").text
+        dic['local_name']=i.find("{*}localName").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+
+def dazz (fail,parser):
+    pars=etree.parse(fail,parser)
+    return pars_drugs_o_k_e_i(pars)
 #def parse_abondoned_reason(xml_file):
 #    res = []
 #    for tag in xml_file.find_all('nsiAuditActionSubject'):
@@ -113,31 +179,6 @@ def pars_budget_list(fail):
 #    session.commit()
 
 #import_objects(parsed_data, nsiAuditActionSubject)
-
-def concrete_bazz_1(lib):
-    for key in lib.keys():
-        for key_2 in lib[key].keys():
-            for  key_3 in lib[key][key_2].keys():
-                if lib[key][key_2][key_3][actual]=='true':
-                    ins=alltable.nsiAuditActionSubject(id=lib[key][key_2][key_3][id],name=lib[key][key_2][key_3][name],actual=True)
-                else:
-                    ins=alltable.nsiAuditActionSubject(id=lib[key][key_2][key_3][id],name=lib[key][key_2][key_3][name],actual=False)
-                s.add(ins)
-                s.commit() 
-def concrete_bazz_2(lib):
-    for key in lib.keys():
-        for key_2 in lib[key].keys():
-            for  key_3 in lib[key][key_2].keys():
-                if lib[key][key_2][key_3][actual]=='true':
-                    ins=alltable.nsiDeviationFactFoundation(code=lib[key][key_2][key_3][code],name=lib[key][key_2][key_3][name],actual=True)
-                else:
-                    ins=alltable.nsiDeviationFactFoundation(code=lib[key][key_2][key_3][code],name=lib[key][key_2][key_3][name],actual=False)
-                s.add(ins)
-                s.commit() 
-def dazz (fail,parser):
-    pars=etree.parse(fail,parser)
-    return pars_bank_guarantee_refusal615_reason(pars)
-
 fails=[]#
 fails=os.listdir("libreal")#получение списка всех файлов в библеотеке
 with open ("wraiter","w") as wraiter:
