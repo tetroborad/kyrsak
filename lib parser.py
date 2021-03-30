@@ -158,10 +158,187 @@ def pars_drugs_o_k_e_i(fail):
         dic['actual']=i.find("{*}actual").text
         lis.append(dic)
     return lis
-
+def pars_k_v_r(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiKVR"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_currency(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiCurrency"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['digital_code']=i.find("{*}digitalCode").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_o_k_e_i(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOKEI"):
+        dic={}
+        if i.find("{*}internationalSymbol")!=None:
+            dic['code']=i.find("{*}code").text
+            dic['full_name']=i.find("{*}fullName").text
+            dic['section_id']=i.find("{*}section/{*}code").text
+            dic['group']=i.find("{*}group/{*}id").text
+            dic['local_name']=i.find("{*}localName").text
+            dic['international_name']=i.find("{*}internationalName").text
+            dic['local_symbol']=i.find("{*}localSymbol").text
+            dic['international_symbol']=i.find("{*}internationalSymbol").text
+            dic['actual']=i.find("{*}actual").text
+            dic['is_temporary_for_k_t_r_u']=i.find("{*}isTemporaryForKTRU").text
+        else:
+            dic['code']=i.find("{*}code").text
+            dic['full_name']=i.find("{*}fullName").text
+            dic['section_id']=i.find("{*}section/{*}code").text
+            dic['group']=i.find("{*}group/{*}id").text
+            dic['local_name']=i.find("{*}localName").text
+            dic['international_name']=i.find("{*}internationalName").text
+            dic['local_symbol']=i.find("{*}localSymbol").text
+            dic['actual']=i.find("{*}actual").text
+            dic['is_temporary_for_k_t_r_u']=i.find("{*}isTemporaryForKTRU").text
+        lis.append(dic)
+    return lis
+def pars_placing_way(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPlacingWay"):
+        dic={}
+        dic['placing_way_id']=i.find("{*}placingWayId").text
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['type']=i.find("{*}type").text
+        dic['subsystem_type']=i.find("{*}subsystemType").text
+        dic['actual']=i.find("{*}actual").text
+        dic['is_procedure']=i.find("{*}isProcedure").text
+        dic['is_exclude']=i.find("{*}isExclude").text
+        lis.append(dic)
+    return lis
+def pars_k_t_r_u_not_using_reason(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiKTRUNotUsingReason"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['update_date']=i.find("{*}updateDate").text
+        dic['is_actual']=i.find("{*}isActual").text
+        lis.append(dic)
+    return lis
+def pars_o_k_s_m(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOKSM"):
+        dic={}
+        dic['country_code']=i.find("{*}countryCode").text
+        dic['country_full_name']=i.find("{*}countryFullName").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_evas_dev_fact_foundation(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiEvasDevFactFoundation"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['placing_way_id']=i.find("{*}placingWay/{*}code").text
+        dic['placing_way_doc_type_id']=i.find("{*}placingWayDocType/{*}code").text
+        dic['integration_object_name']=i.find("{*}integrationObjectName").text
+        dic['is_exclude']=i.find("{*}isExclude").text
+        dic['is_actual']=i.find("{*}isActual").text
+        dic['update_date']=i.find("{*}updateDate").text
+        dic['order_num']=i.find("{*}orderNum").text
+        lis.append(dic)
+    return lis
+def pars_contract_currency_c_b_r_f(fail):
+    lis=[]
+    flag=False
+    for i in fail.getiterator("{*}nsiContractCurrencyCBRF"):
+        if flag:
+            dic={}
+            dic['currency']=i.find("{*}currency/{*}code").text
+            dic['actual']=i.find("{*}actual").text
+            lis.append(dic)
+        else:
+            flag=True
+    return lis
+def pars_contract_penalty_reason(fail):
+    lis=[]
+    flag=False
+    for i in fail.getiterator("{*}nsiContractPenaltyReason"):
+        if flag:
+            dic={}
+            dic['code']=i.find("{*}code").text
+            dic['name']=i.find("{*}name").text
+            dic['penalty_type']=i.find("{*}penaltyType").text
+            dic['actual']=i.find("{*}actual").text
+            lis.append(dic)
+        else:
+            flag=True
+    return lis
+def pars_e_a_e_s_country(fail):
+    lis=[]
+    flag=False
+    for i in fail.getiterator("{*}nsiEAESCountry"):
+        if flag:
+            dic={}
+            dic['name']=i.find("{*}name").text
+            dic['o_k_s_m_code']=i.find("{*}OKSMCode").text
+            dic['code2']=i.find("{*}code2").text
+            dic['code3']=i.find("{*}code3").text
+            dic['order_number']=i.find("{*}orderNumber").text
+            dic['update_date']=i.find("{*}updateDate").text
+            dic['is_actual']=i.find("{*}isActual").text
+            lis.append(dic)
+        else:
+            flag=True
+    return lis
+def pars_purchase_plan_position_change_reason(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPurchasePlanPositionChangeReason"):
+        dic={}
+        if i.find("{*}shortName")!=None:
+            dic['id']=i.find("{*}id").text
+            dic['code']=i.find("{*}code").text
+            dic['description']=i.find("{*}description").text
+            dic['actual']=i.find("{*}actual").text
+            dic['short_name']=i.find("{*}shortName").text
+            lis.append(dic)
+        else:
+            dic['id']=i.find("{*}id").text
+            dic['code']=i.find("{*}code").text
+            dic['description']=i.find("{*}description").text
+            dic['actual']=i.find("{*}actual").text
+            lis.append(dic)
+    return lis
+def pars_e_a_doc_type(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiEADocType"):
+        dic={}
+        if i.find("{*}fileTypeCode")!=None:
+            dic['id']=i.find("{*}id").text
+            dic['code']=i.find("{*}code").text
+            dic['name']=i.find("{*}name").text
+            dic['fileTypeCode']=i.find("{*}fileTypeCode").text
+            dic['order_number']=i.find("{*}orderNumber").text
+            dic['update_date']=i.find("{*}updateDate").text
+            dic['is_actual']=i.find("{*}isActual").text
+            lis.append(dic)
+        else:
+            dic['id']=i.find("{*}id").text
+            dic['code']=i.find("{*}code").text
+            dic['name']=i.find("{*}name").text
+            dic['noInclude']=i.find("{*}noInclude").text
+            dic['order_number']=i.find("{*}orderNumber").text
+            dic['update_date']=i.find("{*}updateDate").text
+            dic['is_actual']=i.find("{*}isActual").text
+            lis.append(dic)
+    return lis
 def dazz (fail,parser):
     pars=etree.parse(fail,parser)
-    return pars_drugs_o_k_e_i(pars)
+    return pars_e_a_doc_type(pars)
 #def parse_abondoned_reason(xml_file):
 #    res = []
 #    for tag in xml_file.find_all('nsiAuditActionSubject'):
