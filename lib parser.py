@@ -551,7 +551,260 @@ def pars_contract_termination_reason(fail):
         else:
             flag=True
     return lis
-def dazz (fail):
+def pars_control99_subject(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiControl99Subject"):
+        dic={}
+        dic['id']=i.find("{*}id").text
+        dic['control_authority_info_id']=i.find("{*}controlAuthorityInfo/{*}regNum").text
+        dic['customer_info']=i.find("{*}customerInfo/{*}regNum").text
+        dic['subject_type']=i.find("{*}subjectType").text
+        dic['status']=i.find("{*}status").text
+        lis.append(dic)
+    return lis
+def pars_deviation_fact_foundation(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiDeviationFactFoundation"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_e_p_doc_type(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiEPDocType"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['object_name']=i.find("{*}objectName").text
+        dic['update_date']=i.find("{*}updateDate").text
+        dic['is_actual']=i.find("{*}isActual").text
+        lis.append(dic)
+    return lis
+def pars_e_t_p(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiETP"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        if i.find("{*}description")!=None:
+                dic['description']=i.find("{*}description").text
+        dic['phone']=i.find("{*}phone").text
+        dic['address']=i.find("{*}address").text
+        dic['email']=i.find("{*}email").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_eval_criterion(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiEvalCriterion"):
+        dic={}
+        taim=[]
+        dic['id']=i.find("{*}id").text
+        dic['name']=i.find("{*}name").text
+        if i.find("{*}code")!=None:
+            dic['code']=i.find("{*}code").text
+        if i.find("{*}criterionCode")!=None:
+            dic['criterion_code']=i.find("{*}criterionCode").text
+        if i.find("{*}description")!=None:
+            dic['description']=i.find("{*}description").text
+        if i.find("{*}order")!=None:
+            dic['order']=i.find("{*}order").text
+        if i.find("{*}numericalCode")!=None:
+            dic['numerical_code']=i.find("{*}numericalCode").text
+        if i.find("{*}criterionGroups")!=None:
+            for k in i.getiterator("{*}criterionGroup"):
+                taim.append(k.find("{*}code").text)
+            dic['criterionGroups']=taim
+        dic['actual']=i.find("{*}actual").text
+        dic['need_expert_eval']=i.find("{*}needExpertEval").text
+        lis.append(dic)
+    return lis
+def pars_k_b_k_budget(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiKBKBudget"):
+        dic={}
+        dic['kbk']=i.find("{*}kbk").text
+        dic['budget']=i.find("{*}budget").text
+        dic['actual']=i.find("{*}actual").text
+        dic['start_date']=i.find("{*}start_date").text
+        if i.find("{*}end_date")!=None:
+            dic['end_date']=i.find("{*}end_date").text
+        lis.append(dic)
+    return lis
+def pars_off_budget(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOffBudget"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['subsystem_type']=i.find("{*}subsystemType").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_o_k_o_p_f(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOKOPF"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        if i.find("{*}parentCode")!=None:
+            dic['parent_code']=i.find("{*}parentCode").text
+        dic['full_name']=i.find("{*}fullName").text
+        dic['singular_name']=i.find("{*}singularName").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_o_k_v_e_d(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOKVED"):
+        dic={}
+        dic['id']=i.find("{*}id").text
+        dic['code']=i.find("{*}code").text
+        dic['section']=i.find("{*}section").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_o_k_v_e_d2(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOKVED2"):
+        dic={}
+        dic['id']=i.find("{*}id").text
+        dic['code']=i.find("{*}code").text
+        dic['section']=i.find("{*}section").text
+        dic['name']=i.find("{*}name").text
+        if i.find("{*}comment")!=None:
+            dic['comment']=i.find("{*}comment").text
+        dic['actual']=i.find("{*}actual").text
+        lis.append(dic)
+    return lis
+def pars_organization_rights(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOrganizationRights"):
+        dic={}
+        taim=[]
+        dic['regNumber']=i.find("{*}regNumber").text
+        for k in i.getiterator("{*}organizationLink"):
+                taim.append(k.find("{*}id").text)
+        dic['organization_link_id']=taim
+        lis.append(dic)
+    return lis
+def pars_organization_types(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOrganizationType"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['description']=i.find("{*}description").text        
+        lis.append(dic)
+    return lis
+def pars_plan_position_change_reason(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPlanPositionChangeReason"):
+        dic={}
+        dic['id']=i.find("{*}id").text
+        dic['name']=i.find("{*}name").text
+        dic['description']=i.find("{*}description").text
+        dic['actual']=i.find("{*}actual").text          
+        lis.append(dic)
+    return lis
+def pars_pref_rate(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPrefRate"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['pref_value']=i.find("{*}prefValue").text
+        dic['update_date']=i.find("{*}updateDate").text
+        dic['is_actual']=i.find("{*}isActual").text          
+        lis.append(dic)
+    return lis
+def pars_public_discussion_decision(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPublicDiscussionDecision"):
+        dic={}
+        taim=[]
+        dic['id']=i.find("{*}id").text
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['type']=i.find("{*}type").text
+        dic['phase']=i.find("{*}phase").text   
+        dic['actual']=i.find("{*}actual").text  
+        if i.find("{*}foundations")!=None:
+            for k in i.getiterator("{*}foundation"):
+                taim.append(k.find("{*}id").text)
+            dic['foundations_id']=taim       
+        lis.append(dic)
+    return lis
+def pars_purchase_document_types(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPurchaseDocumentTypes"):
+        dic={}
+        taim=[]
+        dic['placing_way_code']=i.find("{*}placingWayCode").text
+        dic['placing_way_type']=i.find("{*}placingWayType").text
+        dic['placing_way_name']=i.find("{*}placingWayName").text
+        dic['actual']=i.find("{*}actual").text
+        if i.find("{*}phase")!=None:
+            dic['phase']=i.find("{*}phase").text   
+        dic['actual']=i.find("{*}actual").text  
+        for k in i.getiterator("{*}documentType"):
+            taim.append(k.find("{*}code").text)
+        dic['document_type_id']=taim       
+        lis.append(dic)
+    return lis
+def pars_public_discussion_questionnarie(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPublicDiscussionQuestionnarie"):
+        dic={}
+        taim=[]
+        dic['id']=i.find("{*}id").text
+        dic['code']=i.find("{*}code").text
+        dic['facetName']=i.find("{*}facetName").text
+        dic['type']=i.find("{*}type").text
+        dic['actual']=i.find("{*}actual").text 
+        if i.find("{*}questions")!=None:
+            for k in i.getiterator("{*}question"):
+                taim.append(k.find("{*}id").text)
+            dic['question_id']=taim       
+        lis.append(dic)
+    return lis
+def pars_pref_rate(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPrefRate"):
+        dic={}
+        dic['code']=i.find("{*}code").text
+        dic['pref_value']=i.find("{*}prefValue").text
+        dic['update_date']=i.find("{*}updateDate").text
+        dic['is_actual']=i.find("{*}isActual").text          
+        lis.append(dic)
+    return lis
+def pars_o_k_p_d(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOKPD"):
+        dic={}
+        dic['id']=i.find("{*}id").text
+        dic['code']=i.find("{*}code").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text          
+        lis.append(dic)
+    return lis
+def pars_o_k_p_d2(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOKPD2"):
+        dic={}
+        dic['id']=i.find("{*}id").text
+        if i.find("{*}parentId")!=None:
+            dic['parent_id']=i.find("{*}parentId").text
+        dic['code']=i.find("{*}code").text
+        if i.find("{*}parentCode")!=None:
+            dic['parent_code']=i.find("{*}parentCode").text
+        dic['name']=i.find("{*}name").text
+        dic['actual']=i.find("{*}actual").text          
+        lis.append(dic)
+    return lis
+
+def pars (fail):
     pars=etree.parse(fail,parser)
     s=fail.name[fail.name.find("nsi")+3:fail.name.find("_")]
     if s[-1]=='s':
@@ -583,7 +836,7 @@ fails=os.listdir("libreal")#получение списка всех файло�
 with open ("wraiter","w") as wraiter:
     for i in fails:#обработка всех файлов
         with open("libreal/"+i) as fobj:#открытие файла
-             t=dazz(fobj)#парсинк из документа 
+             t=pars(fobj)#парсинк из документа 
         wraiter.writelines(str(t))
        # if i[4]=='A':
        #     concrete_bazz_1(t)
@@ -594,4 +847,4 @@ with open ("wraiter","w") as wraiter:
 #        wraiter.writelines(str(row.code)+" "+str(row.name)+" "+str(row.actual)+"\n")
 #    for row in s.query(alltable.nsiAuditActionSubject).all():
 #        wraiter.writelines(str(row.code)+" "+str(row.name)+" "+str(row.actual)+"\n")
-#print(datetime.now()-taim)
+print(datetime.now()-taim)
