@@ -803,7 +803,153 @@ def pars_o_k_p_d2(fail):
         dic['actual']=i.find("{*}actual").text          
         lis.append(dic)
     return lis
-
+def pars_purchase_reject_reason(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPurchaseRejectReason"):
+        dic={}
+        taim=[]
+        dic['id']=i.find("{*}id").text
+        dic['code']=i.find("{*}code").text
+        dic['reason']=i.find("{*}reason").text
+        dic['actual']=i.find("{*}actual").text  
+        dic['subsystem_type']=i.find("{*}subsystemType").text     
+        for k in i.getiterator("{*}placingWay"):
+            taim.append(k.find("{*}code").text)
+        dic['placing_way_id']=taim
+        lis.append(dic)
+    return lis
+def pars_special_purchase(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiSpecialPurchase"):
+        dic={}
+        dic['id']=i.find("{*}id").text
+        dic['code']=i.find("{*}code").text
+        dic['purchase_plan_short_name']=i.find("{*}purchasePlanShortName").text
+        dic['purchase_plan_full_name']=i.find("{*}purchasePlanFullName").text  
+        if i.find("{*}tenderPlan2017ShortName")!=None:
+            dic['tender_plan2017_short_name']=i.find("{*}tenderPlan2017ShortName").text
+        if i.find("{*}tenderPlan2017FullName")!=None:
+            dic['tender_plan2017_full_name']=i.find("{*}tenderPlan2017FullName").text 
+        dic['actual']=i.find("{*}actual").text      
+        lis.append(dic)
+    return lis
+def pars_purchase_preference(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiPurchasePreference"):
+        dic={}
+        taim=[]
+        dic['id']=i.find("{*}id").text
+        dic['name']=i.find("{*}name").text
+        if i.find("{*}shortName")!=None:
+            dic['short_name']=i.find("{*}shortName").text
+        dic['type']=i.find("{*}type").text
+        dic['pref_estimate_app']=i.find("{*}prefEstimateApp").text
+        if i.find("{*}placingWays")!=None:
+            for k in i.getiterator("{*}placingWay"):
+                taim.append(k.find("{*}code").text)
+            dic['placing_way_id']=taim
+        dic['actual']=i.find("{*}actual").text  
+        dic['use_tender_plans']=i.find("{*}useTenderPlans").text      
+        lis.append(dic)
+    return lis
+def pars_tender_plan2017_contract_life_cycle_case(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiTenderPlan2017ContractLifeCycleCase"):
+        dic={}
+        taim=[]
+        dic['id']=i.find("{*}id").text
+        dic['name']=i.find("{*}name").text
+        dic['code']=i.find("{*}code").text
+        dic['actual']=i.find("{*}actual").text      
+        lis.append(dic)
+    return lis
+def pars_tender_plan2017_position_change_reason(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiTenderPlan2017PositionChangeReason"):
+        dic={}
+        taim=[]
+        dic['id']=i.find("{*}id").text
+        dic['full_name']=i.find("{*}fullName").text
+        dic['code']=i.find("{*}code").text
+        dic['short_name']=i.find("{*}shortName").text
+        dic['cancel_chance']=i.find("{*}cancelChance").text
+        dic['legal_act_details']=i.find("{*}legalActDetails").text
+        dic['actual']=i.find("{*}actual").text      
+        lis.append(dic)
+    return lis
+def pars_special_purchases2020(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiSpecialPurchase2020"):
+        dic={}
+        taim=[]
+        dic['id']=i.find("{*}id").text
+        dic['full_name']=i.find("{*}fullName").text
+        dic['code']=i.find("{*}code").text
+        dic['short_name']=i.find("{*}shortName").text
+        dic['actual']=i.find("{*}actual").text      
+        lis.append(dic)
+    return lis
+def pars_tender_plan2020_position_change_reason(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiTenderPlan2020PositionChangeReason"):
+        dic={}
+        taim=[]
+        dic['id']=i.find("{*}id").text
+        dic['code']=i.find("{*}code").text
+        dic['short_name']=i.find("{*}shortName").text
+        dic['actual']=i.find("{*}actual").text      
+        lis.append(dic)
+    return lis
+def pars_o_k_t_m_o(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOKTMO"):
+        dic={}
+        taim=[]
+        dic['code']=i.find("{*}code").text
+        if i.find("{*}parent_code")!=None:
+            dic['parent_code']=i.find("{*}parent_code").text
+        dic['full_name']=i.find("{*}fullName").text
+        dic['last_update_date']=i.find("{*}lastUpdateDate").text
+        dic['actual']=i.find("{*}actual").text       
+        lis.append(dic)
+    return lis
+def pars_o_k_t_m_o_p_p_o(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOKTMOPPO"):
+        dic={}
+        taim=[]
+        dic['code']=i.find("{*}code").text
+        if i.find("{*}parent_code")!=None:
+            dic['parent_code']=i.find("{*}parent_code").text
+        if i.find("{*}OKTMOCode")!=None:
+            dic['o_k_t_m_o_Code']=i.find("{*}OKTMOCode").text
+        if i.find("{*}settlementType")!=None:
+            dic['settlement_type']=i.find("{*}settlementType").text
+        if i.find("{*}registerName")!=None:
+            dic['register_name']=i.find("{*}registerName").text
+        dic['actual']=i.find("{*}actual").text       
+        lis.append(dic)
+    return lis
+#------------------------------------------------------------
+def pars_organization(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiOrganization"):
+        dic={}
+        taim=[]
+        dic['reg_number']=i.find("{*}regNumber").text
+        dic['cons_registry_num']=i.find("{*}consRegistryNum").text
+        dic['short_name']=i.find("{*}shortName").text 
+        dic['full_name']=i.find("{*}fullName").text 
+        dic['factual_address']={"building":i.find("{*}factualAddress/{*}building").text, 
+                                "country":i.find("{*}factualAddress/{*}country/{*}countryCode").text,
+                                "filled_manually":i.find("{*}factualAddress/{*}filledManually").text,
+                                "region":i.find("{*}factualAddress/{*}region/{*}kladrCode").text,
+                                "city":i.find("{*}factualAddress/{*}city/{*}kladrCode").text,
+                                "shortStreet":i.find("{*}factualAddress/{*}shortStreet").text,
+                                "zip":i.find("{*}factualAddress/{*}zip").text}  
+        lis.append(dic)
+    return lis
+#---------------------------------------------------------
 def pars (fail):
     pars=etree.parse(fail,parser)
     s=fail.name[fail.name.find("nsi")+3:fail.name.find("_")]
