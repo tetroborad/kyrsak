@@ -1015,6 +1015,7 @@ def pars_special_purchases2020(fail):
         dic['actual']=i.find("{*}actual").text      
         lis.append(dic)
     return lis
+ #не проверил
 def pars_tender_plan2020_position_change_reason(fail):
     lis=[]
     for i in fail.getiterator("{*}nsiTenderPlan2020PositionChangeReason"):
@@ -1034,6 +1035,8 @@ def pars_o_k_t_m_o(fail):
         dic['code']=i.find("{*}code").text
         if i.find("{*}parent_code")!=None:
             dic['parent_code']=i.find("{*}parent_code").text
+        if i.find("{*}section")!=None:
+            dic['section']=i.find("{*}section").text 
         dic['full_name']=i.find("{*}fullName").text
         dic['last_update_date']=i.find("{*}lastUpdateDate").text
         dic['actual']=i.find("{*}actual").text       
@@ -1047,6 +1050,7 @@ def pars_o_k_t_m_o_p_p_o(fail):
         dic['code']=i.find("{*}code").text
         if i.find("{*}parent_code")!=None:
             dic['parent_code']=i.find("{*}parent_code").text
+        dic['name']=i.find("{*}name").text
         if i.find("{*}OKTMOCode")!=None:
             dic['o_k_t_m_o_Code']=i.find("{*}OKTMOCode").text
         if i.find("{*}settlementType")!=None:
@@ -1064,15 +1068,49 @@ def pars_organization(fail):
         taim=[]
         dic['reg_number']=i.find("{*}regNumber").text
         dic['cons_registry_num']=i.find("{*}consRegistryNum").text
-        dic['short_name']=i.find("{*}shortName").text 
+        if i.find("{*}shortName")!=None:
+            dic['short_name']=i.find("{*}shortName").text 
         dic['full_name']=i.find("{*}fullName").text 
-        dic['factual_address']={"building":i.find("{*}factualAddress/{*}building").text, 
-                                "country":i.find("{*}factualAddress/{*}country/{*}countryCode").text,
-                                "filled_manually":i.find("{*}factualAddress/{*}filledManually").text,
-                                "region":i.find("{*}factualAddress/{*}region/{*}kladrCode").text,
-                                "city":i.find("{*}factualAddress/{*}city/{*}kladrCode").text,
-                                "shortStreet":i.find("{*}factualAddress/{*}shortStreet").text,
-                                "zip":i.find("{*}factualAddress/{*}zip").text}  
+        if i.find("{*}GRBSCode")!=None:
+            dic['g_r_b_s_code']=i.find("{*}GRBSCode").text
+        if i.find("{*}BIK")!=None:
+            dic['b_i_k']=i.find("{*}BIK").text
+        if i.find("{*}nomBank")!=None:
+            dic['nom_bank']=i.find("{*}nomBank").text
+        #  factualAddress
+        if i.find("{*}postalAddress")!=None:
+            dic['postal_address']=i.find("{*}postalAddress").text
+        if i.find("{*}email")!=None:
+            dic['email']=i.find("{*}email").text
+        if i.find("{*}phone")!=None:
+            dic['phone']=i.find("{*}phone").text
+        if i.find("{*}fax")!=None:
+            dic['fax']=i.find("{*}fax").text
+        #contactPerson
+        #accounts
+        #budgets
+        #headAgency
+        #orderingAgency
+        dic['i_n_n']=i.find("{*}INN").text
+        dic['k_p_p']=i.find("{*}KPP").text
+        if i.find("{*}registrationDate")!=None:
+            dic['registration_date']=i.find("{*}registrationDate").text
+        if i.find("{*}UBPCode")!=None:
+            dic['u_b_p_code']=i.find("{*}UBPCode").text
+        #IKUInfo
+        lis.append(dic)
+    return lis
+#---------------------------------------------------------
+def pars_commission(fail):
+    lis=[]
+    for i in fail.getiterator("{*}nsiCommission"):
+        dic={}
+        taim=[]
+        dic['reg_number']=i.find("{*}regNumber").text
+        dic['commissionName']=i.find("{*}commissionName").text
+        dic['k_p_p']=i.find("{*}KPP").text
+        dic['owner']=i.find("{*}owner").text
+        dic['actual']=i.find("{*}actual").text  
         lis.append(dic)
     return lis
 #---------------------------------------------------------
