@@ -11,8 +11,8 @@ meta = MetaData()#мета данные
 Session = sessionmaker(bind = engine) #создания класа сесии
 s=Session()#образец класса сесия
 parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера 
-alltable.drop_table_all()
-alltable.creat_table_all()
+#alltable.drop_table_all()
+#alltable.creat_table_all()
 def pars_e_p_doc_type(fail):
     lis=[]
     for i in fail.getiterator("{*}nsiEPDocType"):
@@ -1100,20 +1100,204 @@ def pars_organization(fail):
         #IKUInfo
         lis.append(dic)
     return lis
-#---------------------------------------------------------
 def pars_commission(fail):
     lis=[]
     for i in fail.getiterator("{*}nsiCommission"):
         dic={}
         taim=[]
+        role=[]
         dic['reg_number']=i.find("{*}regNumber").text
-        dic['commissionName']=i.find("{*}commissionName").text
-        dic['k_p_p']=i.find("{*}KPP").text
-        dic['owner']=i.find("{*}owner").text
+        dic['commission_name']=i.find("{*}commissionName").text
+        if i.find("{*}commissionMembers")!=None:
+            for k in i.getiterator("{*}commissionMember"):
+                for rol in k.getiterator("{*}role"):
+                    role.append(rol.find("{*}id").text)    
+                if k.find("{*}middleName")!=None:
+                    taim.append({"id":k.find("{*}id").text,"role":role,"last_name":k.find("{*}lastName").text,"first_name":k.find("{*}firstName").text,"middle_name":k.find("{*}middleName").text})
+                else:
+                    taim.append({"id":k.find("{*}id").text,"role":role,"last_name":k.find("{*}lastName").text,"first_name":k.find("{*}firstName").text})
+            dic['placing_way_id']=taim
+        if i.find("{*}owner")!=None:
+            dic['owner_id']=i.find("{*}owner/{*}regNum").text
         dic['actual']=i.find("{*}actual").text  
         lis.append(dic)
     return lis
-#---------------------------------------------------------
+def pars_k_t_r_u(fail):
+    lis=[]
+    for i in fail.getiterator("{*}data"):
+        dic={}
+        taim=[]
+        dic['code']=i.find("{*}code").text
+        if i.find("{*}version")!=None:
+            dic['version']=i.find("{*}version").text
+        if i.find("{*}inclusionDate")!=None:
+            dic['inclusion_date']=i.find("{*}inclusionDate").text
+        if i.find("{*}publishDate")!=None:
+            dic['publish_date']=i.find("{*}publishDate").text
+        if i.find("{*}name")!=None:
+            dic['name']=i.find("{*}name").text
+        for k in i.getiterator("{*}OKPD2"):
+            taim.append(k.find("{*}code").text)
+        dic["o_k_p_d2_id"]=taim
+        taim=[]
+        dic['actual']=i.find("{*}actual").text
+        if i.find("{*}applicationDateStart")!=None:
+            dic['application_date_start']=i.find("{*}applicationDateStart").text
+        if i.find("{*}applicationDateEnd")!=None:
+            dic['application_date_end']=i.find("{*}applicationDateEnd").text
+        if i.find("{*}OKEIs")!=None:
+            for k in i.getiterator("{*}OKEI"):
+                taim.append(k.find("code"))
+            dic["o_k_e_i_id"]=taim
+            taim=[]
+        if i.find("{*}NSI")!=None:
+            nsi={}
+            if i.find("{*}NSI/standarts")!=None:
+                for k in i.getiterator("standart"):
+                    taim.append(k.find("{*}docName"))
+                nsi["standart"]=taim
+                taim=[]
+            if i.find("{*}NSI/classifiers")!=None:
+                for k in i.getiterator("classifier"):
+                    val={}
+                    for valie in k.getiterator("value"):
+                        val["code"]=valie.find("{*}code").text
+                        val["name"]=valie.find("{*}name").text
+                        if valie.find("{*}descriptionValue")!=None:
+                            val["description_value"]=valie.find("{*}descriptionValue").text
+                        if valie.find("{*}price")!=None:
+                            val["price"]=valie.find("{*}price").text
+                    taim.append({"doc_name":k.find("{*}docName"),"values":val})
+                nsi["classifiers"]=taim
+                taim=[]
+            if i.find("{*}NSI/standardContracts")!=None:
+                contract={}
+                for k in i.getiterator("standardContract"):
+                    if k.find("{*}standardContractNumber")!=None:
+                        contract['standard_contract_number']=k.find("{*}standardContractNumber")
+                    if k.find("{*}type")!=None:
+                        contract['type']=k.find("{*}type")
+                    if k.find("{*}document")!=None:
+                        doc={}
+                        if k.find("{*}document/{*}number")!=None:
+                            doc["number"]=k.find("{*}document/{*}number").text
+                        if k.find("{*}document/{*}name")!=None:
+                            doc["name"]=k.find("{*}document/{*}name").text
+                        if k.find("{*}document/{*}date")!=None:
+                            doc["date"]=k.find("{*}document/{*}date").text
+                        contract['document']=doc
+                nsi["standardContracts"]=contract
+                taim=[]
+            dic["n_s_i"]=nsi
+        if i.find("{*}characteristics")!=None:
+            charact={}
+            for k in i.getiterator("characteristic"):
+                charact["code"]=k.find("{*}code").text
+                charact["name"]=k.find("{*}name").text
+                charact["type"]=k.find("{*}type").text
+                if k.find("{*}kind")!=None:
+                    doc["kind"]=k.find("{*}kind").text
+                if k.find("{*}actual")!=None:
+                    doc["actual"]=k.find("{*}actual").text
+                if k.find("{*}isRequired")!=None:
+                    doc["isRequired"]=k.find("{*}isRequired").text
+                if k.find("{*}choiceType")!=None:
+                    doc["choiceType"]=k.find("{*}choiceType").text
+                valu=[]
+                for val in k.getiterator("{*}value"):
+                    if val.find("{*}qualityDescription")!=None:
+                        valu['qualityDescription']=val.find("{*}qualityDescription").text
+                    else:
+                        valu['o_k_e_i_id']=val.find("{*}OKEI/{*}code").text
+                        valu['value_format']=val.find("{*}valueFormat").text
+                        if val.find("{*}rangeSet")!=None:
+                            rang={}
+                            if val.find("{*}rangeSet/{*}valueRange/{*}minMathNotation")!=None:
+                                rang["minMathNotation"]=val.find("{*}rangeSet/{*}valueRange/{*}minMathNotation").text
+                                rang["min"]=val.find("{*}rangeSet/{*}valueRange/{*}min").text
+                            if val.find("{*}rangeSet/{*}valueRange/{*}maxMathNotation")!=None:
+                                rang["maxMathNotation"]=val.find("{*}rangeSet/{*}valueRange/{*}maxMathNotation").text
+                                rang["max"]=val.find("{*}rangeSet/{*}valueRange/{*}max").text
+                        if val.find("{*}valueSet")!=None:
+                            valu['valueSet']=val.find("{*}valueSet/{*}concreteValue").text
+        if i.find("{*}products")!=None:
+            product={}
+            for k in i.getiterator("{*}product"):
+                if k.find("{*}tradeName")!=None:
+                    product["trade_name"]=k.find("{*}tradeName").text
+                if k.find("{*}manufacturer")!=None:
+                    product["manufacturer"]=k.find("{*}manufacturer").text
+                if k.find("{*}placeOfOrigin")!=None:
+                    product["placeOfOrigin"]=k.find("{*}placeOfOrigin/{*}countryCode").text
+                if k.find("{*}price")!=None:
+                    product["price"]=k.find("{*}price").text
+#
+# 
+# 
+# 
+# 
+# 
+# 
+# тут нада доделать
+# 
+# 
+# 
+# 
+# 
+# 
+#                 
+        if i.find("{*}rubricators")!=None:
+            for k in i.getiterator("{*}rubricators/{*}rubricator"):
+                taim.append(k.find("{*}name"))
+            dic['rubricators']=taim
+            taim=[]
+        if i.find("{*}industryClassifier")!=None:
+            dic["industryClassifier"]=i.find("{*}industryClassifier/code").text
+        if i.find("{*}attachments")!=None:
+            colekt=[]
+            for k in i.getiterator("{*}attachments/{*}attachment"):
+                doc={}
+                taim=[]
+                if k.find("{*}publishedContentId")!=None:
+                    doc["published_content_id"]=k.find("{*}publishedContentId").text
+                doc["file_name"]=k.find("{*}fileName").text
+                if k.find("{*}fileSize")!=None:
+                    doc["file_size"]=k.find("{*}fileSize").text
+                if k.find("{*}docDescription")!=None:
+                    doc["doc_description"]=k.find("{*}docDescription").text
+                if k.find("{*}docDate")!=None:
+                    doc["doc_date"]=k.find("{*}docDate").text
+                if k.find("{*}url")!=None:
+                    doc["url"]=k.find("{*}url").text
+                if k.find("{*}contentId")!=None:
+                    doc["content_id"]=k.find("{*}contentId").text
+                if k.find("{*}content")!=None:
+                    doc["content"]=k.find("{*}content").text
+                if k.find("{*}cryptoSigns")!=None:
+                    for typ in k.getiterator("{*}cryptoSigns/{*}signature/{*}type"):
+                        taim.append(typ.text)
+                    doc['crypto_signs']=taim
+                if k.find("{*}attachmentBusinessType")!=None:
+                    doc["attachmentBusinessType"]=k.find("{*}attachmentBusinessType").text
+                colekt.append(doc)
+            dic["attachments"]=colekt
+        if i.find("{*}cancelInfo")!=None:
+            dic['cancelInfo']=[i.find("{*}cancelInfo/{*}cancelDate").text,i.find("{*}cancelInfo/{*}cancelReason").text]
+        if i.find("{*}nsiDescription")!=None:
+            dic['nsi_description']=i.find("{*}nsiDescription").text
+        if i.find("{*}isTemplate")!=None:
+            dic['is_template']=i.find("{*}isTemplate").text
+        if i.find("{*}parentPositionInfo")!=None:
+            dic['parent_position_info_id']=i.find("{*}parentPositionInfo/{*}code").text
+        if i.find("{*}externalCode")!=None:
+            dic['external_code']=i.find("{*}externalCode").text
+        if i.find("{*}noNewFeatures")!=None:
+            dic['no_new_features']=i.find("{*}noNewFeatures").text
+        if i.find("{*}noNewFeaturesReason")!=None:
+            dic['no_new_features_reason']=i.find("{*}noNewFeaturesReason").text
+
+        lis.append(dic)
+    return lis
 def pars (fail):
     pars=etree.parse(fail,parser)
     s=fail.name[fail.name.find("nsi")+3:fail.name.find("_")]
@@ -1123,7 +1307,7 @@ def pars (fail):
         s=s[:s.find("List")]
     s=re.sub(r'(?<!^)(?=[A-Z])', '_', s).lower()
     f=globals()["pars_"+s]
-    f(pars)
+    return f(pars)
 #def parse_abondoned_reason(xml_file):
 #    res = []
 #    for tag in xml_file.find_all('nsiAuditActionSubject'):
