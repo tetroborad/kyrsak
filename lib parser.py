@@ -1145,22 +1145,23 @@ def pars_k_t_r_u(fail):
             dic['application_date_start']=i.find("{*}applicationDateStart").text
         if i.find("{*}applicationDateEnd")!=None:
             dic['application_date_end']=i.find("{*}applicationDateEnd").text
-        if i.find("{*}OKEIs")!=None:
-            for k in i.getiterator("{*}OKEI"):
-                taim.append(k.find("code"))
+        if i.find("{*}OKEIs")!=None:#ошибка
+            for k in i.getiterator("{*}OKEIs"):
+                for code in i.getiterator("{*}OKEI"):
+                    taim.append(code.find("{*}code").text)
             dic["o_k_e_i_id"]=taim
             taim=[]
         if i.find("{*}NSI")!=None:
             nsi={}
-            if i.find("{*}NSI/standarts")!=None:
-                for k in i.getiterator("standart"):
+            if i.find("{*}NSI/{*}standarts")!=None:
+                for k in i.getiterator("{*}standart"):
                     taim.append(k.find("{*}docName"))
                 nsi["standart"]=taim
                 taim=[]
-            if i.find("{*}NSI/classifiers")!=None:
-                for k in i.getiterator("classifier"):
+            if i.find("{*}NSI/{*}classifiers")!=None:
+                for k in i.getiterator("{*}classifier"):
                     val={}
-                    for valie in k.getiterator("value"):
+                    for valie in k.getiterator("{*}value"):
                         val["code"]=valie.find("{*}code").text
                         val["name"]=valie.find("{*}name").text
                         if valie.find("{*}descriptionValue")!=None:
@@ -1170,9 +1171,9 @@ def pars_k_t_r_u(fail):
                     taim.append({"doc_name":k.find("{*}docName"),"values":val})
                 nsi["classifiers"]=taim
                 taim=[]
-            if i.find("{*}NSI/standardContracts")!=None:
+            if i.find("{*}NSI/{*}standardContracts")!=None:
                 contract={}
-                for k in i.getiterator("standardContract"):
+                for k in i.getiterator("{*}standardContract"):
                     if k.find("{*}standardContractNumber")!=None:
                         contract['standard_contract_number']=k.find("{*}standardContractNumber")
                     if k.find("{*}type")!=None:
@@ -1231,21 +1232,8 @@ def pars_k_t_r_u(fail):
                     product["placeOfOrigin"]=k.find("{*}placeOfOrigin/{*}countryCode").text
                 if k.find("{*}price")!=None:
                     product["price"]=k.find("{*}price").text
-#
-# 
-# 
-# 
-# 
-# 
-# 
-# тут нада доделать
-# 
-# 
-# 
-# 
-# 
-# 
-#                 
+                if k.find("{*}characteristics")!=None:
+                    product["price"]=k.find("{*}characteristics/{*}code").text              
         if i.find("{*}rubricators")!=None:
             for k in i.getiterator("{*}rubricators/{*}rubricator"):
                 taim.append(k.find("{*}name"))
