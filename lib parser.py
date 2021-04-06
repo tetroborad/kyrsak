@@ -2,17 +2,15 @@ import re
 from datetime import datetime
 taim=datetime.now()
 import alltable
-import os#для файлов
-from lxml import etree#для парсинга xml
-from sqlalchemy import *#для работы с БД
+import os
+from lxml import etree
+from sqlalchemy import *
 from sqlalchemy.orm import sessionmaker
-engine = create_engine('postgresql://zakupki:zakupki@localhost:15432/zakupki', echo = False)#
-meta = MetaData()#мета данные
-Session = sessionmaker(bind = engine) #создания класа сесии
-s=Session()#образец класса сесия
-parser=etree.XMLParser(remove_comments=True,recover=True)#настройки парсера 
-#alltable.drop_table_all()
-#alltable.creat_table_all()
+engine = create_engine('postgresql://zakupki:zakupki@localhost:15432/zakupki', echo = False)
+meta = MetaData()
+Session = sessionmaker(bind = engine) 
+s=Session()
+parser=etree.XMLParser(remove_comments=True,recover=True)
 def pars_e_p_doc_type(fail):
     lis=[]
     for i in fail.getiterator("{*}nsiEPDocType"):
@@ -65,7 +63,6 @@ def pars_andit_action_subject(fail):
         dic['actual']=i.find("{*}actual").text
         lis.append(dic)
     return lis
-#не проверил
 def pars_bank_guarantee_refusal615_reason(fail):
     lis=[]
     for i in fail.getiterator("{*}nsiBankGuaranteeRefusal615Reason"):
@@ -112,7 +109,7 @@ def pars_closed_e_p_cases(fail):
         dic['is_actual']=i.find("{*}isActual").text
         lis.append(dic)
     return lis
-#не проверил
+
 def pars_closed_methods_of_reason(fail):
     lis=[]
     for i in fail.getiterator("{*}nsiClosedMethodOfReason"):
@@ -1100,6 +1097,7 @@ def pars_organization(fail):
         #IKUInfo
         lis.append(dic)
     return lis
+#-----------------------
 def pars_commission(fail):
     lis=[]
     for i in fail.getiterator("{*}nsiCommission"):
@@ -1145,9 +1143,9 @@ def pars_k_t_r_u(fail):
             dic['application_date_start']=i.find("{*}applicationDateStart").text
         if i.find("{*}applicationDateEnd")!=None:
             dic['application_date_end']=i.find("{*}applicationDateEnd").text
-        if i.find("{*}OKEIs")!=None:#ошибка
+        if i.find("{*}OKEIs")!=None:
             for k in i.getiterator("{*}OKEIs"):
-                for code in i.getiterator("{*}OKEI"):
+                for code in k.getiterator("{*}OKEI"):
                     taim.append(code.find("{*}code").text)
             dic["o_k_e_i_id"]=taim
             taim=[]
@@ -1155,7 +1153,7 @@ def pars_k_t_r_u(fail):
             nsi={}
             if i.find("{*}NSI/{*}standarts")!=None:
                 for k in i.getiterator("{*}standart"):
-                    taim.append(k.find("{*}docName"))
+                    taim.append(k.find("{*}docName").text)
                 nsi["standart"]=taim
                 taim=[]
             if i.find("{*}NSI/{*}classifiers")!=None:
@@ -1168,16 +1166,16 @@ def pars_k_t_r_u(fail):
                             val["description_value"]=valie.find("{*}descriptionValue").text
                         if valie.find("{*}price")!=None:
                             val["price"]=valie.find("{*}price").text
-                    taim.append({"doc_name":k.find("{*}docName"),"values":val})
+                    taim.append({"name":i.find("{*}name").text,"values":val})
                 nsi["classifiers"]=taim
                 taim=[]
             if i.find("{*}NSI/{*}standardContracts")!=None:
                 contract={}
                 for k in i.getiterator("{*}standardContract"):
                     if k.find("{*}standardContractNumber")!=None:
-                        contract['standard_contract_number']=k.find("{*}standardContractNumber")
+                        contract['standard_contract_number']=k.find("{*}standardContractNumber").text
                     if k.find("{*}type")!=None:
-                        contract['type']=k.find("{*}type")
+                        contract['type']=k.find("{*}type").text
                     if k.find("{*}document")!=None:
                         doc={}
                         if k.find("{*}document/{*}number")!=None:
@@ -1191,36 +1189,45 @@ def pars_k_t_r_u(fail):
                 taim=[]
             dic["n_s_i"]=nsi
         if i.find("{*}characteristics")!=None:
-            charact={}
-            for k in i.getiterator("characteristic"):
+            characts=[]
+            for k in i.getiterator("{*}characteristic"):
+                charact={}
                 charact["code"]=k.find("{*}code").text
                 charact["name"]=k.find("{*}name").text
                 charact["type"]=k.find("{*}type").text
                 if k.find("{*}kind")!=None:
-                    doc["kind"]=k.find("{*}kind").text
+                    charact["kind"]=k.find("{*}kind").text
                 if k.find("{*}actual")!=None:
-                    doc["actual"]=k.find("{*}actual").text
+                    charact["actual"]=k.find("{*}actual").text
                 if k.find("{*}isRequired")!=None:
-                    doc["isRequired"]=k.find("{*}isRequired").text
+                    charact["isRequired"]=k.find("{*}isRequired").text
                 if k.find("{*}choiceType")!=None:
-                    doc["choiceType"]=k.find("{*}choiceType").text
-                valu=[]
+                    charact["choiceType"]=k.find("{*}choiceType").text
+                valus=[]
                 for val in k.getiterator("{*}value"):
+                    valu={}
                     if val.find("{*}qualityDescription")!=None:
                         valu['qualityDescription']=val.find("{*}qualityDescription").text
                     else:
-                        valu['o_k_e_i_id']=val.find("{*}OKEI/{*}code").text
-                        valu['value_format']=val.find("{*}valueFormat").text
+                        if val.find("{*}OKEI")!=None:
+                            valu['o_k_e_i_id']=val.find("{*}OKEI/{*}code").text
+                        if val.find("{*}valueFormat")!=None:
+                            valu['value_format']=val.find("{*}valueFormat").text
                         if val.find("{*}rangeSet")!=None:
                             rang={}
                             if val.find("{*}rangeSet/{*}valueRange/{*}minMathNotation")!=None:
-                                rang["minMathNotation"]=val.find("{*}rangeSet/{*}valueRange/{*}minMathNotation").text
+                                rang["minMathNotation"]=val.find("{*}rangeSet/{*}valueRange/{*}minMathNotation").text#обозначение мат знака либо больше либо больше равно
                                 rang["min"]=val.find("{*}rangeSet/{*}valueRange/{*}min").text
                             if val.find("{*}rangeSet/{*}valueRange/{*}maxMathNotation")!=None:
-                                rang["maxMathNotation"]=val.find("{*}rangeSet/{*}valueRange/{*}maxMathNotation").text
+                                rang["maxMathNotation"]=val.find("{*}rangeSet/{*}valueRange/{*}maxMathNotation").text#обозначение мат знака либо меньше либо меньше равно
                                 rang["max"]=val.find("{*}rangeSet/{*}valueRange/{*}max").text
+                            valu['range_set']=rang
                         if val.find("{*}valueSet")!=None:
                             valu['valueSet']=val.find("{*}valueSet/{*}concreteValue").text
+                    valus.append(valu)
+                charact["value"]=valu
+                characts.append(charact)
+            dic["characteristics"]=characts
         if i.find("{*}products")!=None:
             product={}
             for k in i.getiterator("{*}product"):
@@ -1235,15 +1242,15 @@ def pars_k_t_r_u(fail):
                 if k.find("{*}characteristics")!=None:
                     product["price"]=k.find("{*}characteristics/{*}code").text              
         if i.find("{*}rubricators")!=None:
-            for k in i.getiterator("{*}rubricators/{*}rubricator"):
-                taim.append(k.find("{*}name"))
+            for k in i.getiterator("{*}rubricatorInfo"):
+                taim.append(k.find("{*}name").text)
             dic['rubricators']=taim
             taim=[]
         if i.find("{*}industryClassifier")!=None:
             dic["industryClassifier"]=i.find("{*}industryClassifier/code").text
         if i.find("{*}attachments")!=None:
             colekt=[]
-            for k in i.getiterator("{*}attachments/{*}attachment"):
+            for k in i.getiterator("{*}attachment"):
                 doc={}
                 taim=[]
                 if k.find("{*}publishedContentId")!=None:
@@ -1262,8 +1269,8 @@ def pars_k_t_r_u(fail):
                 if k.find("{*}content")!=None:
                     doc["content"]=k.find("{*}content").text
                 if k.find("{*}cryptoSigns")!=None:
-                    for typ in k.getiterator("{*}cryptoSigns/{*}signature/{*}type"):
-                        taim.append(typ.text)
+                    for typ in k.getiterator("{*}signature"):
+                        taim.append({"type":typ.attrib['type'],"signature":typ.text})
                     doc['crypto_signs']=taim
                 if k.find("{*}attachmentBusinessType")!=None:
                     doc["attachmentBusinessType"]=k.find("{*}attachmentBusinessType").text
@@ -1283,7 +1290,202 @@ def pars_k_t_r_u(fail):
             dic['no_new_features']=i.find("{*}noNewFeatures").text
         if i.find("{*}noNewFeaturesReason")!=None:
             dic['no_new_features_reason']=i.find("{*}noNewFeaturesReason").text
-
+        lis.append(dic)
+    return lis
+#
+def pars_farm_drug_interchange_group(fail):
+    lis=[]
+    for i in fail.getiterator("{*}interchangeGroup"):
+        dic={}
+        taim=[]
+        inf={}
+        inf['interchange_group_i_d']=i.find("{*}groupInfo/{*}interchangeGroupID").text
+        inf['code']=i.find("{*}groupInfo/{*}code").text
+        inf['name']=i.find("{*}groupInfo/{*}name").text
+        inf['level']=i.find("{*}groupInfo/{*}level").text
+        inf['is_actual']=i.find("{*}groupInfo/{*}isActual").text
+        inf['date_create']=i.find("{*}groupInfo/{*}dateCreate").text
+        inf['date_change']=i.find("{*}groupInfo/{*}dateChange").text
+        inf['hash']=i.find("{*}groupInfo/{*}hash").text
+        if i.find("{*}groupInfo/{*}version")!=None:
+            inf['version']=i.find("{*}groupInfo/{*}version").text
+        if i.find("{*}groupInfo/{*}ancestorID")!=None:
+            inf['ancestor_i_d']=i.find("{*}groupInfo/{*}ancestorID").text
+        dic["group_info"]=inf
+        inf={}
+        dic["group_o_k_e_i"]={"name":i.find("{*}groupOKEI/{*}name").text,"o_k_e_i_id":i.find("{*}groupOKEI/{*}OKEI/{*}code").text}
+        for k in i.getiterator("{*}groupPrice"):
+            pric={}
+            if k.find("{*}value")!=None:
+                pric['value']=k.find("{*}value").text
+            if k.find("{*}usageMin")!=None:
+                pric['usage_min']=k.find("{*}usageMin").text
+            if k.find("{*}usageMax")!=None:
+                pric['usage_max']=k.find("{*}usageMax").text
+            if k.find("{*}type")!=None:
+                pric['type']=k.find("{*}type").text
+            pric['date_create']=k.find("{*}dateCreate").text
+            pric['date_start']=k.find("{*}dateStart").text
+            pric['date_end']=k.find("{*}dateEnd").text
+            pric['is_actual']=k.find("{*}isActual").text
+        for k in i.getiterator("{*}childGroup"):
+            inf['interchange_group_i_d']=i.find("{*}groupInfo/{*}interchangeGroupID").text
+            inf['code']=k.find("{*}groupInfo/{*}code").text
+            inf['name']=k.find("{*}groupInfo/{*}name").text
+            inf['level']=k.find("{*}groupInfo/{*}level").text
+            inf['isActual']=k.find("{*}groupInfo/{*}isActual").text
+            inf['dateCreate']=k.find("{*}groupInfo/{*}dateCreate").text
+            inf['dateChange']=k.find("{*}groupInfo/{*}dateChange").text
+            inf['hash']=k.find("{*}groupInfo/{*}hash").text
+            if k.find("{*}groupInfo/{*}version")!=None:
+                inf['version']=k.find("{*}groupInfo/{*}version").text
+            if k.find("{*}groupInfo/{*}ancestorID")!=None:
+                inf['ancestor_i_d']=k.find("{*}groupInfo/{*}ancestorID").text
+            for elem in k.getiterator("{*}element"):
+                elements=[]
+                element={}
+                if elem.find("{*}MNNExternalCode")!=None:
+                    element["m_n_n_external_code"]=elem.find("{*}MNNExternalCode").text
+                element["date_create"]=elem.find("{*}dateCreate").text
+                if elem.find("{*}dateChange")!=None:
+                    element["date_change"]=elem.find("{*}dateChange").text
+                if elem.find("{*}dateStart")!=None:
+                    element["date_start"]=elem.find("{*}dateStart").text
+                if elem.find("{*}dateEnd")!=None:
+                    element["date_end"]=elem.find("{*}dateEnd").text
+                if elem.find("{*}lastUpdateDate")!=None:
+                    element["last_update_date"]=elem.find("{*}lastUpdateDate").text
+                element["is_actual"]=elem.find("{*}isActual").text
+                element["rate_value"]=elem.find("{*}rateValue").text
+                if elem.find("{*}packRequirement")!=None:
+                    element["pack_requirement"]=elem.find("{*}packRequirement").text
+                elements.append(element)
+            inf["elements"]=elements
+        dic["child_group"]=inf
+        lis.append(dic)
+    return lis
+def pars_commission(fail):
+    lis=[]
+    for i in fail.getiterator("{*}MNNInfo"):
+        dic={}
+        taim=[]
+        dosa={}
+        dic['groupInfo']={"group_code":i.find("{*}groupInfo/{*}groupCode").text,"parent_group_code":i.find("{*}groupInfo/{*}parentGroupCode").text,"group_name":i.find("{*}groupInfo/{*}groupName").text,"actual":i.find("{*}groupInfo/{*}actual").text}
+        dic['m_n_n_code']=i.find("{*}MNNCode").text
+        dic['m_n_n_drug_code']=i.find("{*}MNNDrugCode").text
+        dic['m_n_n_external_code']=i.find("{*}MNNExternalCode").text
+        dic['m_n_n_hash']=i.find("{*}MNNHash").text
+        dic['m_n_n_name']=i.find("{*}MNNName").text
+        dic['ftg_info']={"code":i.find("{*}ftgInfo/{*}ftgCode").text,"name":i.find("{*}ftgInfo/{*}ftgName").text}
+        dic['medicamental_form_info']={"code":i.find("{*}medicamentalFormInfo/{*}medicamentalFormCode").text,"name":i.find("{*}medicamentalFormInfo/{*}medicamentalFormName").text}
+        dosa["dosage_code"]=i.find("{*}dosagesInfo/{*}dosageInfo/{*}dosageCode").text
+        dosa["dosage_name"]=i.find("{*}dosagesInfo/{*}dosageInfo/{*}dosageName").text
+        dosa["dosage_g_r_l_s_value"]=i.find("{*}dosagesInfo/{*}dosageInfo/{*}dosageGRLSValue").text
+        dosa["dosage_o_k_e_i_id"]=i.find("{*}dosagesInfo/{*}dosageInfo/{*}dosageOKEI/{*}code").text
+        dosa["dosage_value"]=i.find("{*}dosagesInfo/{*}dosageInfo/{*}dosageValue").text
+        dosa["dosage_user_id"]=i.find("{*}dosagesInfo/{*}dosageInfo/{*}dosageUser/{*}dosageUserOKEI").text
+        dic["dosage"]=dosa
+        for k in i.getiterator("athInfo"):
+            taim.append({"ath_code":k.find("athCode").text,"ath_external_code":k.find("athExternalCode").text,"ath_name":k.find("athName").text})
+        dic["ath_info"]=taim
+        taim=[]
+        dic['is_z_n_v_l_p']=i.find("{*}isZNVLP").text
+        dic['is_narcotiс']=i.find("{*}isNarcotiс").text
+        dic['o_k_p_d2_id']=i.find("{*}OKPD2/{*}code").text
+        dic['create_date']=i.find("{*}createDate").text
+        dic['start_date']=i.find("{*}startDate").text
+        if i.find("{*}endDate")!=None:
+            dic['end_date']=i.find("{*}endDate").text
+        if i.find("{*}pricesInfo")!=None:
+            for k in i.getiterator("{*}priceInfo"):
+                price={}
+                price["price_code"]=k.find("{*}priceCode").text
+                price["price_value"]=k.find("{*}priceValue").text
+                price["price_type"]=k.find("{*}priceType").text
+                price["price_sigma_value"]=k.find("{*}priceSigmaValue").text
+                if k.find("{*}priceSigmaValue")!=None:
+                    price["usage_min"]=k.find("{*}usageMin").text
+                if k.find("{*}usageMax")!=None:
+                    price["usage_max"]=k.find("{*}usageMax").text
+                price["author"]=k.find("{*}author").text
+                price["create_date"]=k.find("{*}createDate").text
+                price["start_date"]=k.find("{*}startDate").text
+                if k.find("{*}endDate")!=None:
+                    price["end_date"]=k.find("{*}endDate").text
+                taim.append(price)
+            dic["prices_info"]=taim
+            taim=[]
+        for k in i.getiterator("{*}positionTradeName"):
+            trade={}
+            trade['positionTradeNameCode']=k.find("{*}positionTradeNameCode").text
+            trade['positionTradeNameExternalCode']=k.find("{*}positionTradeNameExternalCode").text
+            trade['positionTradeNameHash']=k.find("{*}positionTradeNameHash").text
+            trade['drugCode']=k.find("{*}drugCode").text
+            if k.find("{*}MNNNormName")!=None:
+                trade['MNNNormName']=k.find("{*}MNNNormName").text
+            if k.find("{*}dosageNormName")!=None:
+                trade['dosageNormName']=k.find("{*}dosageNormName").text
+            if k.find("{*}medicamentalFormNormName")!=None:
+                trade['medicamentalFormNormName']=k.find("{*}medicamentalFormNormName").text
+            if k.find("{*}isDosed")!=None:
+                trade['isDosed']=k.find("{*}isDosed").text
+            if k.find("{*}conv")!=None:
+                trade['conv']=k.find("{*}conv").text
+            trade['tradeInfo']={"tradeCode":k.find("{*}tradeInfo/{*}tradeCode").text,"tradeName":k.find("{*}tradeInfo/{*}tradeName").text}
+            #packagingsInfo
+            trade['completeness']=k.find("{*}completeness").text
+            #owner
+            trade['certificateNumber']=k.find("{*}certificateNumber").text
+            trade['certificateDate']=k.find("{*}certificateDate").text
+            if k.find("{*}certificateUpdateDate")!=None:
+                trade['certificateUpdateDate']=k.find("{*}certificateUpdateDate").text
+            trade['barcode']=k.find("{*}barcode").text
+            #manufacturerInfo
+            #pricesInfo
+            #limPricesInfo
+            trade['createDate']=k.find("{*}createDate").text
+            trade['startDate']=k.find("{*}startDate").text
+            if k.find("{*}endDate")!=None:
+                trade['endDate']=k.find("{*}endDate").text
+            trade['reasonEnd']=k.find("{*}reasonEnd").text
+            trade['changeDate']=k.find("{*}changeDate").text
+            trade['actual']=k.find("{*}actual").text
+            if k.find("{*}lastChangeDate")!=None:
+                trade['lastChangeDate']=k.find("{*}lastChangeDate").text
+            #descendantInfo
+            #ancestorsListInfo
+            #invalidationDataListInfo
+            taim.append(trade)
+        dic["position_trade_name"]=taim    
+        dic['change_date']=i.find("{*}changeDate").text
+        dic['actual']=i.find("{*}actual").text
+        if i.find("{*}lastChangeDate")!=None:
+            dic['last_change_date']=i.find("{*}lastChangeDate").text
+        if i.find("{*}descendantInfo")!=None:
+            for k in i.getiterator("{*}positionTradeNameExternalCode"):
+                taim.append(k.text)
+            dic["ancestors_list_info"]=taim
+            taim=[]
+        if i.find("{*}ancestorsListInfo")!=None:
+            for k in i.getiterator("{*}ancestorListInfo"):
+                taim.append(k.find("{*}positionTradeNameExternalCode").text)
+            dic["ancestors_list_info"]=taim
+            taim=[]
+        if i.find("{*}nonNormMNNsListInfo")!=None:
+            for k in i.getiterator("{*}nonNormMNNInfo"):
+                taim.append(k.find("{*}MNNName").text)
+            dic["non_norm_m_n_ns_list_info"]=taim
+            taim=[]   
+        if i.find("{*}nonNormMedFormsDosagesListInfo")!=None:
+            for k in i.getiterator("{*}nonNormMedFormDosage"):
+                taim.append({"medicamental_form_name":k.find("{*}medicamentalFormName").text,"dosage_name":k.find("{*}dosageName").text})
+            dic["invalidation_data_list_info"]=taim
+            taim=[]
+        if i.find("{*}invalidationDataListInfo")!=None:
+            for k in i.getiterator("{*}invalidationData"):
+                taim.append({"code":k.find("{*}code").text,"date":k.find("{*}date").text,"description":k.find("{*}description").text})
+            dic["invalidation_data_list_info"]=taim
+            taim=[]
         lis.append(dic)
     return lis
 def pars (fail):
