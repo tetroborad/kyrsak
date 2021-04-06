@@ -1454,7 +1454,11 @@ def pars_commission(fail):
                 trade['lastChangeDate']=k.find("{*}lastChangeDate").text
             #descendantInfo
             #ancestorsListInfo
-            #invalidationDataListInfo
+            if k.find("{*}invalidationDataListInfo")!=None:
+                inval_lic=[]
+                for inval in k.getiterator("{*}invalidationData"):
+                    inval_lic.append({"code":inval.find("{*}code").text,"date":inval.find("{*}date").text,"description":inval.find("{*}description").text})
+                trade["invalidation_data_list_info"]=inval_lic
             taim.append(trade)
         dic["position_trade_name"]=taim    
         dic['change_date']=i.find("{*}changeDate").text
