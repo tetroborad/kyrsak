@@ -1432,15 +1432,23 @@ def pars_commission(fail):
             if k.find("{*}conv")!=None:
                 trade['conv']=k.find("{*}conv").text
             trade['tradeInfo']={"tradeCode":k.find("{*}tradeInfo/{*}tradeCode").text,"tradeName":k.find("{*}tradeInfo/{*}tradeName").text}
-            #packagingsInfo
+            for k in i.getiterator("{*}packagingInfo"):
+                packs=[]
+                pack={}
+                pack["primary_packaging_info"]={"primaryPackagingCode":k.find("{*}primaryPackagingInfo/{*}primaryPackagingCode").text,"primaryPackagingName":k.find("{*}primaryPackagingInfo/{*}primaryPackagingName").text}
+                pack["packaging1_quantity"]=k.find("{*}packaging1Quantity").text
+                pack["packaging2_quantity"]=k.find("{*}packaging2Quantity").text
+                pack["consumer_packaging_info"]={"consumerPackagingCode":k.find("{*}consumerPackagingInfo/{*}consumerPackagingCode").text,"consumerPackagingName":k.find("{*}consumerPackagingInfo/{*}consumerPackagingName").text}
+                packs.append(pack)
+            trade['packagings_info']=packs
             trade['completeness']=k.find("{*}completeness").text
-            #owner
+            trade['owner']={"certificateKeeperName":k.find("{*}owner/{*}certificateKeeperName").text,"certificateKeeperCountry":k.find("{*}owner/{*}certificateKeeperCountry/{*}countryCode").text}
             trade['certificateNumber']=k.find("{*}certificateNumber").text
             trade['certificateDate']=k.find("{*}certificateDate").text
             if k.find("{*}certificateUpdateDate")!=None:
                 trade['certificateUpdateDate']=k.find("{*}certificateUpdateDate").text
             trade['barcode']=k.find("{*}barcode").text
-            #manufacturerInfo
+            trade['manufacturerInfo']={"manufacturerOKSM":k.find("{*}manufacturerInfo/{*}manufacturerOKSM/{*}countryCode").text,"manufacturerAdress":k.find("{*}manufacturerInfo/{*}manufacturerAdress").text,"manufacturerName":k.find("{*}manufacturerInfo/{*}manufacturerName").text}
             #pricesInfo
             #limPricesInfo
             trade['createDate']=k.find("{*}createDate").text
@@ -1460,7 +1468,8 @@ def pars_commission(fail):
                     inval_lic.append({"code":inval.find("{*}code").text,"date":inval.find("{*}date").text,"description":inval.find("{*}description").text})
                 trade["invalidation_data_list_info"]=inval_lic
             taim.append(trade)
-        dic["position_trade_name"]=taim    
+        dic["position_trade_name"]=taim
+        taim=[]    
         dic['change_date']=i.find("{*}changeDate").text
         dic['actual']=i.find("{*}actual").text
         if i.find("{*}lastChangeDate")!=None:
