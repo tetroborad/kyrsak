@@ -11,6 +11,7 @@ meta = MetaData()
 Session = sessionmaker(bind = engine) 
 s=Session()
 parser=etree.XMLParser(remove_comments=True,recover=True)
+#alltable.creat_table_all()
 def pars_e_p_doc_type(fail):
     lis=[]
     for i in fail.getiterator("{*}nsiEPDocType"):
@@ -1057,14 +1058,14 @@ def pars_o_k_t_m_o_p_p_o(fail):
         dic['actual']=i.find("{*}actual").text       
         lis.append(dic)
     return lis
-#------------------------------------------------------------
 def pars_organization(fail):
     lis=[]
     for i in fail.getiterator("{*}nsiOrganization"):
         dic={}
         taim=[]
         dic['reg_number']=i.find("{*}regNumber").text
-        dic['cons_registry_num']=i.find("{*}consRegistryNum").text
+        if i.find("{*}consRegistryNum")!=None:
+            dic['cons_registry_num']=i.find("{*}consRegistryNum").text
         if i.find("{*}shortName")!=None:
             dic['short_name']=i.find("{*}shortName").text 
         dic['full_name']=i.find("{*}fullName").text 
@@ -1074,7 +1075,64 @@ def pars_organization(fail):
             dic['b_i_k']=i.find("{*}BIK").text
         if i.find("{*}nomBank")!=None:
             dic['nom_bank']=i.find("{*}nomBank").text
-        #  factualAddress
+        if i.find("{*}factualAddress")!=None:
+            address={}
+            if i.find("{*}factualAddress/{*}OKATO")!=None:
+                address["OKATO"]=i.find("{*}factualAddress/{*}OKATO").text
+            if i.find("{*}factualAddress/{*}addressLine")!=None:    
+                address["addressLine"]=i.find("{*}factualAddress/{*}addressLine").text
+            if i.find("{*}factualAddress/{*}area")!=None:
+                areals={}
+                areals["kladrType"]=i.find("{*}factualAddress/{*}area/{*}kladrType").text
+                areals["kladrCode"]=i.find("{*}factualAddress/{*}area/{*}kladrCode").text
+                if i.find("{*}factualAddress/{*}area/{*}fullName")!=None:
+                    areals["fullName"]=i.find("{*}factualAddress/{*}area/{*}fullName").text
+                address["area"]=areals
+            if i.find("{*}factualAddress/{*}building")!=None:    
+                address["building"]=i.find("{*}factualAddress/{*}building").text
+            if i.find("{*}factualAddress/{*}country")!=None:
+                country={}
+                country["countryCode"]=i.find("{*}factualAddress/{*}country/{*}countryCode").text
+                if i.find("{*}factualAddress/{*}country/{*}countryFullName")!=None:
+                    country["countryFullName"]=i.find("{*}factualAddress/{*}country/{*}countryFullName").text
+                address["country"]=country
+            if i.find("{*}factualAddress/{*}filledManually")!=None:    
+                address["filledManually"]=i.find("{*}factualAddress/{*}filledManually").text
+            if i.find("{*}factualAddress/{*}office")!=None:    
+                address["office"]=i.find("{*}factualAddress/{*}office").text
+            if i.find("{*}factualAddress/{*}region")!=None:
+                region={}
+                region["kladrType"]=i.find("{*}factualAddress/{*}region/{*}kladrType").text
+                region["kladrCode"]=i.find("{*}factualAddress/{*}region/{*}kladrCode").text
+                if i.find("{*}factualAddress/{*}region/{*}fullName")!=None:
+                    region["fullName"]=i.find("{*}factualAddress/{*}region/{*}fullName").text
+                address["region"]=region
+            if i.find("{*}factualAddress/{*}settlement")!=None:
+                settlement={}
+                settlement["kladrType"]=i.find("{*}factualAddress/{*}settlement/{*}kladrType").text
+                settlement["kladrCode"]=i.find("{*}factualAddress/{*}settlement/{*}kladrCode").text
+                if i.find("{*}factualAddress/{*}settlement/{*}fullName")!=None:
+                    settlement["fullName"]=i.find("{*}factualAddress/{*}settlement/{*}fullName").text
+                address["settlement"]=settlement
+            if i.find("{*}factualAddress/{*}city")!=None:
+                city={}
+                city["kladrType"]=i.find("{*}factualAddress/{*}city/{*}kladrType").text
+                city["kladrCode"]=i.find("{*}factualAddress/{*}city/{*}kladrCode").text
+                if i.find("{*}factualAddress/{*}city/{*}fullName")!=None:
+                    city["fullName"]=i.find("{*}factualAddress/{*}city/{*}fullName").text
+                address["city"]=city
+            if i.find("{*}factualAddress/{*}shortStreet")!=None:    
+                address["shortStreet"]=i.find("{*}factualAddress/{*}shortStreet").text
+            if i.find("{*}factualAddress/{*}street")!=None:
+                street={}
+                street["kladrType"]=i.find("{*}factualAddress/{*}street/{*}kladrType").text
+                street["kladrCode"]=i.find("{*}factualAddress/{*}street/{*}kladrCode").text
+                if i.find("{*}factualAddress/{*}street/{*}fullName")!=None:
+                    street["fullName"]=i.find("{*}factualAddress/{*}street/{*}fullName").text
+                address["street"]=street
+            if i.find("{*}factualAddress/{*}zip")!=None:    
+                address["zip"]=i.find("{*}factualAddress/{*}zip").text
+            dic['factualAddress']=address
         if i.find("{*}postalAddress")!=None:
             dic['postal_address']=i.find("{*}postalAddress").text
         if i.find("{*}email")!=None:
@@ -1083,21 +1141,121 @@ def pars_organization(fail):
             dic['phone']=i.find("{*}phone").text
         if i.find("{*}fax")!=None:
             dic['fax']=i.find("{*}fax").text
-        #contactPerson
-        #accounts
-        #budgets
-        #headAgency
-        #orderingAgency
-        dic['i_n_n']=i.find("{*}INN").text
-        dic['k_p_p']=i.find("{*}KPP").text
+        if i.find("{*}contactPerson"):
+            person={}
+            person["lastName"]=i.find("{*}contactPerson/{*}lastName").text
+            person["firstName"]=i.find("{*}contactPerson/{*}firstName").text
+            if i.find("{*}contactPerson/{*}middleName")!=None:
+                person["middleName"]=i.find("{*}contactPerson/{*}middleName").text
+            dic['contactPerson']=person
+        if i.find("{*}accounts")!=None:
+            accounts=[]
+            for acc in i.getiterator("{*}account"):
+                account={}
+                if acc.find("{*}bankAddress")!=None:
+                    account["bankAddress"]=acc.find("{*}bankAddress").text
+                account["bankName"]=acc.find("{*}bankName").text
+                account["bik"]=acc.find("{*}bik").text
+                if acc.find("{*}corrAccount")!=None:
+                    account["corrAccount"]=acc.find("{*}corrAccount").text
+                if acc.find("{*}paymentAccount")!=None:
+                    account["paymentAccount"]=acc.find("{*}paymentAccount").text
+                if acc.find("{*}personalAccount")!=None:
+                    account["personalAccount"]=acc.find("{*}personalAccount").text
+                accounts.append(account)
+            dic['accounts']=accounts         
+        if i.find("{*}budgets")!=None:
+            budgets=[]
+            for k in i.getiterator("{*}budget"):
+                budgets.append({"code":k.find("{*}code").text,"name":k.find("{*}name").text})
+            dic['budgets']=budgets 
+        if i.find("{*}headAgency")!=None:
+            headAgency={}
+            headAgency["regNum"]=i.find("{*}headAgency/{*}regNum").text
+            if i.find("{*}headAgency/{*}consRegistryNum")!=None:
+                headAgency["consRegistryNum"]=i.find("{*}headAgency/{*}consRegistryNum").text
+            if i.find("{*}headAgency/{*}fullName").text:
+                headAgency["fullName"]=i.find("{*}headAgency/{*}fullName").text
+            dic['headAgency']=headAgency 
+        if i.find("{*}orderingAgency")!=None:
+            orderingAgency={}
+            orderingAgency["regNum"]=i.find("{*}orderingAgency/{*}regNum").text
+            if i.find("{*}orderingAgency/{*}consRegistryNum")!=None:
+                orderingAgency["consRegistryNum"]=i.find("{*}orderingAgency/{*}consRegistryNum").text
+            if i.find("{*}orderingAgency/{*}fullName").text:
+                orderingAgency["fullName"]=i.find("{*}orderingAgency/{*}fullName").text
+            dic['orderingAgency']=orderingAgency
+        if i.find("{*}INN")!=None:
+            dic['i_n_n']=i.find("{*}INN").text
+        if i.find("{*}KPP")!=None:
+            dic['k_p_p']=i.find("{*}KPP").text
         if i.find("{*}registrationDate")!=None:
             dic['registration_date']=i.find("{*}registrationDate").text
         if i.find("{*}UBPCode")!=None:
             dic['u_b_p_code']=i.find("{*}UBPCode").text
-        #IKUInfo
+        if i.find("{*}IKUInfo")!=None:
+            IKUInfo=[]
+            for k in i.getiterator("{*}IKUInfo"):
+                IKU={}
+                IKU['IKU']=k.find("{*}IKU").text
+                if k.find("{*}dateStIKU")!=None:
+                    IKU['dateStIKU']=k.find("{*}dateStIKU").text
+                if k.find("{*}dateEndIKU")!=None:
+                    IKU['dateEndIKU']=k.find("{*}dateEndIKU").text
+                IKUInfo.append(IKU)
+            dic['IKUInfo']=IKUInfo
+        if i.find("{*}OGRN")!=None:
+            dic['OGRN']=i.find("{*}OGRN").text
+        if i.find("{*}OKFS/{*}code")!=None:
+            dic['OKFS_id']=i.find("{*}OKFS/{*}code").text
+        if i.find("{*}OKOPF")!=None:
+            dic['OKOPF']={"code":i.find("{*}OKOPF/{*}code").text,"fullName":i.find("{*}OKOPF/{*}fullName").text}
+        if i.find("{*}OKPO")!=None:
+            dic['OKPO']=i.find("{*}OKPO").text
+        if i.find("{*}OKVED")!=None:
+            dic['OKVED']=i.find("{*}OKVED").text
+        if i.find("{*}OKOGU")!=None:
+            dic['OKOGU']={"code":i.find("{*}OKOGU/{*}code").text,"name":i.find("{*}OKOGU/{*}name").text}
+        if i.find("{*}organizationRole")!=None:
+            dic['organizationRole']=i.find("{*}organizationRole").text
+        if i.find("{*}organizationRoles")!=None:
+            organizationRoles=[]
+            for role in i.getiterator("{*}organizationRoleItem"):
+                organizationRoleItem={}
+                if role.find("{*}organizationRole")!=None:
+                    organizationRoleItem["organizationRole"]=role.find("{*}organizationRole").text
+                if role.find("{*}startDate")!=None:
+                    organizationRoleItem["startDate"]=role.find("{*}startDate").text
+                if role.find("{*}endDate")!=None:
+                    organizationRoleItem["endDate"]=role.find("{*}endDate").text
+                organizationRoles.append(organizationRoleItem)
+            dic['organizationRoles']=organizationRoles
+        if i.find("{*}authorityRegion")!=None:
+            authorityRegion={}
+            authorityRegion["kladrType"]=i.find("{*}authorityRegion/{*}kladrType")
+            if i.find("{*}authorityRegion/{*}kladrCode")!=None:
+                authorityRegion["kladrCode"]=i.find("{*}authorityRegion/{*}kladrCode")
+            if i.find("{*}authorityRegion/{*}fullName")!=None:
+                authorityRegion["fullName"]=i.find("{*}authorityRegion/{*}fullName")
+            dic["authorityRegion"]=authorityRegion
+        if i.find("{*}organizationType")!=None:
+            dic['organizationType']={"code":i.find("{*}organizationType/{*}code").text,"name":i.find("{*}organizationType/{*}name").text}
+        if i.find("{*}subordinationType")!=None:
+            dic['subordinationType']=i.find("{*}subordinationType").text
+        if i.find("{*}url")!=None:
+            dic['url']=i.find("{*}url").text
+        if i.find("{*}timeZone")!=None:
+            dic['timeZone']=i.find("{*}timeZone").text
+        if i.find("{*}timeZoneUtcOffset")!=None:
+            dic['timeZoneUtcOffset']=i.find("{*}timeZoneUtcOffset").text
+        if i.find("{*}timeZoneOlson")!=None:
+            dic['timeZoneOlson']=i.find("{*}timeZoneOlson").text
+        if i.find("{*}actual")!=None:
+            dic['actual']=i.find("{*}actual").text
+        if i.find("{*}register")!=None:
+            dic['register']=i.find("{*}register").text
         lis.append(dic)
     return lis
-#-----------------------
 def pars_commission(fail):
     lis=[]
     for i in fail.getiterator("{*}nsiCommission"):
@@ -1292,7 +1450,6 @@ def pars_k_t_r_u(fail):
             dic['no_new_features_reason']=i.find("{*}noNewFeaturesReason").text
         lis.append(dic)
     return lis
-#
 def pars_farm_drug_interchange_group(fail):
     lis=[]
     for i in fail.getiterator("{*}interchangeGroup"):
@@ -1364,7 +1521,7 @@ def pars_farm_drug_interchange_group(fail):
         dic["child_group"]=inf
         lis.append(dic)
     return lis
-def pars_commission(fail):
+def pars_farm_drugs_dictionary(fail):
     lis=[]
     for i in fail.getiterator("{*}MNNInfo"):
         dic={}
@@ -1385,12 +1542,12 @@ def pars_commission(fail):
         dosa["dosage_value"]=i.find("{*}dosagesInfo/{*}dosageInfo/{*}dosageValue").text
         dosa["dosage_user_id"]=i.find("{*}dosagesInfo/{*}dosageInfo/{*}dosageUser/{*}dosageUserOKEI").text
         dic["dosage"]=dosa
-        for k in i.getiterator("athInfo"):
-            taim.append({"ath_code":k.find("athCode").text,"ath_external_code":k.find("athExternalCode").text,"ath_name":k.find("athName").text})
+        for k in i.getiterator("{*}athInfo"):
+            taim.append({"ath_code":k.find("{*}athCode").text,"ath_external_code":k.find("{*}athExternalCode").text,"ath_name":k.find("{*}athName").text})
         dic["ath_info"]=taim
         taim=[]
         dic['is_z_n_v_l_p']=i.find("{*}isZNVLP").text
-        dic['is_narcotiс']=i.find("{*}isNarcotiс").text
+        dic['is_narcotiс']=i.find("{*}isNarcotic").text
         dic['o_k_p_d2_id']=i.find("{*}OKPD2/{*}code").text
         dic['create_date']=i.find("{*}createDate").text
         dic['start_date']=i.find("{*}startDate").text
@@ -1432,13 +1589,13 @@ def pars_commission(fail):
             if k.find("{*}conv")!=None:
                 trade['conv']=k.find("{*}conv").text
             trade['tradeInfo']={"tradeCode":k.find("{*}tradeInfo/{*}tradeCode").text,"tradeName":k.find("{*}tradeInfo/{*}tradeName").text}
-            for k in i.getiterator("{*}packagingInfo"):
+            for packaging in k.getiterator("{*}packagingInfo"):
                 packs=[]
                 pack={}
-                pack["primary_packaging_info"]={"primaryPackagingCode":k.find("{*}primaryPackagingInfo/{*}primaryPackagingCode").text,"primaryPackagingName":k.find("{*}primaryPackagingInfo/{*}primaryPackagingName").text}
-                pack["packaging1_quantity"]=k.find("{*}packaging1Quantity").text
-                pack["packaging2_quantity"]=k.find("{*}packaging2Quantity").text
-                pack["consumer_packaging_info"]={"consumerPackagingCode":k.find("{*}consumerPackagingInfo/{*}consumerPackagingCode").text,"consumerPackagingName":k.find("{*}consumerPackagingInfo/{*}consumerPackagingName").text}
+                pack["primary_packaging_info"]={"primaryPackagingCode":packaging.find("{*}primaryPackagingInfo/{*}primaryPackagingCode").text,"primaryPackagingName":packaging.find("{*}primaryPackagingInfo/{*}primaryPackagingName").text}
+                pack["packaging1_quantity"]=packaging.find("{*}packaging1Quantity").text
+                pack["packaging2_quantity"]=packaging.find("{*}packaging2Quantity").text
+                pack["consumer_packaging_info"]={"consumerPackagingCode":packaging.find("{*}consumerPackagingInfo/{*}consumerPackagingCode").text,"consumerPackagingName":packaging.find("{*}consumerPackagingInfo/{*}consumerPackagingName").text}
                 packs.append(pack)
             trade['packagings_info']=packs
             trade['completeness']=k.find("{*}completeness").text
@@ -1447,21 +1604,55 @@ def pars_commission(fail):
             trade['certificateDate']=k.find("{*}certificateDate").text
             if k.find("{*}certificateUpdateDate")!=None:
                 trade['certificateUpdateDate']=k.find("{*}certificateUpdateDate").text
-            trade['barcode']=k.find("{*}barcode").text
+            if k.find("{*}barcode")!=None:
+                trade['barcode']=k.find("{*}barcode").text
             trade['manufacturerInfo']={"manufacturerOKSM":k.find("{*}manufacturerInfo/{*}manufacturerOKSM/{*}countryCode").text,"manufacturerAdress":k.find("{*}manufacturerInfo/{*}manufacturerAdress").text,"manufacturerName":k.find("{*}manufacturerInfo/{*}manufacturerName").text}
-            #pricesInfo
-            #limPricesInfo
+            prices=[]
+            for pric in k.getiterator("{*}priceInfo"):
+                price={}
+                price["priceCode"]=pric.find("{*}priceCode").text
+                price["priceValue"]=pric.find("{*}priceValue").text
+                price["priceType"]=pric.find("{*}priceType").text
+                price["priceSigmaValue"]=pric.find("{*}priceSigmaValue").text
+                price["createDate"]=pric.find("{*}createDate").text
+                price["startDate"]=pric.find("{*}startDate").text
+                if pric.find("{*}endDate")!=None:
+                    price["endDate"]=pric.find("{*}endDate").text
+                prices.append(price)
+            trade['priceInfo']=prices
+            lim_prices=[]
+            for lim_pric in k.getiterator("{*}limPriceInfo"):
+                lim_price={}
+                lim_price["priceCode"]=lim_pric.find("{*}priceCode").text
+                lim_price["priceValue"]=lim_pric.find("{*}priceValue").text
+                lim_price["reqDate"]=lim_pric.find("{*}reqDate").text
+                lim_price["reqNumber"]=lim_pric.find("{*}reqNumber").text
+                if lim_pric.find("{*}endDate")!=None:
+                    lim_price["endDate"]=lim_pric.find("{*}endDate").text
+                if lim_pric.find("{*}reasonEnd")!=None:
+                    lim_price["reasonEnd"]=lim_pric.find("{*}reasonEnd").text
+                if lim_pric.find("{*}deactivateDate")!=None:
+                    lim_price["deactivateDate"]=lim_pric.find("{*}deactivateDate").text                
+                lim_prices.append(lim_price)
+            trade['lim_price_info']=lim_prices
             trade['createDate']=k.find("{*}createDate").text
             trade['startDate']=k.find("{*}startDate").text
             if k.find("{*}endDate")!=None:
                 trade['endDate']=k.find("{*}endDate").text
-            trade['reasonEnd']=k.find("{*}reasonEnd").text
+            if k.find("{*}reasonEnd")!=None:
+                trade['reasonEnd']=k.find("{*}reasonEnd").text
             trade['changeDate']=k.find("{*}changeDate").text
             trade['actual']=k.find("{*}actual").text
             if k.find("{*}lastChangeDate")!=None:
                 trade['lastChangeDate']=k.find("{*}lastChangeDate").text
-            #descendantInfo
-            #ancestorsListInfo
+            descends=[]
+            for descendant in k.getiterator("{*}positionTradeNameExternalCode"):
+                descends.append(descendant.text)
+            trade['descendantInfo']=descends
+            ancestors=[]
+            for ancestor in k.getiterator("{*}ancestorListInfo"):
+                ancestors.append(ancestor.find("{*}positionTradeNameExternalCode").text)
+            trade['ancestorListInfo']=ancestors
             if k.find("{*}invalidationDataListInfo")!=None:
                 inval_lic=[]
                 for inval in k.getiterator("{*}invalidationData"):
@@ -1480,8 +1671,8 @@ def pars_commission(fail):
             dic["ancestors_list_info"]=taim
             taim=[]
         if i.find("{*}ancestorsListInfo")!=None:
-            for k in i.getiterator("{*}ancestorListInfo"):
-                taim.append(k.find("{*}positionTradeNameExternalCode").text)
+            for ancestor in k.getiterator("{*}ancestorListInfo"):
+                taim.append(ancestor.find("{*}positionTradeNameExternalCode").text)
             dic["ancestors_list_info"]=taim
             taim=[]
         if i.find("{*}nonNormMNNsListInfo")!=None:
@@ -1501,6 +1692,34 @@ def pars_commission(fail):
             taim=[]
         lis.append(dic)
     return lis
+def pars_calendar_day (fail):
+    lis=[]
+    for i in fail.getiterator("{*}day"):
+        dic={}
+        dic['dayDate']=i.find("{*}dayDate").text
+        if i.find("{*}regions")!=None:
+            regions=[]
+            for k in i.getiterator("{*}region"):
+                region={}
+                region["kladrType"]=k.find("{*}kladrType").text
+                region["kladrCode"]=k.find("{*}kladrCode").text
+                region["fullName"]=k.find("{*}fullName").text
+                regions.append(region)
+            dic["regions"]=regions
+        dic['isWorkDay']=i.find("{*}isWorkDay").text
+        lis.append(dic)
+    return lis
+def record(recor):
+    for colum in recor.key():
+        if recor[colum].type==list :
+            lis_recor(record[colum])
+        elif recor[colum].type==dict:
+            recor[colum]=record(recor[colum])
+    
+
+def lis_record(lis):
+    for recor in lis:
+        record(recor)
 def pars (fail):
     pars=etree.parse(fail,parser)
     s=fail.name[fail.name.find("nsi")+3:fail.name.find("_")]
@@ -1510,7 +1729,9 @@ def pars (fail):
         s=s[:s.find("List")]
     s=re.sub(r'(?<!^)(?=[A-Z])', '_', s).lower()
     f=globals()["pars_"+s]
-    return f(pars)
+    s=f(pars)
+
+    return s
 #def parse_abondoned_reason(xml_file):
 #    res = []
 #    for tag in xml_file.find_all('nsiAuditActionSubject'):
